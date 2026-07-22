@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ТЛС Путешествия — текущий макет (as-is)</title>
+  <title>ТЛС Путешествия AS IS</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -83,40 +83,250 @@
 
   <div class="page">
     <header class="page-header">
-      <p class="eyebrow">RS TLS · as-is preview</p>
-      <h1>ТЛС Путешествия — макет экранов</h1>
-      <nav class="nav-pills">
-        <a href="home-variants.html">Варианты главной</a>
-        <a href="map-nearby.html">Карта рядом</a>
-        <a href="#brand">Иконка</a>
-        <a href="#home">Главная</a>
-        <a href="#lists">Списки</a>
-        <a href="#details">Деталки → чат</a>
-        <a href="#services">Услуги</a>
-        <a href="#chat">Чат</a>
-        <a href="#profile">Профиль / Member</a>
-        <a href="#loyalty-extra">Лояльность CRUD</a>
-        <a href="#auth">Вход</a>
-        <a href="#search">Поиск</a>
-        <a href="#palette">Палитра</a>
+      <nav class="site-nav" aria-label="Разделы макетов">
+        <a href="index.html" class="on">AS IS</a>
+        <a href="home-variants.html">TO BE MAIN</a>
+        <a href="map-nearby.html">TO BE MAP</a>
       </nav>
+      <h1>ТЛС Путешествия AS IS</h1>
     </header>
 
     <section class="section" id="brand">
-      <h2>Иконка приложения</h2>
-      <div class="phones">
-        <div class="phone-wrap">
-          <div class="phone-label"><strong>Springboard</strong></div>
-          <div class="phone">
-            <div class="phone-screen brand-screen">
-              <div class="status-bar"><span>13:40</span><span class="icons">▮ Wi‑Fi 74</span></div>
-              <div class="app-icon-demo">
-                <img class="app-icon" src="assets/app-icon-real.png" alt="RS TLS" width="88" height="88" />
-                <div class="app-icon-label">Путешествия</div>
-              </div>
-            </div>
+      <h2>Иконка · AS IS</h2>
+      <div class="icon-asis">
+        <img class="app-icon app-icon-lg" src="assets/app-icon-real.png" alt="AS IS" width="120" height="120" />
+        <div class="app-icon-label">AS IS</div>
+      </div>
+
+      <h2 class="brand-subhead">Предложения по логотипам</h2>
+      <p class="section-desc">Отобранные концепты + вариации фонов/подписей · wordmark в стиле «ПУТЬ» · новые travel-иконки · (<a href="https://rstls.ru" target="_blank" rel="noopener">rstls.ru</a>)</p>
+
+      <div class="logo-grid">
+        <figure class="logo-card">
+          <div class="logo-tile c-ink" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="28" fill="none" stroke="#c9a86a" stroke-width="2.5"/><path d="M50 22 L54 46 L78 50 L54 54 L50 78 L46 54 L22 50 L46 46 Z" fill="#c9a86a"/></svg>
           </div>
-        </div>
+          <figcaption><strong>01 · Компас</strong><span>Роза ветров</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-navy" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M22 62 H78 L70 72 H30 Z" fill="#c9a86a"/><path d="M50 28 V62" stroke="#e8eef1" stroke-width="2.5"/><path d="M50 32 L72 58 H50 Z" fill="#e8eef1"/><path d="M50 40 L34 58 H50 Z" fill="none" stroke="#7ec8e3" stroke-width="2"/></svg>
+          </div>
+          <figcaption><strong>02 · Яхта</strong><span>Парус / премиум-флот</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-dusk" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><circle cx="50" cy="48" r="14" fill="#e8c97a"/><path d="M18 62 Q50 48 82 62" fill="none" stroke="#9ec8d4" stroke-width="3"/><path d="M18 70 Q50 58 82 70" fill="none" stroke="#9ec8d4" stroke-width="2" opacity=".5"/></svg>
+          </div>
+          <figcaption><strong>03 · Горизонт</strong><span>Солнце над морем</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-ink" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M12 72 L36 36 L48 52 L62 28 L88 72 Z" fill="none" stroke="#7ec8e3" stroke-width="2.5"/><path d="M62 28 L70 40 L56 40 Z" fill="#c9a86a"/></svg>
+          </div>
+          <figcaption><strong>04 · Альпы</strong><span>Горные маршруты</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-ink" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M30 70 Q50 20 70 70" fill="none" stroke="#7ec8e3" stroke-width="2.5"/><path d="M36 58 H64" stroke="#c9a86a" stroke-width="2"/><circle cx="50" cy="32" r="3" fill="#fff"/></svg>
+          </div>
+          <figcaption><strong>05 · Арка</strong><span>Вход в премиум-сервис</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-teal" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><circle cx="50" cy="42" r="16" fill="none" stroke="#fff" stroke-width="2.5"/><path d="M34 42 H66 M50 26 V58" stroke="#fff" stroke-width="1.5"/><path d="M28 68 H72" stroke="#c9a86a" stroke-width="3" stroke-linecap="round"/><path d="M36 74 H64" stroke="#7ec8e3" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <figcaption><strong>06 · Навигация</strong><span>Курс / направление</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-navy" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="28" fill="none" stroke="#c9a86a" stroke-width="1.5"/><path d="M32 60 L50 30 L68 60 Z" fill="none" stroke="#e8eef1" stroke-width="2"/><path d="M38 60 H62" stroke="#00b7d4" stroke-width="2.5"/></svg>
+          </div>
+          <figcaption><strong>07 · Печать-взлёт</strong><span>Авиа в гербе</span></figcaption>
+        </figure>
+
+        <figure class="logo-card">
+          <div class="logo-tile c-cream" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#1a2a32" font-weight="600">ТЛС</text><text x="50" y="68" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#0098bd" letter-spacing="2">ПУТЕШЕСТВИЯ</text></svg>
+          </div>
+          <figcaption><strong>08 · ТЛС · cream</strong><span>Светлый фон</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-navy" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#e8eef1" font-weight="600">ТЛС</text><text x="50" y="68" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#7ec8e3" letter-spacing="2">ПУТЕШЕСТВИЯ</text></svg>
+          </div>
+          <figcaption><strong>09 · ТЛС · navy</strong><span>Тёмный синий</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-ink" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#f0e6d2" font-weight="600">ТЛС</text><text x="50" y="68" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#c9a86a" letter-spacing="2">ПУТЕШЕСТВИЯ</text></svg>
+          </div>
+          <figcaption><strong>10 · ТЛС · ink+gold</strong><span>Графит и золото</span></figcaption>
+        </figure>
+
+        <figure class="logo-card">
+          <div class="logo-tile c-teal" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><ellipse cx="50" cy="58" rx="26" ry="9" fill="#0a2a32"/><path d="M50 58 V40" stroke="#c9a86a" stroke-width="2.5"/><path d="M50 42 Q34 32 30 42 Q42 40 50 42 Q66 32 70 42 Q58 40 50 42" fill="#7ec8e3"/><circle cx="70" cy="28" r="5" fill="#e8c97a"/><text x="50" y="78" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#fff" font-weight="700" letter-spacing="1">ТЛС</text></svg>
+          </div>
+          <figcaption><strong>11 · Остров · ТЛС</strong><span>Кириллица</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-teal" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><ellipse cx="50" cy="58" rx="26" ry="9" fill="#0a2a32"/><path d="M50 58 V40" stroke="#c9a86a" stroke-width="2.5"/><path d="M50 42 Q34 32 30 42 Q42 40 50 42 Q66 32 70 42 Q58 40 50 42" fill="#7ec8e3"/><circle cx="70" cy="28" r="5" fill="#e8c97a"/><text x="50" y="78" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#fff" font-weight="700" letter-spacing="1">RS TLS</text></svg>
+          </div>
+          <figcaption><strong>12 · Остров · RS TLS</strong><span>Латиница</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-teal" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><ellipse cx="50" cy="58" rx="26" ry="9" fill="#0a2a32"/><path d="M50 58 V40" stroke="#c9a86a" stroke-width="2.5"/><path d="M50 42 Q34 32 30 42 Q42 40 50 42 Q66 32 70 42 Q58 40 50 42" fill="#7ec8e3"/><circle cx="70" cy="28" r="5" fill="#e8c97a"/><text x="50" y="78" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#fff" font-weight="700" letter-spacing="1">РС ТЛС</text></svg>
+          </div>
+          <figcaption><strong>13 · Остров · РС ТЛС</strong><span>Полная кириллица</span></figcaption>
+        </figure>
+
+        <figure class="logo-card">
+          <div class="logo-tile c-black" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="46" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#c9a86a" font-weight="600" letter-spacing="3">ПУТЬ</text><path d="M28 58 H72" stroke="#3a4a52" stroke-width="1"/><text x="50" y="74" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#8a9aa2" letter-spacing="2">TLS</text></svg>
+          </div>
+          <figcaption><strong>14 · ПУТЬ TLS</strong><span>Базовый wordmark</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile wm-emboss" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="44" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#e8d9a8" font-weight="600" letter-spacing="1">КАБИНЕТ</text><path d="M28 56 H72" stroke="rgba(255,255,255,.15)" stroke-width="1"/><text x="50" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#8a9aa2" letter-spacing="2">TLS</text></svg>
+          </div>
+          <figcaption><strong>15 · Кабинет TLS</strong><span>Тиснение / emboss</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile wm-glow" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="44" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#ffe08a" font-weight="700" letter-spacing="2">VIP</text><path d="M28 56 H72" stroke="rgba(201,168,106,.35)" stroke-width="1"/><text x="50" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#fff" letter-spacing="2">ПУТЬ</text></svg>
+          </div>
+          <figcaption><strong>16 · VIP Путь</strong><span>Gold glow</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile wm-gradient" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="44" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="url(#wg1)" font-weight="700" letter-spacing="3">РС</text><path d="M28 56 H72" stroke="rgba(255,255,255,.2)" stroke-width="1"/><text x="50" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#d8eef4" letter-spacing="3">КЛУБ</text><defs><linearGradient id="wg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7ec8e3"/><stop offset="100%" stop-color="#c9a86a"/></linearGradient></defs></svg>
+          </div>
+          <figcaption><strong>17 · РС Клуб</strong><span>Градиент cyan→gold</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile wm-outline" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="44" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="none" stroke="#c9a86a" stroke-width="1.2" font-weight="600" letter-spacing="2">МИР</text><path d="M28 56 H72" stroke="#3a4a52" stroke-width="1"/><text x="50" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="none" stroke="#8a9aa2" stroke-width="0.9" letter-spacing="2">TLS</text></svg>
+          </div>
+          <figcaption><strong>18 · Мир TLS</strong><span>Outline / контур</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile wm-glass" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="44" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#fff" font-weight="600" letter-spacing="2">LIFE</text><path d="M28 56 H72" stroke="rgba(255,255,255,.35)" stroke-width="1"/><text x="50" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,.8)" letter-spacing="2">TLS</text></svg>
+          </div>
+          <figcaption><strong>19 · Life TLS</strong><span>Liquid glass фон</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile wm-goldfoil" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="44" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#1a1410" font-weight="700" letter-spacing="1">МОЙ</text><path d="M28 56 H72" stroke="rgba(26,20,16,.25)" stroke-width="1"/><text x="50" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#3a2a18" letter-spacing="2">TLS</text></svg>
+          </div>
+          <figcaption><strong>20 · Мой TLS</strong><span>Золотая фольга</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile wm-neon" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="44" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#5ef0ff" font-weight="600" letter-spacing="1">FIRST</text><path d="M28 56 H72" stroke="rgba(94,240,255,.25)" stroke-width="1"/><text x="50" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#c9a86a" letter-spacing="2">TLS</text></svg>
+          </div>
+          <figcaption><strong>21 · First TLS</strong><span>Neon cyan</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile wm-relief" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="44" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#d4c4a0" font-weight="600" letter-spacing="1">БЕЗ ГРАНИЦ</text><path d="M28 56 H72" stroke="rgba(0,183,212,.35)" stroke-width="1"/><text x="50" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#7ec8e3" letter-spacing="2">TLS</text></svg>
+          </div>
+          <figcaption><strong>22 · Без границ</strong><span>Relief / soft shadow</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile wm-blurline" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="44" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#f0e6d2" font-weight="600" letter-spacing="1">КЛУБ</text><path d="M22 56 H78" stroke="#00b7d4" stroke-width="2" opacity=".85"/><text x="50" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#8a9aa2" letter-spacing="2">TLS</text></svg>
+          </div>
+          <figcaption><strong>23 · Клуб TLS</strong><span>Accent line / блик линии</span></figcaption>
+        </figure>
+
+        <figure class="logo-card">
+          <div class="logo-tile c-dusk" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M20 60 H80" stroke="#9ec8d4" stroke-width="2"/><path d="M28 60 L40 44 H60 L72 60" fill="#1a3040" stroke="#e8eef1" stroke-width="2"/><rect x="44" y="48" width="12" height="8" fill="#c9a86a"/><path d="M36 44 V36 H64 V44" fill="none" stroke="#7ec8e3" stroke-width="2"/></svg>
+          </div>
+          <figcaption><strong>24 · Лайнер</strong><span>Круизы</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-navy" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M20 72 V40 L50 22 L80 40 V72 Z" fill="none" stroke="#e8eef1" stroke-width="2.5"/><rect x="42" y="52" width="16" height="20" fill="#c9a86a"/><path d="M30 48 h10 v10 H30 Z M60 48 h10 v10 H60 Z" fill="none" stroke="#7ec8e3" stroke-width="1.5"/></svg>
+          </div>
+          <figcaption><strong>25 · Резиденция</strong><span>Отель / вилла</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-glass-blue" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="56" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#fff" font-weight="700" letter-spacing="2">TLS</text></svg>
+          </div>
+          <figcaption><strong>26 · Glass TLS</strong><span>Liquid glass wordmark</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-glass-dark" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><text x="50" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#fff" font-weight="600">ТЛС</text><text x="50" y="62" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,.75)" letter-spacing="2">ПУТЕШЕСТВИЯ</text></svg>
+          </div>
+          <figcaption><strong>27 · Glass ТЛС</strong><span>Стеклянный стек</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-orbit" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="8" fill="#c9a86a"/><ellipse cx="50" cy="50" rx="28" ry="12" fill="none" stroke="#7ec8e3" stroke-width="1.5" transform="rotate(-20 50 50)"/><ellipse cx="50" cy="50" rx="28" ry="12" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5" transform="rotate(40 50 50)"/><circle cx="74" cy="42" r="3" fill="#fff"/></svg>
+          </div>
+          <figcaption><strong>28 · Orbit</strong><span>Орбита сервисов</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-ink-split" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M0 0 H50 V100 H0 Z" fill="#121820"/><path d="M50 0 H100 V100 H50 Z" fill="#f3eee4"/><text x="28" y="56" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#c9a86a" font-weight="700">RS</text><text x="72" y="56" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#1a2a32" font-weight="700">TLS</text></svg>
+          </div>
+          <figcaption><strong>29 · Split RS|TLS</strong><span>Вертикальный сплит</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-blue-split" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M0 0 H50 V100 H0 Z" fill="#0e2436"/><path d="M50 0 H100 V100 H50 Z" fill="#e8f4f8"/><text x="28" y="56" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#00b7d4" font-weight="700">RS</text><text x="72" y="56" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#1396b6" font-weight="700">TLS</text></svg>
+          </div>
+          <figcaption><strong>30 · Split blue</strong><span>Синие оттенки RS TLS</span></figcaption>
+        </figure>
+        <figure class="logo-card">
+          <div class="logo-tile c-h-split" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M0 0 H100 V50 H0 Z" fill="#121820"/><path d="M0 50 H100 V100 H0 Z" fill="#f3eee4"/><text x="50" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#c9a86a" font-weight="700" letter-spacing="2">RS</text><text x="50" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#1a2a32" font-weight="700" letter-spacing="2">TLS</text></svg>
+          </div>
+          <figcaption><strong>31 · Split horizontal</strong><span>Горизонтальное разделение</span></figcaption>
+        </figure>
+      </div>
+
+      <h2 class="brand-subhead" id="names">Предложения по названиям</h2>
+      <p class="section-desc">Подписи на Springboard · wordmark-совместимые</p>
+      <div class="name-grid">
+        <div class="name-card"><strong>Путь TLS</strong><span>Базовый</span></div>
+        <div class="name-card"><strong>Кабинет TLS</strong><span>ЛК клиента</span></div>
+        <div class="name-card"><strong>VIP Путь</strong><span>Сегмент</span></div>
+        <div class="name-card"><strong>РС Клуб</strong><span>Членство</span></div>
+        <div class="name-card"><strong>Мир TLS</strong><span>Глобальный</span></div>
+        <div class="name-card"><strong>Ключ TLS</strong><span>Доступ</span></div>
+        <div class="name-card"><strong>Горизонт TLS</strong><span>Travel</span></div>
+        <div class="name-card"><strong>Life TLS</strong><span>Lifestyle</span></div>
+        <div class="name-card"><strong>Мой TLS</strong><span>Личное</span></div>
+        <div class="name-card"><strong>First TLS</strong><span>Премиум-класс</span></div>
+        <div class="name-card"><strong>Без границ</strong><span>Девиз</span></div>
+        <div class="name-card"><strong>Яхта TLS</strong><span>Флот</span></div>
+        <div class="name-card"><strong>Клуб TLS</strong><span>Членство</span></div>
+        <div class="name-card"><strong>ТЛС Путь</strong><span>Кириллица</span></div>
+        <div class="name-card"><strong>Консьерж РС</strong><span>Суть сервиса</span></div>
+        <div class="name-card"><strong>РС Консьерж</strong><span>Бренд вперёд</span></div>
+        <div class="name-card"><strong>Привилегии</strong><span>Benefits</span></div>
+        <div class="name-card"><strong>TLS Club</strong><span>EN</span></div>
+        <div class="name-card"><strong>TLS Life</strong><span>EN lifestyle</span></div>
+        <div class="name-card"><strong>Резиденция</strong><span>Stay</span></div>
+        <div class="name-card"><strong>Аэро TLS</strong><span>Авиа</span></div>
+        <div class="name-card"><strong>РС Путешествия</strong><span>Как сайт</span></div>
+        <div class="name-card"><strong>ТЛС.Жизнь</strong><span>Travel+life</span></div>
+        <div class="name-card"><strong>Персона</strong><span>Личный</span></div>
+        <div class="name-card"><strong>Маршрут</strong><span>Планирование</span></div>
+        <div class="name-card"><strong>City Key</strong><span>Город</span></div>
+        <div class="name-card"><strong>Villa Pass</strong><span>Виллы</span></div>
+        <div class="name-card"><strong>Круиз+</strong><span>Море</span></div>
+        <div class="name-card"><strong>Свет TLS</strong><span>Мягкий бренд</span></div>
+        <div class="name-card"><strong>Сервис+</strong><span>Сервис</span></div>
       </div>
     </section>
 

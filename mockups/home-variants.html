@@ -43,21 +43,13 @@
 
   <main class="page home-exploration">
     <header class="page-header">
-      <p class="eyebrow">Layout exploration</p>
-      <h1>Варианты главной</h1>
-      <p>
-        Курированный набор для постановки iOS-задач · 22 раскладки (V1–V22).
-        <a href="index.html">← As-is макет</a>
-      </p>
-      <nav class="nav-pills" id="variant-nav"></nav>
+      <nav class="site-nav" aria-label="Разделы макетов">
+        <a href="index.html">AS IS</a>
+        <a href="home-variants.html" class="on">TO BE MAIN</a>
+        <a href="map-nearby.html">TO BE MAP</a>
+      </nav>
+      <h1>ТЛС Путешествия TO BE MAIN</h1>
     </header>
-
-    <div class="design-rules">
-      <strong>Категории:</strong>
-      Акции · Авиабилеты · Рестораны · Отели · Привилегии · Визы · ВНЖ · Туры · Медицина · Страхование · Сервисы · Авто
-      <br />
-      <strong>Всего:</strong> 85 вариантов · V66–V85 комбинации метафор
-    </div>
 
     <div id="variant-list"></div>
     <p class="footer"><a href="index.html">as-is</a> · mockups/home-variants.html</p>
@@ -2222,11 +2214,6 @@
       cards: 'Визитки',
       hero: 'Hero + сетка'
     };
-
-    document.getElementById('variant-nav').innerHTML = Object.entries(groupLabels).map(([key, label]) => {
-      const first = variants.find((v) => v.group === key);
-      return `<a href="#v${first.id}">${label}</a>`;
-    }).join('') + variants.map((v) => `<a href="#v${v.id}">V${v.id}</a>`).join('');
 
     let lastGroup = '';
     document.getElementById('variant-list').innerHTML = variants.map((variant) => {
