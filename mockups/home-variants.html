@@ -1,0 +1,2594 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ТЛС Путешествия — варианты главной</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="i-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 10 12 20.5 3.5 10Z"/><path d="M3.5 10h17M8 3.8 12 10l4-6.2"/>
+    </symbol>
+    <symbol id="i-suitcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8M9 12v5m3-5v5m3-5v5"/>
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+      <path d="M4.5 4.5h10a2 2 0 0 1 2 2V13a2 2 0 0 1-2 2H8l-3.5 2.5Z"/>
+      <path d="M9 18.5h7.5l3 2.5V10.5a2 2 0 0 0-2-2h-1"/>
+    </symbol>
+    <symbol id="i-profile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <circle cx="12" cy="8" r="3.2"/><path d="M5.5 19.5c0-3.7 2.7-6 6.5-6s6.5 2.3 6.5 6"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+      <circle cx="11" cy="11" r="6"/><path d="m16 16 4.5 4.5"/>
+    </symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M4.2 8.2h6.2l1.2-1.4h8.2c.9 0 1.6.7 1.6 1.6v9.4c0 .9-.7 1.6-1.6 1.6H4.2c-.9 0-1.6-.7-1.6-1.6V9.8c0-.9.7-1.6 1.6-1.6Zm.3 2.1v8.2h15V10.3H4.5Z"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M8.2 16.8c2.4 2.2 5.6 3.5 9 3.2.7-.1 1.2-.7 1.3-1.4l.2-1.6c0-.5-.3-1-.8-1.2l-2.4-1c-.4-.2-.9-.1-1.2.2l-.7.8c-.2.2-.5.3-.8.2-1.3-.5-2.5-1.4-3.4-2.6-.2-.3-.1-.6.1-.8l.8-.7c.3-.3.4-.8.2-1.2l-1-2.4c-.2-.5-.7-.8-1.2-.8l-1.6.2c-.7.1-1.3.6-1.4 1.3-.3 3.4 1 6.6 3.2 9Z"/>
+      <path d="M15.2 4.2c2.1.4 3.9 1.7 4.9 3.5.3.5.1 1.1-.4 1.3-.5.3-1.1.1-1.3-.4-.7-1.3-1.9-2.2-3.4-2.5-.5-.1-.9-.6-.8-1.1.1-.5.6-.9 1-.8Z" opacity=".9"/>
+      <path d="M15.4 6.8c1.1.3 2 1 2.5 1.9.2.5 0 1-.5 1.2-.4.2-1 0-1.2-.4-.3-.5-.8-.9-1.4-1-.5-.1-.8-.6-.7-1.1.1-.5.6-.8 1.3-.6Z" opacity=".75"/>
+    </symbol>
+    <symbol id="i-avatar" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="24" fill="#E4EAF3"/><circle cx="24" cy="18" r="8" fill="#8A929C"/>
+      <path d="M8 42c2-10 8-14 16-14s14 4 16 14" fill="#8A929C"/>
+    </symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21 12.5 14.2 14l-3.4 6.4-.9-.5 1.6-5.9L3 11.8l.6-1.1 8.1 1.7L14.2 5l1 .4-1.5 6.2L21 12.5Z"/>
+    </symbol>
+  </svg>
+
+  <main class="page home-exploration">
+    <header class="page-header">
+      <p class="eyebrow">Layout exploration</p>
+      <h1>Варианты главной</h1>
+      <p>
+        Курированный набор для постановки iOS-задач · 22 раскладки (V1–V22).
+        <a href="index.html">← As-is макет</a>
+      </p>
+      <nav class="nav-pills" id="variant-nav"></nav>
+    </header>
+
+    <div class="design-rules">
+      <strong>Категории:</strong>
+      Акции · Авиабилеты · Рестораны · Отели · Привилегии · Визы · ВНЖ · Туры · Медицина · Страхование · Сервисы · Авто
+      <br />
+      <strong>Всего:</strong> 85 вариантов · V66–V85 комбинации метафор
+    </div>
+
+    <div id="variant-list"></div>
+    <p class="footer"><a href="index.html">as-is</a> · mockups/home-variants.html</p>
+  </main>
+
+  <script>
+    const categories = [
+      { name: 'Акции', className: 'cat-promo' },
+      { name: 'Авиабилеты', className: 'cat-air' },
+      { name: 'Рестораны', className: 'cat-rest' },
+      { name: 'Отели', className: 'cat-hotel' },
+      { name: 'Привилегии', className: 'cat-priv' },
+      { name: 'Визы', className: 'cat-visa' },
+      { name: 'ВНЖ', className: 'cat-residence' },
+      { name: 'Туры', className: 'cat-tour' },
+      { name: 'Медицина', className: 'cat-med' },
+      { name: 'Страхование', className: 'cat-insurance' },
+      { name: 'Сервисы', className: 'cat-service' },
+      { name: 'Авто', className: 'cat-auto' }
+    ];
+
+    const eliteStories = [
+      { name: 'Aman Tokyo', short: 'Aman', className: 'cat-hotel' },
+      { name: 'George V', short: 'George V', className: 'cat-hotel' },
+      { name: 'The Ritz', short: 'Ritz', className: 'cat-hotel' },
+      { name: 'Nobu', short: 'Nobu', className: 'cat-rest' },
+      { name: 'Cipriani', short: 'Cipriani', className: 'cat-rest' },
+      { name: 'Le Bristol', short: 'Bristol', className: 'cat-hotel' },
+      { name: 'Mandarin', short: 'Mandarin', className: 'cat-hotel' },
+      { name: 'L’Ambroisie', short: 'Ambroisie', className: 'cat-rest' },
+      { name: 'Burj Al Arab', short: 'Burj', className: 'cat-hotel' },
+      { name: 'Sketch', short: 'Sketch', className: 'cat-rest' },
+      { name: 'La Pergola', short: 'Pergola', className: 'cat-rest' },
+      { name: 'Gucci Osteria', short: 'Gucci', className: 'cat-rest' }
+    ];
+
+    const variants = [
+      /* —— Offers + «Сервисы» —— */
+      { id: 1, group: 'offers', name: 'Offers · stack', note: 'UIScrollView: заголовок «Специальные предложения» → горизонтальный UICollectionView (wide cards, peek, scale/fade краёв) → разделитель «Сервисы» → вертикальный stack фото-баннеров категорий', layout: 'offers-wglobe-stack', wglobe: 'offer-peek', plaques: 'stack', sep: 'line', offersTune: 'v121' },
+      { id: 2, group: 'offers', name: 'Offers · квадраты', note: 'Как V1, но категории — UICollectionView grid 2 колонки, ячейки aspectRatio 1:1', layout: 'offers-wglobe-stack', wglobe: 'offer-peek', plaques: 'square', sep: 'line', offersTune: 'v121' },
+      { id: 3, group: 'offers', name: 'Offers · сетка 2 кол.', note: 'Как V1, категории — равномерная сетка 2 колонки (одинаковая высота ячеек)', layout: 'offers-wglobe-stack', wglobe: 'offer-peek', plaques: 'grid', sep: 'line', offersTune: 'v121' },
+      { id: 4, group: 'offers', name: 'Offers · wide+pair', note: 'Как V1, категории — чередование: full-width баннер, затем ряд из 2 компактных', layout: 'offers-wglobe-stack', wglobe: 'offer-peek', plaques: 'alternating', sep: 'line', offersTune: 'v121' },
+      { id: 5, group: 'offers', name: 'Offers · magazine', note: 'Как V1, категории — magazine: крупный блок 2×2 + мелкие плитки вокруг', layout: 'offers-wglobe-stack', wglobe: 'offer-peek', plaques: 'magazine', sep: 'line', offersTune: 'v121' },
+
+      /* —— Каталог категорий —— */
+      { id: 6, group: 'cats', name: 'Панорамная сетка', note: 'Сетка 2 колонки, низкие wide-плитки категорий на всю ширину ячейки', layout: 'grid-wide' },
+      { id: 7, group: 'cats', name: 'Bento категорий', note: 'Только категории: bento-сетка 2 колонки со span tall/full-width', layout: 'bento-cats' },
+      { id: 8, group: 'cats', name: 'Шахматная сетка', note: 'Сетка 2 колонки со смещением строк (staggered / masonry-like offset)', layout: 'staggered' },
+      { id: 9, group: 'mosaic', name: 'L-угол', note: 'Повторяющийся L: 1 tall + 2 short в колонке справа', layout: 'bento-m3' },
+      { id: 10, group: 'mosaic', name: 'Magazine', note: 'Крупная плитка на 2×2 + мелкие вокруг', layout: 'bento-m4' },
+      { id: 11, group: 'mosaic', name: 'Полосы', note: 'Чередование full-width полосы и пары из 2 плиток', layout: 'bento-m5' },
+      { id: 12, group: 'mosaic', name: '3 колонки', note: 'Узкая равномерная сетка 3 колонки', layout: 'bento-m6' },
+      { id: 13, group: 'mosaic', name: 'Cascade', note: 'Каскад: tall, затем pair; повтор паттерна вниз', layout: 'bento-m8' },
+
+      /* —— Stories rails —— */
+      { id: 14, group: 'stories', name: 'Elite + сетка', note: 'Горизонтальные story-кружки (отели/рестораны) → сетка 2 кол. категорий', layout: 'stories-elite-grid', stories: 'elite' },
+      { id: 15, group: 'stories', name: 'Rail fullscreen', note: 'Горизонтальный UICollectionView высоких portrait-карточек (почти fullscreen по высоте), snap по центру', layout: 'stories-rail', rail: 'default', stories: 'elite-rail' },
+      { id: 16, group: 'stories', name: 'Rail compact', note: 'Как V15, но компактные карточки меньшей высоты/ширины', layout: 'stories-rail', rail: 'compact', stories: 'elite-rail' },
+
+      /* —— Прочее —— */
+      { id: 17, group: 'other', name: 'Lifestyle segments', note: 'UISegmentedControl (Travel / Dining / Docs) → контент сегмента ниже', layout: 'idea-segments' },
+      { id: 18, group: 'other', name: 'Wide strip + bento', note: 'Горизонтальная лента wide stories → ниже bento-мозаика категорий', layout: 'hybrid-strip-mosaic', strip: 'classic', mosaic: 'bento-cats' },
+      { id: 19, group: 'other', name: 'Offers frame + line', note: 'Блок спецпредложений в карточке-рамке → линия «Сервисы» → вертикальный stack категорий', layout: 'offers-wglobe-stack', wglobe: 'offer-peek', plaques: 'stack', sep: 'frame-line' },
+      { id: 20, group: 'other', name: 'Offers frame + panel', note: 'Блок спецпредложений в рамке → категории в отдельной подложке-панели (stack)', layout: 'offers-wglobe-stack', wglobe: 'offer-peek', plaques: 'stack', sep: 'frame-panel' },
+
+      /* —— V21: база «визитки» —— */
+      { id: 21, group: 'cards', name: 'Визитки · база', note: 'Визитки категорий без фона стола, лёгкий угол; UICollectionView / grid', layout: 'card-plain' },
+
+      /* —— V22: hero + сетка (бывш. V27), прежняя золотая обводка —— */
+      { id: 22, group: 'hero', name: 'Hero + сетка', note: 'Одна wide-accent визитка → сетка 2 кол. ниже; обводка #c9a227', layout: 'card-hero-grid' }
+    ];
+
+    const svg = (id, cls = 'ico') => `<svg class="${cls}"><use href="#${id}"/></svg>`;
+    const icoMask = (name) => `<span class="ico-mask ico-mask-${name}" aria-hidden="true"></span>`;
+
+    function header() {
+      return `
+        <div class="status-bar"><span>13:12</span><span class="icons">Wi-Fi 74</span></div>
+        <div class="top-bar">
+          <div class="avatar-sm">${svg('i-avatar')}</div>
+          <div class="icon-row">
+            <div class="icon-btn">${icoMask('search')}</div>
+            <div class="icon-btn">${icoMask('folder')}</div>
+            <div class="icon-btn">${icoMask('phone')}</div>
+          </div>
+        </div>`;
+    }
+
+    function tabs(interactive = false) {
+      const cls = interactive ? 'tab-bar anim-tabs' : 'tab-bar';
+      return `<div class="${cls}">
+        <div class="tab active" data-tab="0">${svg('i-diamond')}</div>
+        <div class="tab" data-tab="1">${svg('i-suitcase')}</div>
+        <div class="tab" data-tab="2">${svg('i-chat')}</div>
+        <div class="tab" data-tab="3">${svg('i-profile')}</div>
+        ${interactive ? '<span class="anim-tab-indicator"></span>' : ''}
+      </div>`;
+    }
+
+    function banner(category, index, extra = '') {
+      return `<div class="category-banner ${category.className} ${extra}">
+        <span class="category-name">${category.name}</span>
+        <span class="category-arrow">›</span>
+      </div>`;
+    }
+
+    function hero() {
+      return `<div class="category-hero">
+        <span class="hero-kicker">Актуальное</span>
+        <strong>Путешествуйте с привилегиями</strong>
+        <span>Персональные предложения и сервис 24/7</span>
+      </div>`;
+    }
+
+    function mapBlock() {
+      return `<div class="category-map">
+        <strong>Привилегии рядом</strong>
+        <span class="map-dot d1"></span><span class="map-dot d2"></span><span class="map-dot d3"></span>
+        <small>Москва · Сочи · Милан</small>
+      </div>`;
+    }
+
+    function storiesCats() {
+      return `<div class="stories-preview">
+        ${categories.slice(0, 6).map((c) => `<div class="story-preview">
+          <div class="story-preview-ring ${c.className}"></div><span>${c.name}</span>
+        </div>`).join('')}
+      </div>
+      <div class="stories-note">Stories — категории</div>`;
+    }
+
+    function storiesElite(limit = 8) {
+      return `<div class="stories-preview">
+        ${eliteStories.slice(0, limit).map((s) => `<div class="story-preview">
+          <div class="story-preview-ring ${s.className}"></div><span>${s.short}</span>
+        </div>`).join('')}
+      </div>
+      <div class="stories-note">Stories — элитные отели и рестораны</div>`;
+    }
+
+    function storiesLarge() {
+      return `<div class="stories-large-row">
+        ${eliteStories.slice(0, 4).map((s) => `
+          <div class="story-large-card ${s.className}">
+            <span class="story-large-label">Story</span>
+            <strong>${s.name}</strong>
+          </div>`).join('')}
+      </div>`;
+    }
+
+    function storiesRail(size = 'default', count = 4) {
+      const list = eliteStories.slice(0, count);
+      return `<div class="stories-rail-row rail-${size}">
+        ${list.map((s) => `
+          <div class="story-rail-card ${s.className}">
+            <strong>${s.name}</strong>
+            <em>Смотреть</em>
+          </div>`).join('')}
+      </div>`;
+    }
+
+    function storiesStrip(kind = 'classic', count = 5) {
+      const list = eliteStories.slice(0, count);
+      return `<div class="stories-strip-row strip-${kind}">
+        ${list.map((s) => `
+          <div class="story-strip-card ${s.className}">
+            <strong>${s.name}</strong>
+            <em>${s.className === 'cat-hotel' ? 'Отель' : 'Ресторан'}</em>
+          </div>`).join('')}
+      </div>`;
+    }
+
+    function storiesHGlobe(kind = 'scale', count = 6) {
+      const list = eliteStories.slice(0, count);
+      return `<div class="stories-hglobe-row hglobe-${kind}">
+        ${list.map((s) => `
+          <div class="story-hglobe-card ${s.className}">
+            <strong>${s.short}</strong>
+          </div>`).join('')}
+      </div>`;
+    }
+
+    function storiesWGlobe(kind = 'classic', count = 6) {
+      return `<div class="stories-wglobe-row wglobe-${kind}">
+        ${eliteStories.slice(0, count).map((s) => `
+          <div class="story-wglobe-card ${s.className}">
+            <strong>${s.name}</strong>
+            <em>${s.className === 'cat-hotel' ? 'Отель' : 'Ресторан'}</em>
+          </div>`).join('')}
+      </div>`;
+    }
+
+    function horizontalCats() {
+      return `<div class="h-cats-row">
+        ${categories.map((c) => `
+          <div class="h-cat-card category-banner ${c.className}">
+            <span class="category-name">${c.name}</span>
+          </div>`).join('')}
+      </div>`;
+    }
+
+    function categoryTabsBar(variant, activeIndex = 0) {
+      const style = variant.tabsStyle ? ` cat-tabs-${variant.tabsStyle}` : '';
+      const sticky = variant.stickyTabs ? ' is-sticky' : '';
+      return `<div class="cat-tabs-row${style}${sticky}">
+        ${categories.map((c, i) => `
+          <button type="button" class="cat-tab${i === activeIndex ? ' on' : ''}" data-cat="${i}">${c.name}</button>
+        `).join('')}
+      </div>`;
+    }
+
+    function tabsBodyContent(body, activeCat) {
+      const cat = categories[activeCat] || categories[0];
+      const offers = eliteStories.slice(0, 6);
+      if (body === 'list') {
+        return `<div class="tabs-offer-list">
+          ${offers.map((s) => `<div class="tabs-offer-row ${s.className}"><strong>${s.name}</strong><span>${cat.name}</span></div>`).join('')}
+        </div>`;
+      }
+      if (body === 'dense') {
+        return `<div class="idea-dense-list">
+          ${offers.map((s) => `<div class="idea-dense-row"><strong>${s.name}</strong><span>${cat.name}</span></div>`).join('')}
+        </div>`;
+      }
+      if (body === 'wide') return storiesStrip('classic', 5);
+      if (body === 'square') return storiesStrip('square', 5);
+      if (body === 'hglobe') return storiesHGlobe('scale', 6);
+      if (body === 'wglobe') return storiesWGlobe('classic', 6);
+      if (body === 'bento') return mosaicBlock('bento-cats');
+      if (body === 'alternating') return mosaicBlock('alternating');
+      if (body === 'twin') return mosaicBlock('bento-m2');
+      if (body === 'magazine') return mosaicBlock('bento-m4');
+      if (body === 'cascade') return mosaicBlock('bento-m8');
+      if (body === 'panorama') return mosaicBlock('grid-wide');
+      if (body === 'dual') {
+        return `${storiesStrip('classic', 4)}${storiesStrip('square', 4)}`;
+      }
+      if (body === 'featured') {
+        return `<div class="tabs-featured">
+          <div class="tabs-featured-main category-banner ${cat.className}"><span class="category-name">${cat.name}</span></div>
+          <div class="tabs-featured-side">
+            ${offers.slice(0, 2).map((s) => `<div class="story-strip-card ${s.className}"><strong>${s.short}</strong></div>`).join('')}
+          </div>
+        </div>
+        <div class="category-layout layout-grid">${categories.slice(0, 4).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+      if (body === 'split') {
+        return `${storiesStrip('classic', 4)}
+          <div class="tabs-offer-list">
+            ${offers.slice(0, 4).map((s) => `<div class="tabs-offer-row ${s.className}"><strong>${s.name}</strong><span>${cat.name}</span></div>`).join('')}
+          </div>`;
+      }
+      /* grid default */
+      return `<div class="category-layout layout-grid">
+        ${offers.map((s) => `
+          <div class="category-banner ${s.className}"><span class="category-name">${s.short}</span><span class="category-arrow">›</span></div>
+        `).join('')}
+      </div>`;
+    }
+
+    function mosaicBlock(layoutName) {
+      return `<div class="category-layout layout-${layoutName}">${categories.map((c, i) => banner(c, i)).join('')}</div>`;
+    }
+
+    function chips(list = categories) {
+      return `<div class="idea-chips">${list.map((c) => `<span class="idea-chip">${c.name}</span>`).join('')}</div>`;
+    }
+
+    function categoryLayout(variant) {
+      const all = categories.map((c, i) => banner(c, i)).join('');
+
+      if (variant.layout === 'task-groups') {
+        return `
+          <h4 class="category-group-title">Подготовка</h4>
+          <div class="category-grid">${categories.slice(5, 7).concat(categories.slice(8, 10)).map((c) => banner(c, categories.indexOf(c))).join('')}</div>
+          <h4 class="category-group-title">Путешествие</h4>
+          <div class="category-grid">${categories.slice(1, 4).concat(categories.slice(7, 8)).map((c) => banner(c, categories.indexOf(c))).join('')}</div>
+          <h4 class="category-group-title">Lifestyle и сервис</h4>
+          <div class="category-grid">${[categories[0], categories[4], categories[10], categories[11]].map((c) => banner(c, categories.indexOf(c))).join('')}</div>`;
+      }
+
+      if (variant.layout === 'groups') {
+        return [0, 4, 8].map((start, group) => `
+          <h4 class="category-group-title">${['Популярное', 'Документы и здоровье', 'Сервисы'][group]}</h4>
+          <div class="category-group-row">${categories.slice(start, start + 4).map((c, i) => banner(c, start + i)).join('')}</div>`).join('');
+      }
+
+      if (variant.layout === 'stories-elite-grid') {
+        return `<div class="category-layout layout-grid">${all}</div>`;
+      }
+
+      if (variant.layout === 'stories-large') {
+        return `${storiesLarge()}<h4 class="category-group-title">Категории</h4>${chips()}`;
+      }
+
+      if (variant.layout === 'stories-featured') {
+        return `<div class="category-layout layout-grid">${all}</div>`;
+      }
+
+      if (variant.layout === 'stories-mid') {
+        return `
+          <div class="category-layout layout-grid">${categories.slice(0, 4).map((c, i) => banner(c, i)).join('')}</div>
+          ${storiesElite(6)}
+          <div class="category-layout layout-grid">${categories.slice(4).map((c, i) => banner(c, i + 4)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'stories-rail') {
+        const size = variant.rail || 'default';
+        const count = size === 'peek' || size === 'panorama' ? 3 : size === 'slim' || size === 'mixed' ? 5 : 4;
+        return `${storiesRail(size, count)}
+          <h4 class="category-group-title">Все категории</h4>
+          <div class="category-layout layout-hero-list">${all}</div>`;
+      }
+
+      if (variant.layout === 'stories-strip') {
+        return `${storiesStrip(variant.strip || 'classic')}
+          <h4 class="category-group-title">Категории</h4>
+          <div class="category-layout layout-grid">${all}</div>`;
+      }
+
+      if (variant.layout === 'stories-hglobe') {
+        return `${storiesHGlobe(variant.hglobe || 'scale')}
+          <p class="anim-hint">Горизонтальный скролл · центр выделен</p>
+          <div class="category-layout layout-grid">${categories.slice(0, 6).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'hybrid-strip-mosaic') {
+        return `${storiesStrip(variant.strip || 'classic')}
+          <h4 class="category-group-title">Категории</h4>
+          ${mosaicBlock(variant.mosaic || 'bento-cats')}`;
+      }
+
+      if (variant.layout === 'hybrid-hero-strip') {
+        const strip = storiesStrip(variant.strip || 'classic');
+        const heroBlock = hero();
+        if (variant.heroPos === 'mid') {
+          return `${strip}${heroBlock}
+            <div class="category-layout layout-grid">${categories.slice(0, 6).map((c, i) => banner(c, i)).join('')}</div>`;
+        }
+        return `${heroBlock}${strip}
+          <div class="category-layout layout-grid">${categories.slice(0, 6).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'hybrid-hglobe-hero') {
+        return `${hero()}
+          ${storiesHGlobe(variant.hglobe || 'scale')}
+          <div class="category-layout layout-hero-list">${categories.slice(0, 5).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'hybrid-double-strip') {
+        const top = storiesStrip(variant.strip || 'classic', 4);
+        const second = variant.second === 'hglobe'
+          ? storiesHGlobe('meridian', 5)
+          : storiesStrip(variant.second || 'square', 4);
+        return `${top}${second}
+          <div class="category-layout layout-grid">${categories.slice(0, 4).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'extra-dual-rails') {
+        return `<h4 class="category-group-title">Отели</h4>
+          ${storiesStrip('classic', 4)}
+          <h4 class="category-group-title">Рестораны</h4>
+          <div class="stories-strip-row strip-square">
+            ${eliteStories.filter((s) => s.className === 'cat-rest').slice(0, 4).map((s) => `
+              <div class="story-strip-card ${s.className}"><strong>${s.name}</strong><em>Ресторан</em></div>
+            `).join('')}
+          </div>
+          ${chips(categories.slice(0, 6))}`;
+      }
+
+      if (variant.layout === 'extra-member-strip') {
+        return `${storiesStrip('peek', 4)}
+          <div class="idea-member-card">
+            <span>Member</span>
+            <strong>TLS00610970</strong>
+            <em>Курицын Денис</em>
+          </div>
+          <div class="category-layout layout-grid">${categories.slice(0, 4).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'extra-hglobe-chips') {
+        return `${storiesHGlobe(variant.hglobe || 'fade')}
+          ${chips()}
+          <div class="category-layout layout-hero-list">${categories.slice(0, 4).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'extra-stack-wide') {
+        return `<div class="extra-stack-wide">
+          ${eliteStories.slice(0, 4).map((s) => `
+            <div class="story-strip-card stack-card ${s.className}">
+              <strong>${s.name}</strong><em>Смотреть</em>
+            </div>`).join('')}
+        </div>
+        <div class="category-layout layout-grid">${categories.slice(0, 4).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'extra-mosaic-strip') {
+        return `${mosaicBlock('bento-cats')}
+          <h4 class="category-group-title">Избранное</h4>
+          ${storiesStrip('square', 5)}`;
+      }
+
+      if (variant.layout === 'extra-city-strip') {
+        return `<h4 class="category-group-title">Куда едем?</h4>
+          <div class="idea-city-grid">
+            <div class="idea-city">Дубай</div>
+            <div class="idea-city">Париж</div>
+            <div class="idea-city">Токио</div>
+            <div class="idea-city">Милан</div>
+          </div>
+          ${storiesStrip('classic', 4)}
+          ${chips(categories.slice(0, 6))}`;
+      }
+
+      if (variant.layout === 'extra-cta-square') {
+        return `<div class="idea-quick-grid">
+          <div class="idea-quick q-chat"><strong>Чат</strong><span>Консьерж 24/7</span></div>
+          <div class="idea-quick q-book"><strong>Бронь</strong><span>Отель / ресторан</span></div>
+        </div>
+          ${storiesStrip('square', 5)}
+          <div class="category-layout layout-grid">${categories.slice(0, 4).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'stories-chat') {
+        return `
+          <div class="idea-chat-cta">
+            <strong>Нужна помощь с бронью?</strong>
+            <span>Консьерж ответит в чате за пару минут</span>
+            <button type="button" class="idea-btn">Написать в чат</button>
+          </div>
+          <div class="category-layout layout-grid">${all}</div>`;
+      }
+
+      /* ideas */
+      if (variant.layout === 'idea-quick') {
+        return `<div class="idea-quick-grid">
+          <div class="idea-quick q-chat"><strong>Чат</strong><span>Консьерж 24/7</span></div>
+          <div class="idea-quick q-book"><strong>Забронировать</strong><span>Отель / ресторан</span></div>
+          <div class="idea-quick q-priv"><strong>Привилегии</strong><span>Ваши офферы</span></div>
+          <div class="idea-quick q-call"><strong>Позвонить</strong><span>Персональный менеджер</span></div>
+        </div>
+        <h4 class="category-group-title">Категории</h4>${chips()}`;
+      }
+
+      if (variant.layout === 'idea-member') {
+        return `<div class="idea-member-card">
+          <span>Member</span>
+          <strong>TLS00610970</strong>
+          <em>Курицын Денис</em>
+        </div>
+        <div class="idea-shortcut-row">
+          <span>Показать карту</span><span>Документы</span><span>Чат</span>
+        </div>
+        <div class="category-layout layout-grid">${categories.slice(0, 6).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'idea-search') {
+        return `<div class="idea-search-box">
+          ${icoMask('search')}
+          <span>Ресторан в Милане, виза в ОАЭ…</span>
+        </div>
+        <div class="idea-suggest">
+          <button type="button">Столик в Nobu</button>
+          <button type="button">Билеты в Париж</button>
+          <button type="button">ВНЖ Португалия</button>
+          <button type="button">Трансфер в аэропорт</button>
+        </div>
+        <h4 class="category-group-title">Популярные разделы</h4>
+        <div class="category-layout layout-grid">${categories.slice(0, 6).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'idea-foryou') {
+        return `<h4 class="category-group-title">Для вас сегодня</h4>
+          <div class="idea-foryou-list">
+            <div class="idea-foryou-card cat-rest"><strong>Nobu Moscow</strong><span>Столик на двоих · −15%</span></div>
+            <div class="idea-foryou-card cat-hotel"><strong>Four Seasons George V</strong><span>Suite upgrade available</span></div>
+            <div class="idea-foryou-card cat-air"><strong>Business class DXB</strong><span>Вылет 28 июл · 2 билета</span></div>
+            <div class="idea-foryou-card cat-priv"><strong>Lounge Priority</strong><span>Активировать карту</span></div>
+          </div>
+          ${chips(categories.slice(0, 8))}`;
+      }
+
+      if (variant.layout === 'idea-city') {
+        return `<h4 class="category-group-title">Куда едем?</h4>
+          <div class="idea-city-grid">
+            <div class="idea-city">Дубай</div>
+            <div class="idea-city">Париж</div>
+            <div class="idea-city">Токио</div>
+            <div class="idea-city">Милан</div>
+            <div class="idea-city">Сочи</div>
+            <div class="idea-city">Лондон</div>
+          </div>
+          <h4 class="category-group-title">Сервисы в городе</h4>${chips()}`;
+      }
+
+      if (variant.layout === 'idea-request') {
+        return `<div class="idea-request-box">
+          <label>Чем помочь?</label>
+          <div class="idea-request-field">Опишите запрос консьержу…</div>
+          <button type="button" class="idea-btn">Отправить в чат</button>
+        </div>
+        <h4 class="category-group-title">Недавние</h4>
+        <div class="idea-list-rows">
+          <div><strong>Столик · Cipriani</strong><span>В работе</span></div>
+          <div><strong>Виза Schengen</strong><span>Документы</span></div>
+          <div><strong>Трансфер CDG</strong><span>Готово</span></div>
+        </div>`;
+      }
+
+      if (variant.layout === 'idea-timeline') {
+        return `<div class="idea-timeline">
+          <div class="idea-tl-item done"><span>1</span><div><strong>Документы</strong><em>Виза · страховка</em></div></div>
+          <div class="idea-tl-item active"><span>2</span><div><strong>Перелёт</strong><em>Подбор авиабилетов</em></div></div>
+          <div class="idea-tl-item"><span>3</span><div><strong>Проживание</strong><em>Отель / апартаменты</em></div></div>
+          <div class="idea-tl-item"><span>4</span><div><strong>На месте</strong><em>Авто · рестораны</em></div></div>
+        </div>
+        <div class="category-layout layout-hero-list">${categories.slice(1, 5).map((c, i) => banner(c, i + 1)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'idea-icons') {
+        return `<div class="idea-icon-grid">
+          ${categories.map((c) => `<div class="idea-icon-cell"><div class="idea-icon-bubble ${c.className}"></div><span>${c.name}</span></div>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'idea-editorial') {
+        return `<div class="idea-editorial-feed">
+          <article class="idea-ed cat-hotel"><em>Отель</em><strong>Weekend in Le Bristol</strong><p>Париж · 2 ночи · member rate</p></article>
+          <article class="idea-ed thin"><em>Новость</em><strong>Новые привилегии в Милане</strong></article>
+          <article class="idea-ed cat-rest"><em>Ресторан</em><strong>La Pergola</strong><p>Рим · дегустационный сет</p></article>
+          <article class="idea-ed thin"><em>Сервис</em><strong>Частный трансфер 24/7</strong></article>
+        </div>
+        ${chips(categories.slice(0, 6))}`;
+      }
+
+      if (variant.layout === 'idea-rails') {
+        return ['Отели', 'Рестораны', 'Туры'].map((title, gi) => `
+          <h4 class="category-group-title">${title}</h4>
+          <div class="idea-rail">
+            ${eliteStories.slice(gi * 3, gi * 3 + 4).map((s) => `
+              <div class="idea-rail-card ${s.className}"><strong>${s.short}</strong></div>
+            `).join('')}
+          </div>`).join('') + `<h4 class="category-group-title">Ещё</h4>${chips()}`;
+      }
+
+      if (variant.layout === 'idea-chat') {
+        return `<div class="idea-chat-first">
+          <div class="idea-chat-bubble bot">Здравствуйте! Чем могу помочь сегодня?</div>
+          <div class="idea-chat-topics">
+            <button type="button">Забронировать столик</button>
+            <button type="button">Подобрать отель</button>
+            <button type="button">Оформить визу</button>
+            <button type="button">Трансфер</button>
+          </div>
+          <div class="idea-chat-input">Сообщение консьержу…</div>
+        </div>`;
+      }
+
+      if (variant.layout === 'idea-loyalty') {
+        return `<div class="idea-loyalty-head">
+          <div><em>Статус</em><strong>Member Gold</strong></div>
+          <div class="idea-points">12 480<span>баллов</span></div>
+        </div>
+        <div class="idea-member-card mini">
+          <span>Member</span><strong>TLS00610970</strong>
+        </div>
+        <div class="idea-loyalty-actions">
+          <span>Потратить</span><span>История</span><span>Уровни</span>
+        </div>
+        <div class="category-layout layout-grid">${[categories[0], categories[4], categories[2], categories[3]].map((c) => banner(c, categories.indexOf(c))).join('')}</div>`;
+      }
+
+      if (variant.layout === 'idea-bookings') {
+        return `<h4 class="category-group-title">Ближайшее</h4>
+          <div class="idea-booking-card">
+            <div class="idea-booking-date"><strong>28</strong><span>июл</span></div>
+            <div><strong>Dubai · Business</strong><span>SVO → DXB · 09:40</span></div>
+          </div>
+          <div class="idea-booking-card">
+            <div class="idea-booking-date"><strong>29</strong><span>июл</span></div>
+            <div><strong>Burj Al Arab</strong><span>2 ночи · Deluxe Suite</span></div>
+          </div>
+          <div class="idea-booking-card">
+            <div class="idea-booking-date"><strong>30</strong><span>июл</span></div>
+            <div><strong>Nobu Dubai</strong><span>20:00 · 2 гостя</span></div>
+          </div>
+          <button type="button" class="idea-btn">Новая бронь в чат</button>`;
+      }
+
+      if (variant.layout === 'idea-map') {
+        return `${mapBlock()}
+          <div class="idea-map-filters">
+            <span class="on">Рядом</span><span>Рестораны</span><span>Отели</span><span>Авто</span>
+          </div>
+          <div class="idea-list-rows">
+            <div><strong>Cipriani Moscow</strong><span>1.2 км</span></div>
+            <div><strong>Four Seasons</strong><span>2.4 км</span></div>
+            <div><strong>Лаудж SVO</strong><span>28 км</span></div>
+          </div>`;
+      }
+
+      if (variant.layout === 'idea-filters') {
+        return `<div class="idea-filter-row">
+          <span class="on">Все</span><span>Москва</span><span>Сочи</span><span>Зарубежье</span>
+        </div>
+        <div class="idea-dense-list">
+          ${[
+            ['Nebo Bistro', 'Рестораны · −10%'],
+            ['Aman Tokyo', 'Отели · member'],
+            ['Schengen Visa', 'Визы · сопровождение'],
+            ['Giraffe Breakfast', 'Туры · Пекин'],
+            ['Priority Pass', 'Привилегии'],
+            ['Private transfer', 'Авто · 24/7']
+          ].map(([t, s]) => `<div class="idea-dense-row"><strong>${t}</strong><span>${s}</span></div>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'idea-assistant') {
+        return `<div class="idea-assistant">
+          <em>Concierge</em>
+          <strong>Чем помочь?</strong>
+          <div class="idea-suggest tall">
+            <button type="button">«Столик на субботу в Милане»</button>
+            <button type="button">«Отель у Лазурного берега»</button>
+            <button type="button">«Виза в Японию для семьи»</button>
+            <button type="button">«Медицинский check-up»</button>
+          </div>
+          <button type="button" class="idea-btn">Открыть чат</button>
+        </div>`;
+      }
+
+      if (variant.layout === 'idea-segments') {
+        return `<div class="idea-seg-tabs">
+          <span class="on">Travel</span><span>Dining</span><span>Docs</span>
+        </div>
+        <div class="category-layout layout-grid">${[categories[1], categories[3], categories[7], categories[11], categories[9], categories[10]].map((c) => banner(c, categories.indexOf(c))).join('')}</div>
+        <h4 class="category-group-title">Dining — превью</h4>
+        <div class="idea-rail">
+          ${eliteStories.filter((s) => s.className === 'cat-rest').slice(0, 4).map((s) => `
+            <div class="idea-rail-card ${s.className}"><strong>${s.short}</strong></div>
+          `).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'idea-widgets') {
+        return `<div class="idea-widgets">
+          <div class="idea-widget w-member"><span>Member</span><strong>TLS00610970</strong></div>
+          <div class="idea-widget w-city"><span>Сейчас</span><strong>Париж · 22°</strong></div>
+          <div class="idea-widget w-chat"><span>Чат</span><strong>2 ответа</strong></div>
+          <div class="idea-widget w-next"><span>Далее</span><strong>Nobu · 20:00</strong></div>
+        </div>
+        <div class="category-layout layout-grid">${categories.slice(0, 4).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'idea-destinations') {
+        return `<div class="idea-dest-stack">
+          <div class="idea-dest cat-hotel"><strong>Дубай</strong><span>Отели · авто · lounges</span></div>
+          <div class="idea-dest cat-rest"><strong>Париж</strong><span>Michelin · Le Bristol</span></div>
+          <div class="idea-dest cat-tour"><strong>Токио</strong><span>Aman · виза · туры</span></div>
+          <div class="idea-dest cat-priv"><strong>Милан</strong><span>Fashion week · Cipriani</span></div>
+        </div>`;
+      }
+
+      if (variant.layout === 'idea-inbox') {
+        return `<div class="idea-inbox">
+          <div class="idea-inbox-row new"><span class="dot"></span><div><strong>Столик · Sketch London</strong><em>Ждём подтверждения</em></div><time>10:12</time></div>
+          <div class="idea-inbox-row"><span class="dot"></span><div><strong>Виза ОАЭ</strong><em>Нужен скан паспорта</em></div><time>Вчера</time></div>
+          <div class="idea-inbox-row done"><span class="dot"></span><div><strong>Трансфер Ницца</strong><em>Выполнено</em></div><time>Пн</time></div>
+          <div class="idea-inbox-row"><span class="dot"></span><div><strong>Suite · Mandarin</strong><em>Вариант отправлен</em></div><time>Пн</time></div>
+        </div>
+        <button type="button" class="idea-btn">Новый запрос</button>`;
+      }
+
+      if (variant.layout === 'globe') {
+        return `<div class="globe-catalog">
+          ${categories.map((c) => `
+            <div class="globe-tile category-banner ${c.className}">
+              <span class="category-name">${c.name}</span>
+              <span class="category-arrow">›</span>
+            </div>`).join('')}
+        </div>
+        <h4 class="category-group-title">Ещё</h4>
+        ${horizontalCats()}
+        <p class="anim-hint">Скролл · края сужаются · внизу горизонтальные карточки</p>`;
+      }
+
+      if (variant.layout === 'stories-wglobe') {
+        return `${storiesWGlobe(variant.wglobe || 'classic')}
+          <h4 class="category-group-title">Категории</h4>
+          <div class="category-layout layout-grid">${categories.slice(0, 6).map((c, i) => banner(c, i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'wglobe-mosaic') {
+        return `${storiesWGlobe(variant.wglobe || 'classic')}
+          <h4 class="category-group-title">Категории</h4>
+          ${mosaicBlock('bento-cats')}`;
+      }
+
+      if (variant.layout === 'wglobe-hcats') {
+        return `${storiesWGlobe(variant.wglobe || 'peek')}
+          <h4 class="category-group-title">Категории</h4>
+          ${horizontalCats()}`;
+      }
+
+      if (variant.layout === 'tabs-body') {
+        return `${categoryTabsBar(variant, 0)}
+          <div class="tabs-body-panel" data-body="${variant.body || 'grid'}">
+            ${tabsBodyContent(variant.body || 'grid', 0)}
+          </div>`;
+      }
+
+      if (variant.layout === 'tabs-wglobe-stack') {
+        const count = variant.plaqueCount || 12;
+        const plaques = variant.plaques || 'stack';
+        let plaquesHtml = '';
+        if (plaques === 'alternating') {
+          plaquesHtml = `<div class="category-layout layout-alternating">${categories.slice(0, count).map((c, i) => banner(c, i)).join('')}</div>`;
+        } else if (plaques === 'grid') {
+          plaquesHtml = `<div class="category-layout layout-grid">${categories.slice(0, count).map((c, i) => banner(c, i)).join('')}</div>`;
+        } else if (plaques === 'list') {
+          const listCls = variant.wglobe === 'mid-dense' ? 'layout-hero-list layout-v97-cats' : 'layout-hero-list';
+          plaquesHtml = `<div class="category-layout ${listCls}">${categories.slice(0, count).map((c, i) => banner(c, i)).join('')}</div>`;
+        } else {
+          plaquesHtml = `<div class="category-layout layout-stack">${categories.slice(0, count).map((c, i) => banner(c, i)).join('')}</div>`;
+        }
+        return `${categoryTabsBar(variant, 0)}
+          ${variant.storiesTitle ? `<h4 class="category-group-title">${variant.storiesTitle}</h4>` : ''}
+          ${storiesWGlobe(variant.wglobe || 'mid', 6)}
+          ${variant.hideCatsTitle ? '' : '<h4 class="category-group-title">Категории</h4>'}
+          ${plaquesHtml}`;
+      }
+
+      if (variant.layout === 'offers-wglobe-stack') {
+        const count = variant.plaqueCount || 12;
+        const plaques = variant.plaques || 'list';
+        const sep = variant.sep || '';
+        let plaquesHtml = '';
+        if (plaques === 'alternating') {
+          plaquesHtml = `<div class="category-layout layout-alternating layout-offers-cats">${categories.slice(0, count).map((c, i) => banner(c, i)).join('')}</div>`;
+        } else if (plaques === 'grid') {
+          plaquesHtml = `<div class="category-layout layout-grid layout-offers-cats">${categories.slice(0, count).map((c, i) => banner(c, i)).join('')}</div>`;
+        } else if (plaques === 'square') {
+          plaquesHtml = `<div class="category-layout layout-square-cats layout-offers-cats">${categories.slice(0, count).map((c, i) => banner(c, i)).join('')}</div>`;
+        } else if (plaques === 'bento') {
+          plaquesHtml = `<div class="category-layout layout-bento-cats layout-offers-cats">${categories.slice(0, count).map((c, i) => banner(c, i)).join('')}</div>`;
+        } else if (plaques === 'mosaic') {
+          plaquesHtml = `<div class="category-layout layout-bento-m3 layout-offers-cats">${categories.slice(0, count).map((c, i) => banner(c, i)).join('')}</div>`;
+        } else if (plaques === 'magazine') {
+          plaquesHtml = `<div class="category-layout layout-bento-m4 layout-offers-cats">${categories.slice(0, count).map((c, i) => banner(c, i)).join('')}</div>`;
+        } else if (plaques === 'stack') {
+          plaquesHtml = `<div class="category-layout layout-stack layout-offers-cats">${categories.slice(0, count).map((c, i) => banner(c, i)).join('')}</div>`;
+        } else {
+          plaquesHtml = `<div class="category-layout layout-hero-list layout-offers-cats">${categories.slice(0, count).map((c, i) => banner(c, i)).join('')}</div>`;
+        }
+
+        const offersInner = `
+          <div class="offers-heading">
+            <h4 class="offers-title">Специальные предложения</h4>
+          </div>
+          ${storiesWGlobe(variant.wglobe || 'offer', 6)}`;
+
+        const offersBlock = (sep === 'frame' || sep === 'frame-line' || sep === 'frame-panel')
+          ? `<div class="offers-block offers-sep-frame">${offersInner}</div>`
+          : `<div class="offers-block${sep === 'fade' ? ' offers-sep-fade' : ''}">${offersInner}</div>`;
+
+        let sepHtml = '';
+        if (sep === 'line') {
+          sepHtml = `<div class="offers-sep offers-sep-line"><span>Сервисы</span></div>`;
+        } else if (sep === 'space') {
+          sepHtml = `<div class="offers-sep offers-sep-space"><span class="offers-kicker">Разделы</span><strong>Категории услуг</strong></div>`;
+        } else if (sep === 'panel') {
+          sepHtml = '';
+          plaquesHtml = `<div class="offers-cats-panel"><div class="offers-sep offers-sep-space"><span class="offers-kicker">Каталог</span><strong>Категории</strong></div>${plaquesHtml}</div>`;
+        } else if (sep === 'titles') {
+          sepHtml = `<div class="offers-sep offers-sep-titles"><span class="offers-kicker">Сервис</span><h4 class="offers-title offers-title-sm">Категории</h4></div>`;
+        } else if (sep === 'fade') {
+          sepHtml = `<div class="offers-sep offers-sep-fade-bar" aria-hidden="true"></div>`;
+        } else if (sep === 'frame-line') {
+          sepHtml = `<div class="offers-sep offers-sep-line"><span>Сервисы</span></div>`;
+        } else if (sep === 'frame-panel') {
+          sepHtml = '';
+          plaquesHtml = `<div class="offers-cats-panel"><div class="offers-sep offers-sep-space"><strong>Категории</strong></div>${plaquesHtml}</div>`;
+        }
+
+        return `${offersBlock}${sepHtml}${plaquesHtml}`;
+      }
+
+      if (variant.layout === 'plane-fly') {
+        return `<div class="category-layout layout-numbered plane-catalog">
+          ${categories.map((c, i) => `
+            <button type="button" class="category-banner plane-tile ${c.className}" data-name="${c.name}">
+              <span class="plane-trail" aria-hidden="true"></span>
+              <span class="plane-glyph" aria-hidden="true">${svg('i-plane', 'ico plane-ico')}</span>
+              <span class="category-name">${c.name}</span>
+              <span class="category-arrow">›</span>
+            </button>`).join('')}
+        </div>
+        <p class="anim-hint">Тап · белый самолётик летит по пунктиру вправо, плашка на месте</p>`;
+      }
+
+      /* —— animation demos —— */
+      if (variant.layout === 'anim-stagger') {
+        return `<div class="category-layout layout-stack anim-stagger-list">
+          ${categories.slice(0, 6).map((c, i) => banner(c, i, `anim-stagger-item`)).join('')}
+        </div>
+        <p class="anim-hint">Появление 1 раз · ~220&nbsp;ms шаг</p>`;
+      }
+
+      if (variant.layout === 'anim-parallax') {
+        return `<div class="anim-parallax-list">
+          ${categories.slice(0, 4).map((c, i) => `
+            <div class="anim-parallax-card category-banner">
+              <div class="anim-parallax-bg ${c.className}"></div>
+              <span class="category-name">${c.name}</span>
+            </div>`).join('')}
+        </div>
+        <p class="anim-hint">Скролл внутри телефона · сдвиг фона ≤6&nbsp;px</p>`;
+      }
+
+      if (variant.layout === 'anim-stories-in') {
+        return `<div class="category-layout layout-grid">
+          ${categories.slice(0, 6).map((c, i) => banner(c, i)).join('')}
+        </div>
+        <p class="anim-hint">Stories появляются мягко, без pulse</p>`;
+      }
+
+      if (variant.layout === 'anim-story-expand') {
+        return `<div class="anim-story-stage">
+          <div class="anim-story-sheet" hidden>
+            <button type="button" class="anim-story-close" aria-label="Закрыть">×</button>
+            <strong class="anim-story-title">Nobu</strong>
+            <span>Краткий preview · тап закрывает сразу</span>
+          </div>
+        </div>
+        <div class="category-layout layout-hero-list">
+          ${categories.slice(0, 4).map((c, i) => banner(c, i)).join('')}
+        </div>
+        <p class="anim-hint">Тап по story-кружку</p>`;
+      }
+
+      if (variant.layout === 'anim-kenburns') {
+        return `<div class="category-layout layout-grid">
+          ${categories.slice(0, 6).map((c, i) => banner(c, i)).join('')}
+        </div>
+        <p class="anim-hint">Zoom ~1.04 за 12&nbsp;s · еле заметно</p>`;
+      }
+
+      if (variant.layout === 'anim-card-flip') {
+        return `<div class="anim-flip-scene" tabindex="0" role="button" aria-label="Перевернуть карту">
+          <div class="anim-flip-inner">
+            <div class="anim-flip-face front">
+              <span>Member</span>
+              <strong>TLS00610970</strong>
+              <em>Нажмите, чтобы перевернуть</em>
+            </div>
+            <div class="anim-flip-face back">
+              <span>QR / номер</span>
+              <div class="anim-qr"></div>
+              <em>Нажмите ещё раз</em>
+            </div>
+          </div>
+        </div>
+        <div class="category-layout layout-grid">
+          ${categories.slice(0, 4).map((c, i) => banner(c, i)).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'anim-cta-shimmer') {
+        return `<div class="anim-offer cat-rest">
+          <em>Ресторан</em>
+          <strong>Nobu Moscow</strong>
+          <span>Столик · привилегия</span>
+          <button type="button" class="idea-btn anim-shimmer-btn">Воспользоваться</button>
+        </div>
+        <p class="anim-hint">Блик один раз при появлении экрана</p>`;
+      }
+
+      if (variant.layout === 'anim-press') {
+        return `<div class="category-layout layout-stack anim-press-list">
+          ${categories.slice(0, 5).map((c, i) => banner(c, i, 'anim-pressable')).join('')}
+        </div>
+        <button type="button" class="idea-btn anim-pressable">Написать в чат</button>
+        <p class="anim-hint">Зажмите карточку или кнопку</p>`;
+      }
+
+      if (variant.layout === 'anim-tab-slide') {
+        return `<p class="anim-hint top">Индикатор на tab bar · тап по вкладкам</p>
+          <div class="category-layout layout-grid">
+            ${categories.slice(0, 6).map((c, i) => banner(c, i)).join('')}
+          </div>`;
+      }
+
+      if (variant.layout === 'anim-chip') {
+        return `<div class="anim-chip-row">
+          <button type="button" class="anim-chip on">Все</button>
+          <button type="button" class="anim-chip">Москва</button>
+          <button type="button" class="anim-chip">Сочи</button>
+          <button type="button" class="anim-chip">Зарубежье</button>
+        </div>
+        <div class="category-layout layout-hero-list">
+          ${categories.slice(0, 5).map((c, i) => banner(c, i)).join('')}
+        </div>
+        <p class="anim-hint">Тап по чипу · spring ~200&nbsp;ms</p>`;
+      }
+
+      if (variant.layout === 'anim-rail') {
+        return `<h4 class="category-group-title">Отели и рестораны</h4>
+          <div class="anim-rail-scroll">
+            ${eliteStories.slice(0, 6).map((s) => `
+              <div class="idea-rail-card anim-pressable ${s.className}"><strong>${s.short}</strong></div>
+            `).join('')}
+          </div>
+          <p class="anim-hint">Горизонтальный скролл · scroll-snap</p>
+          ${chips(categories.slice(0, 6))}`;
+      }
+
+      if (variant.layout === 'anim-skeleton') {
+        return `<div class="anim-skel-stage">
+          <div class="anim-skel-block">
+            <div class="anim-skel-card"></div>
+            <div class="anim-skel-card"></div>
+            <div class="anim-skel-card short"></div>
+          </div>
+          <div class="anim-skel-content" hidden>
+            ${categories.slice(0, 3).map((c, i) => banner(c, i)).join('')}
+          </div>
+        </div>
+        <p class="anim-hint">Авто-переход skeleton → контент</p>`;
+      }
+
+      if (variant.layout === 'anim-map-pins') {
+        return `<div class="category-layout layout-grid">
+          ${categories.slice(0, 6).map((c, i) => banner(c, i)).join('')}
+        </div>
+        <p class="anim-hint">Пины на карте появляются один раз</p>`;
+      }
+
+      if (variant.layout === 'anim-inbox') {
+        return `<div class="anim-inbox">
+          <div class="anim-inbox-row" data-status="new">
+            <span class="anim-status-dot"></span>
+            <div><strong>Столик · Cipriani</strong><em class="anim-status-text">Новая</em></div>
+          </div>
+          <div class="anim-inbox-row" data-status="progress">
+            <span class="anim-status-dot"></span>
+            <div><strong>Виза Schengen</strong><em class="anim-status-text">В работе</em></div>
+          </div>
+          <div class="anim-inbox-row" data-status="done">
+            <span class="anim-status-dot"></span>
+            <div><strong>Трансфер CDG</strong><em class="anim-status-text">Готово</em></div>
+          </div>
+        </div>
+        <button type="button" class="idea-btn anim-inbox-cycle">Сменить статусы</button>
+        <p class="anim-hint">Цвет точки morph’ится, текст не прыгает</p>`;
+      }
+
+      if (variant.layout === 'anim-timeline') {
+        return `<div class="anim-tl">
+          <div class="anim-tl-line"><span class="anim-tl-fill"></span></div>
+          <div class="anim-tl-steps">
+            <div class="done"><span>1</span><em>Документы</em></div>
+            <div class="active"><span>2</span><em>Перелёт</em></div>
+            <div><span>3</span><em>Отель</em></div>
+            <div><span>4</span><em>На месте</em></div>
+          </div>
+        </div>
+        <div class="category-layout layout-hero-list">
+          ${categories.slice(1, 5).map((c, i) => banner(c, i + 1)).join('')}
+        </div>
+        <p class="anim-hint">Прогресс заполняется один раз</p>`;
+      }
+
+      if (variant.layout === 'anim-search') {
+        return `<div class="anim-search-wrap">
+          <button type="button" class="anim-search-toggle" aria-label="Поиск">${icoMask('search')}</button>
+          <div class="anim-search-field">
+            <input type="text" placeholder="Ресторан, виза, отель…" readonly />
+          </div>
+        </div>
+        <div class="idea-suggest">
+          <button type="button">Nobu</button>
+          <button type="button">Виза ОАЭ</button>
+          <button type="button">George V</button>
+        </div>
+        <div class="category-layout layout-grid">
+          ${categories.slice(0, 4).map((c, i) => banner(c, i)).join('')}
+        </div>
+        <p class="anim-hint">Тап по иконке поиска</p>`;
+      }
+
+      if (variant.layout === 'anim-refresh') {
+        return `<div class="anim-refresh-demo">
+          <div class="anim-refresh-ring" aria-hidden="true"></div>
+          <button type="button" class="idea-btn anim-refresh-run">Обновить</button>
+        </div>
+        <div class="category-layout layout-stack">
+          ${categories.slice(0, 4).map((c, i) => banner(c, i)).join('')}
+        </div>
+        <p class="anim-hint">Тонкое кольцо вместо спиннера</p>`;
+      }
+
+      if (variant.layout === 'anim-success') {
+        return `<div class="anim-offer cat-hotel">
+          <em>Отель</em>
+          <strong>Le Bristol Paris</strong>
+          <span>Suite · member rate</span>
+          <button type="button" class="idea-btn anim-success-btn">Забронировать</button>
+          <div class="anim-success-toast" hidden>
+            <span class="anim-check"></span>
+            Запрос отправлен в чат
+          </div>
+        </div>
+        <p class="anim-hint">Галочка поверх, экран остаётся кликабельным</p>`;
+      }
+
+      if (variant.layout === 'anim-theme') {
+        return `<button type="button" class="idea-btn anim-theme-toggle">Сменить тему</button>
+          <div class="category-layout layout-grid">
+            ${categories.slice(0, 6).map((c, i) => banner(c, i)).join('')}
+          </div>
+          <p class="anim-hint">Crossfade внутри рамки телефона</p>`;
+      }
+
+      if (variant.layout === 'anim-pack') {
+        return `<div class="anim-offer cat-priv">
+          <em>Привилегия</em>
+          <strong>Lounge Priority</strong>
+          <button type="button" class="idea-btn anim-shimmer-btn anim-pressable">Воспользоваться</button>
+        </div>
+        <div class="category-layout layout-grid anim-stagger-list">
+          ${categories.slice(0, 6).map((c, i) => banner(c, i, 'anim-stagger-item anim-pressable')).join('')}
+        </div>
+        <p class="anim-hint">Сборка безопасных эффектов</p>`;
+      }
+
+      /* —— V21–V40 rare / unusual metaphors —— */
+      const codes = ['PRMO','AVIA','REST','HOTL','PRIV','VISA','RES','TOUR','MED','INS','SRV','AUTO'];
+      const gates = ['A1','B2','C3','D4','E5','F6','G7','H8','J9','K1','L2','M3'];
+
+      if (variant.layout === 'rare-boarding') {
+        return `<div class="rare-boarding">
+          ${categories.map((c, i) => `
+            <button type="button" class="rare-pass">
+              <span class="rare-pass-stub"><em>${codes[i]}</em></span>
+              <span class="rare-pass-body ${c.className}">
+                <strong>${c.name}</strong>
+                <small>GATE ${gates[i]}</small>
+              </span>
+              <span class="rare-pass-perf" aria-hidden="true"></span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-constellation') {
+        const pos = [
+          [18,12],[72,8],[48,22],[12,38],[85,32],[30,48],[68,52],[22,68],[78,70],[45,78],[10,88],[90,90]
+        ];
+        return `<div class="rare-sky">
+          <svg class="rare-sky-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M18 12 L48 22 L72 8 M48 22 L30 48 L68 52 L48 22 M30 48 L22 68 L45 78 L68 52 M12 38 L30 48 M85 32 L68 52 L78 70" fill="none" stroke="currentColor" stroke-width="0.35"/>
+          </svg>
+          ${categories.map((c, i) => `
+            <button type="button" class="rare-star" style="left:${pos[i][0]}%;top:${pos[i][1]}%">
+              <span class="rare-star-dot ${c.className}"></span>
+              <span class="rare-star-label">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-stamps') {
+        return `<div class="rare-stamps">
+          ${categories.map((c, i) => `
+            <button type="button" class="rare-stamp ${c.className}" style="--rot:${(i%5-2)*4}deg">
+              <span class="rare-stamp-ring">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-keycards') {
+        return `<div class="rare-keycards">
+          ${categories.map((c, i) => `
+            <button type="button" class="rare-keycard">
+              <span class="rare-key-mag"></span>
+              <span class="rare-key-face ${c.className}">
+                <em>ROOM ${100+i}</em>
+                <strong>${c.name}</strong>
+              </span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-fids') {
+        return `<div class="rare-fids">
+          <div class="rare-fids-head"><span>CODE</span><span>SERVICE</span><span>GATE</span></div>
+          ${categories.map((c, i) => `
+            <button type="button" class="rare-fids-row">
+              <span class="rare-fids-code">${codes[i]}</span>
+              <span class="rare-fids-name">${c.name}</span>
+              <span class="rare-fids-gate">${gates[i]}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-orbit') {
+        return `<div class="rare-orbit">
+          <div class="rare-orbit-core">●</div>
+          <div class="rare-orbit-ring">
+            ${categories.map((c, i) => `
+              <button type="button" class="rare-orbit-item" style="--i:${i}">
+                <span class="rare-orbit-dot ${c.className}"></span>
+                <span>${c.name}</span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-tags') {
+        return `<div class="rare-tags">
+          ${categories.map((c, i) => `
+            <button type="button" class="rare-tag" style="--tilt:${(i%3-1)*3}deg">
+              <span class="rare-tag-hole"></span>
+              <span class="rare-tag-body ${c.className}"><strong>${c.name}</strong></span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-windows') {
+        return `<div class="rare-windows">
+          ${categories.map((c) => `
+            <button type="button" class="rare-window">
+              <span class="rare-window-frame">
+                <span class="rare-window-glass ${c.className}"></span>
+              </span>
+              <span class="rare-window-cap">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-desk') {
+        return `<div class="rare-desk">
+          ${categories.map((c, i) => `
+            <button type="button" class="rare-card" style="--rot:${(i%5-2)*5}deg;--x:${(i%3)*2}px">
+              <span class="rare-card-photo ${c.className}"></span>
+              <span class="rare-card-name">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-film') {
+        return `<div class="rare-film">
+          ${categories.map((c, i) => `
+            <button type="button" class="rare-frame">
+              <span class="rare-sprocket" aria-hidden="true"></span>
+              <span class="rare-frame-photo ${c.className}"><em>${String(i+1).padStart(2,'0')}</em><strong>${c.name}</strong></span>
+              <span class="rare-sprocket" aria-hidden="true"></span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-metro') {
+        const lineA = [1,3,2,4,0];
+        const lineB = [5,6,8,9];
+        const lineC = [7,11,10];
+        const mk = (ids, color) => ids.map((id, i) => `
+          <button type="button" class="rare-station">
+            <span class="rare-station-dot" style="--line:${color}"></span>
+            <span>${categories[id].name}</span>
+          </button>${i < ids.length-1 ? '<span class="rare-track" style="--line:'+color+'"></span>' : ''}`).join('');
+        return `<div class="rare-metro">
+          <div class="rare-line"><span class="rare-line-lab" style="--line:#00b7d4">A</span>${mk(lineA,'#00b7d4')}</div>
+          <div class="rare-line"><span class="rare-line-lab" style="--line:#c9a227">B</span>${mk(lineB,'#c9a227')}</div>
+          <div class="rare-line"><span class="rare-line-lab" style="--line:#7a8cff">C</span>${mk(lineC,'#7a8cff')}</div>
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-vitrine') {
+        const shelves = [[0,1,2],[3,4,5],[6,7,8],[9,10,11]];
+        return `<div class="rare-vitrine">
+          ${shelves.map((row) => `
+            <div class="rare-shelf">
+              ${row.map((i) => `
+                <button type="button" class="rare-exhibit">
+                  <span class="rare-exhibit-photo ${categories[i].className}"></span>
+                  <span class="rare-exhibit-plinth">${categories[i].name}</span>
+                </button>`).join('')}
+            </div>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-compass') {
+        const sectors = [
+          { dir: 'N', title: 'Travel', ids: [1,7,11] },
+          { dir: 'E', title: 'Stay', ids: [3,2] },
+          { dir: 'S', title: 'Life', ids: [0,4,10] },
+          { dir: 'W', title: 'Docs', ids: [5,6,8,9] }
+        ];
+        return `<div class="rare-compass">
+          <div class="rare-compass-core">●</div>
+          ${sectors.map((s) => `
+            <div class="rare-compass-quad rare-q-${s.dir.toLowerCase()}">
+              <span class="rare-compass-dir">${s.dir} · ${s.title}</span>
+              ${s.ids.map((i) => `<button type="button" class="rare-compass-item">${categories[i].name}</button>`).join('')}
+            </div>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-tickets') {
+        return `<div class="rare-tickets">
+          ${categories.map((c, i) => `
+            <button type="button" class="rare-ticket">
+              <span class="rare-ticket-main ${c.className}"><strong>${c.name}</strong></span>
+              <span class="rare-ticket-tear" aria-hidden="true"></span>
+              <span class="rare-ticket-stub">${codes[i]}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-dayclock') {
+        const slots = [
+          { t: '06:00', label: 'Утро', ids: [1,11] },
+          { t: '11:00', label: 'День', ids: [3,2,4] },
+          { t: '16:00', label: 'День', ids: [5,6,8] },
+          { t: '20:00', label: 'Вечер', ids: [0,7,10] },
+          { t: '23:00', label: 'Ночь', ids: [9] }
+        ];
+        return `<div class="rare-dayclock">
+          ${slots.map((s) => `
+            <div class="rare-hour">
+              <div class="rare-hour-meta"><strong>${s.t}</strong><em>${s.label}</em></div>
+              <div class="rare-hour-cats">
+                ${s.ids.map((i) => `<button type="button" class="rare-hour-chip ${categories[i].className}">${categories[i].name}</button>`).join('')}
+              </div>
+            </div>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-blueprint') {
+        return `<div class="rare-blueprint">
+          <div class="rare-bp-grid">
+            ${categories.map((c, i) => `
+              <button type="button" class="rare-bp-room" style="--span:${i%5===0?2:1}">
+                <span class="rare-bp-code">${codes[i]}</span>
+                <span class="rare-bp-name">${c.name}</span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-vinyl') {
+        return `<div class="rare-vinyls">
+          ${categories.map((c) => `
+            <button type="button" class="rare-vinyl">
+              <span class="rare-vinyl-disc ${c.className}">
+                <span class="rare-vinyl-label">${c.name}</span>
+              </span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-envelopes') {
+        return `<div class="rare-envelopes">
+          ${categories.map((c) => `
+            <button type="button" class="rare-envelope">
+              <span class="rare-env-flap"></span>
+              <span class="rare-env-seal">●</span>
+              <span class="rare-env-title">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-prism') {
+        return `<div class="rare-prism">
+          ${categories.map((c, i) => `
+            <button type="button" class="rare-band ${c.className}" style="--i:${i}">
+              <span>${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'rare-suitcase') {
+        const left = [0,1,2,3,4,5];
+        const right = [6,7,8,9,10,11];
+        return `<div class="rare-suitcase">
+          <div class="rare-case-half">
+            ${left.map((i) => `<button type="button" class="rare-compartment ${categories[i].className}"><span>${categories[i].name}</span></button>`).join('')}
+          </div>
+          <div class="rare-case-spine" aria-hidden="true"></div>
+          <div class="rare-case-half">
+            ${right.map((i) => `<button type="button" class="rare-compartment ${categories[i].className}"><span>${categories[i].name}</span></button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      /* —— V41–V60 xeno —— */
+      if (variant.layout === 'xeno-seismo') {
+        const peaks = [28,62,40,78,35,70,45,85,32,68,50,74];
+        return `<div class="xeno-seismo">
+          <svg class="xeno-seismo-line" viewBox="0 0 240 80" preserveAspectRatio="none" aria-hidden="true">
+            <polyline fill="none" stroke="currentColor" stroke-width="1.5"
+              points="${peaks.map((y,i)=>`${i*20},${80-y}`).join(' ')}"/>
+          </svg>
+          <div class="xeno-seismo-labels">
+            ${categories.map((c,i)=>`<button type="button" class="xeno-seismo-lab" style="left:${(i/11)*100}%"><span>${c.name}</span></button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-domino') {
+        return `<div class="xeno-domino">
+          ${categories.map((c,i)=>`
+            <button type="button" class="xeno-bone">
+              <span class="xeno-bone-top">${codes[i].slice(0,2)}</span>
+              <span class="xeno-bone-div"></span>
+              <span class="xeno-bone-bot">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-origami') {
+        return `<div class="xeno-origami">
+          ${categories.map((c,i)=>`
+            <button type="button" class="xeno-fold" style="--i:${i}">
+              <span class="xeno-fold-face ${c.className}"><strong>${c.name}</strong></span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-piano') {
+        return `<div class="xeno-piano">
+          ${categories.map((c,i)=>`
+            <button type="button" class="xeno-key ${i%3===1?'is-black':'is-white'}">
+              <span>${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-abacus') {
+        const rows = [[0,1,2],[3,4,5],[6,7,8],[9,10,11]];
+        return `<div class="xeno-abacus">
+          ${rows.map((row)=>`
+            <div class="xeno-abacus-row">
+              <span class="xeno-rod" aria-hidden="true"></span>
+              ${row.map((i)=>`
+                <button type="button" class="xeno-bead ${categories[i].className}"><span>${categories[i].name}</span></button>
+              `).join('')}
+            </div>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-vials') {
+        return `<div class="xeno-vials">
+          ${categories.map((c)=>`
+            <button type="button" class="xeno-vial">
+              <span class="xeno-vial-glass ${c.className}"></span>
+              <span class="xeno-vial-cap"></span>
+              <span class="xeno-vial-lab">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-tarot') {
+        const cross = [3,1,2,4,0];
+        const line = [5,6,7,8,9,10,11];
+        return `<div class="xeno-tarot">
+          <div class="xeno-tarot-cross">
+            ${cross.map((i,n)=>`
+              <button type="button" class="xeno-tarot-card pos-${n} ${categories[i].className}">
+                <strong>${categories[i].name}</strong>
+              </button>`).join('')}
+          </div>
+          <div class="xeno-tarot-line">
+            ${line.map((i)=>`
+              <button type="button" class="xeno-tarot-card ${categories[i].className}">
+                <strong>${categories[i].name}</strong>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-morse') {
+        return `<div class="xeno-morse">
+          ${categories.map((c,i)=>`
+            <button type="button" class="xeno-morse-row">
+              <span class="xeno-dots" aria-hidden="true">${'· − '.repeat((i%3)+1)}</span>
+              <span class="xeno-dash">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-kaleido') {
+        return `<div class="xeno-kaleido">
+          ${categories.map((c)=>`
+            <button type="button" class="xeno-hex ${c.className}"><span>${c.name}</span></button>
+          `).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-matchbox') {
+        return `<div class="xeno-matchboxes">
+          ${categories.map((c)=>`
+            <button type="button" class="xeno-match">
+              <span class="xeno-match-lid ${c.className}"><strong>${c.name}</strong></span>
+              <span class="xeno-match-side"></span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-postage') {
+        return `<div class="xeno-postage">
+          ${categories.map((c,i)=>`
+            <button type="button" class="xeno-stamp-sq ${c.className}">
+              <em>${codes[i]}</em>
+              <strong>${c.name}</strong>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-catalog') {
+        return `<div class="xeno-catalog">
+          ${[0,1,2,3].map((drawer)=>`
+            <div class="xeno-drawer">
+              <span class="xeno-drawer-label">${String.fromCharCode(65+drawer)}</span>
+              <div class="xeno-drawer-cards">
+                ${categories.slice(drawer*3, drawer*3+3).map((c)=>`
+                  <button type="button" class="xeno-libcard"><span>${c.name}</span></button>
+                `).join('')}
+              </div>
+            </div>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-typewriter') {
+        return `<div class="xeno-typewriter">
+          ${categories.map((c,i)=>`
+            <button type="button" class="xeno-tw-key">
+              <span class="xeno-tw-letter">${codes[i][0]}</span>
+              <span class="xeno-tw-name">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-gauges') {
+        return `<div class="xeno-gauges">
+          ${categories.map((c,i)=>`
+            <button type="button" class="xeno-gauge">
+              <span class="xeno-gauge-dial">
+                <span class="xeno-gauge-needle" style="--a:${-40+i*10}deg"></span>
+              </span>
+              <span class="xeno-gauge-lab">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-inkblot') {
+        return `<div class="xeno-inkblots">
+          ${categories.map((c,i)=>`
+            <button type="button" class="xeno-blot ${c.className}" style="--r:${40+(i%4)*8}% ${55+(i%3)*10}% ${48+(i%5)*6}% ${60-(i%4)*5}% / ${50+(i%3)*8}% ${45+(i%4)*7}% ${55-(i%3)*5}% ${52+(i%5)*4}%">
+              <span>${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-crossword') {
+        return `<div class="xeno-crossword">
+          ${categories.map((c, i) => `
+            <button type="button" class="xeno-cell">
+              <em>${i + 1}</em><span>${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-scrabble') {
+        return `<div class="xeno-scrabble">
+          ${categories.map((c)=>`
+            <div class="xeno-scrab-word">
+              ${c.name.slice(0,5).split('').map((ch)=>`<button type="button" class="xeno-tile">${ch}</button>`).join('')}
+              <span class="xeno-scrab-full">${c.name}</span>
+            </div>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-ropes') {
+        return `<div class="xeno-ropes">
+          ${categories.map((c)=>`
+            <button type="button" class="xeno-rope">
+              <span class="xeno-cord" aria-hidden="true"></span>
+              <span class="xeno-tassel" aria-hidden="true"></span>
+              <span class="xeno-rope-tag">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-dna') {
+        return `<div class="xeno-dna">
+          <span class="xeno-helix left" aria-hidden="true"></span>
+          <span class="xeno-helix right" aria-hidden="true"></span>
+          ${categories.map((c,i)=>`
+            <button type="button" class="xeno-rung" style="--i:${i}">
+              <span class="xeno-rung-lab">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'xeno-shadow') {
+        return `<div class="xeno-shadow-stage">
+          ${categories.map((c)=>`
+            <button type="button" class="xeno-shadow-item">
+              <span class="xeno-silhouette ${c.className}"></span>
+              <span class="xeno-shadow-cap">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      /* —— V21–V35 business cards (desk family, no blotter) —— */
+      const bizCard = (c, i, extraClass = '') => `
+        <button type="button" class="rare-card ${extraClass}" style="--rot:${(i%5-2)*5}deg;--x:${(i%3)*2}px">
+          <span class="rare-card-photo ${c.className}"></span>
+          <span class="rare-card-name">${c.name}</span>
+        </button>`;
+
+      if (variant.layout === 'card-plain') {
+        return `<div class="card-plain">${categories.map((c,i)=>bizCard(c,i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'card-hscroll') {
+        return `<div class="card-hscroll">${categories.map((c,i)=>bizCard(c,i,'card-snap')).join('')}</div>`;
+      }
+
+      if (variant.layout === 'card-accent-rail') {
+        const [first, ...rest] = categories;
+        return `<div class="card-accent-rail">
+          <button type="button" class="rare-card card-accent-hero">
+            <span class="rare-card-photo ${first.className}"></span>
+            <span class="rare-card-name">${first.name}</span>
+            <span class="card-accent-badge">Акцент</span>
+          </button>
+          <div class="card-hscroll">${rest.map((c,i)=>bizCard(c,i,'card-snap')).join('')}</div>
+        </div>`;
+      }
+
+      if (variant.layout === 'card-grid2') {
+        return `<div class="card-grid2">${categories.map((c)=>`
+          <button type="button" class="rare-card card-flat">
+            <span class="rare-card-photo ${c.className}"></span>
+            <span class="rare-card-name">${c.name}</span>
+          </button>`).join('')}</div>`;
+      }
+
+      if (variant.layout === 'card-vscroll') {
+        return `<div class="card-vscroll">${categories.map((c,i)=>`
+          <button type="button" class="rare-card card-v-item card-flat">
+            <span class="rare-card-photo ${c.className}"></span>
+            <span class="rare-card-name">${c.name}</span>
+            <span class="card-v-idx">${String(i+1).padStart(2,'0')}</span>
+          </button>`).join('')}</div>`;
+      }
+
+      if (variant.layout === 'card-alt-accent') {
+        return `<div class="card-grid2">${categories.map((c,i)=>`
+          <button type="button" class="rare-card card-flat ${i%2?'card-accent-ring':''}">
+            <span class="rare-card-photo ${c.className}"></span>
+            <span class="rare-card-name">${c.name}</span>
+          </button>`).join('')}</div>`;
+      }
+
+      if (variant.layout === 'card-hero-grid') {
+        const [first, ...rest] = categories;
+        return `<div class="card-hero-grid">
+          <button type="button" class="rare-card card-accent-hero card-accent-wide">
+            <span class="rare-card-photo ${first.className}"></span>
+            <span class="rare-card-name">${first.name}</span>
+          </button>
+          <div class="card-grid2">${rest.map((c)=>`
+            <button type="button" class="rare-card card-flat">
+              <span class="rare-card-photo ${c.className}"></span>
+              <span class="rare-card-name">${c.name}</span>
+            </button>`).join('')}</div>
+        </div>`;
+      }
+
+      if (variant.layout === 'card-stripe') {
+        return `<div class="card-stripe-list">${categories.map((c,i)=>`
+          <button type="button" class="card-stripe-item">
+            <span class="card-stripe-bar" style="--hue:${(i*28)%360}"></span>
+            <span class="rare-card-photo ${c.className}"></span>
+            <span class="rare-card-name">${c.name}</span>
+          </button>`).join('')}</div>`;
+      }
+
+      if (variant.layout === 'card-dark-scroll') {
+        return `<div class="card-hscroll">${categories.map((c)=>`
+          <button type="button" class="card-dark card-snap">
+            <span class="rare-card-photo ${c.className}"></span>
+            <span class="rare-card-name">${c.name}</span>
+          </button>`).join('')}</div>`;
+      }
+
+      if (variant.layout === 'card-portrait') {
+        return `<div class="card-portrait-row">
+          ${categories.map((c)=>`
+            <button type="button" class="card-portrait">
+              <span class="card-portrait-photo ${c.className}"></span>
+              <span class="card-portrait-name">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'card-fan') {
+        return `<div class="card-fan">
+          ${categories.map((c,i)=>`
+            <button type="button" class="card-fan-item rare-card" style="--i:${i};--n:${categories.length}">
+              <span class="rare-card-photo ${c.className}"></span>
+              <span class="rare-card-name">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'card-stack') {
+        return `<div class="card-stack">
+          ${categories.map((c,i)=>`
+            <button type="button" class="card-stack-item rare-card" style="--i:${i}">
+              <span class="rare-card-photo ${c.className}"></span>
+              <span class="rare-card-name">${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'card-wallet') {
+        return `<div class="card-wallet">
+          ${categories.map((c,i)=>`
+            <div class="card-wallet-slot" style="--i:${i}">
+              <button type="button" class="rare-card card-flat card-wallet-card">
+                <span class="rare-card-photo ${c.className}"></span>
+                <span class="rare-card-name">${c.name}</span>
+              </button>
+            </div>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'card-indexed') {
+        return `<div class="card-grid2">${categories.map((c,i)=>`
+          <button type="button" class="rare-card card-flat card-indexed ${i<3?'card-accent-ring':''}">
+            <span class="card-idx-num">${String(i+1).padStart(2,'0')}</span>
+            <span class="rare-card-photo ${c.className}"></span>
+            <span class="rare-card-name">${c.name}</span>
+          </button>`).join('')}</div>`;
+      }
+
+      if (variant.layout === 'card-soft-grid') {
+        return `<div class="card-soft-grid">${categories.map((c)=>`
+          <button type="button" class="rare-card card-flat card-soft">
+            <span class="rare-card-photo ${c.className}"></span>
+            <span class="rare-card-name">${c.name}</span>
+          </button>`).join('')}</div>`;
+      }
+
+      /* —— V36–V41 boarding passes —— */
+      const passItem = (c, i, extraClass = '') => `
+        <button type="button" class="rare-pass ${extraClass}">
+          <span class="rare-pass-stub"><em>${codes[i]}</em></span>
+          <span class="rare-pass-body ${c.className}">
+            <strong>${c.name}</strong>
+            <small>GATE ${gates[i]}</small>
+          </span>
+          <span class="rare-pass-perf" aria-hidden="true"></span>
+        </button>`;
+
+      if (variant.layout === 'pass-stack') {
+        return `<div class="rare-boarding">${categories.map((c,i)=>passItem(c,i)).join('')}</div>`;
+      }
+
+      if (variant.layout === 'pass-hscroll') {
+        return `<div class="pass-hscroll">${categories.map((c,i)=>passItem(c,i,'pass-snap')).join('')}</div>`;
+      }
+
+      if (variant.layout === 'pass-accent') {
+        const [first, ...rest] = categories;
+        return `<div class="pass-accent-wrap">
+          ${passItem(first, 0, 'pass-accent-hero')}
+          <div class="pass-hscroll">${rest.map((c,i)=>passItem(c,i+1,'pass-snap pass-compact')).join('')}</div>
+        </div>`;
+      }
+
+      if (variant.layout === 'pass-then-cards') {
+        return `<div class="mix-col">
+          <div class="rare-boarding">${categories.slice(0,3).map((c,i)=>passItem(c,i)).join('')}</div>
+          <div class="card-hscroll">${categories.slice(3).map((c,i)=>bizCard(c,i,'card-snap')).join('')}</div>
+        </div>`;
+      }
+
+      if (variant.layout === 'pass-stubs') {
+        return `<div class="pass-stubs-row">
+          ${categories.map((c,i)=>`
+            <button type="button" class="pass-stub-only">
+              <em>${codes[i]}</em>
+              <span>${c.name}</span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      if (variant.layout === 'pass-hybrid') {
+        return `<div class="pass-hybrid-list">
+          ${categories.map((c,i)=>`
+            <button type="button" class="pass-hybrid">
+              <span class="pass-hybrid-body ${c.className}">
+                <strong>${c.name}</strong>
+                <small>${codes[i]} · GATE ${gates[i]}</small>
+              </span>
+              <span class="pass-hybrid-tear" aria-hidden="true"></span>
+              <span class="pass-hybrid-stub"><em>${codes[i].slice(0,2)}</em></span>
+            </button>`).join('')}
+        </div>`;
+      }
+
+      /* —— V66–V85 mixes —— */
+      const cardMini = (ids) => ids.map((i) => `
+        <button type="button" class="rare-card mix-mini-card">
+          <span class="rare-card-photo ${categories[i].className}"></span>
+          <span class="rare-card-name">${categories[i].name}</span>
+        </button>`).join('');
+
+      if (variant.layout === 'mix-boarding-desk') {
+        return `<div class="mix-col">
+          <div class="rare-boarding mix-compact">
+            ${categories.slice(0,6).map((c,i)=>`
+              <button type="button" class="rare-pass">
+                <span class="rare-pass-stub"><em>${codes[i]}</em></span>
+                <span class="rare-pass-body ${c.className}"><strong>${c.name}</strong></span>
+                <span class="rare-pass-perf" aria-hidden="true"></span>
+              </button>`).join('')}
+          </div>
+          <div class="rare-desk mix-desk">${cardMini([6,7,8,9,10,11])}</div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-fids-metro') {
+        return `<div class="mix-col">
+          <div class="rare-fids mix-compact">
+            ${categories.slice(0,6).map((c,i)=>`
+              <button type="button" class="rare-fids-row">
+                <span class="rare-fids-code">${codes[i]}</span>
+                <span class="rare-fids-name">${c.name}</span>
+                <span class="rare-fids-gate">${gates[i]}</span>
+              </button>`).join('')}
+          </div>
+          <div class="rare-metro">
+            <div class="rare-line"><span class="rare-line-lab" style="--line:#00b7d4">A</span>
+              ${[6,7,8].map((i)=>`<button type="button" class="rare-station"><span class="rare-station-dot" style="--line:#00b7d4"></span><span>${categories[i].name}</span></button>`).join('<span class="rare-track" style="--line:#00b7d4"></span>')}
+            </div>
+            <div class="rare-line"><span class="rare-line-lab" style="--line:#c9a227">B</span>
+              ${[9,10,11].map((i)=>`<button type="button" class="rare-station"><span class="rare-station-dot" style="--line:#c9a227"></span><span>${categories[i].name}</span></button>`).join('<span class="rare-track" style="--line:#c9a227"></span>')}
+            </div>
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-stamps-orbit') {
+        return `<div class="mix-stack-orbit">
+          <div class="rare-stamps mix-stamps-edge">
+            ${categories.slice(0,6).map((c,i)=>`
+              <button type="button" class="rare-stamp ${c.className}" style="--rot:${(i%5-2)*5}deg">
+                <span class="rare-stamp-ring">${c.name}</span>
+              </button>`).join('')}
+          </div>
+          <div class="rare-orbit mix-orbit-sm">
+            <div class="rare-orbit-core">●</div>
+            <div class="rare-orbit-ring">
+              ${categories.slice(6).map((c,i)=>`
+                <button type="button" class="rare-orbit-item" style="--i:${i}">
+                  <span class="rare-orbit-dot ${c.className}"></span><span>${c.name}</span>
+                </button>`).join('')}
+            </div>
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-film-postage') {
+        return `<div class="mix-row">
+          <div class="rare-film mix-film-half">
+            ${categories.slice(0,6).map((c,i)=>`
+              <button type="button" class="rare-frame">
+                <span class="rare-sprocket"></span>
+                <span class="rare-frame-photo ${c.className}"><strong>${c.name}</strong></span>
+                <span class="rare-sprocket"></span>
+              </button>`).join('')}
+          </div>
+          <div class="xeno-postage mix-postage-half">
+            ${categories.slice(6).map((c,i)=>`
+              <button type="button" class="xeno-stamp-sq ${c.className}">
+                <em>${codes[i+6]}</em><strong>${c.name}</strong>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-keys-case') {
+        return `<div class="mix-row">
+          <div class="rare-keycards mix-half">
+            ${categories.slice(0,6).map((c,i)=>`
+              <button type="button" class="rare-keycard">
+                <span class="rare-key-mag"></span>
+                <span class="rare-key-face ${c.className}"><strong>${c.name}</strong></span>
+              </button>`).join('')}
+          </div>
+          <div class="rare-suitcase mix-half-case">
+            <div class="rare-case-half">
+              ${[6,7,8].map((i)=>`<button type="button" class="rare-compartment ${categories[i].className}"><span>${categories[i].name}</span></button>`).join('')}
+            </div>
+            <div class="rare-case-spine"></div>
+            <div class="rare-case-half">
+              ${[9,10,11].map((i)=>`<button type="button" class="rare-compartment ${categories[i].className}"><span>${categories[i].name}</span></button>`).join('')}
+            </div>
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-vinyl-prism') {
+        return `<div class="mix-col">
+          <div class="rare-vinyls mix-vinyl-row">
+            ${categories.slice(0,6).map((c)=>`
+              <button type="button" class="rare-vinyl"><span class="rare-vinyl-disc ${c.className}"><span class="rare-vinyl-label">${c.name}</span></span></button>
+            `).join('')}
+          </div>
+          <div class="rare-prism mix-prism-sm">
+            ${categories.slice(6).map((c)=>`
+              <button type="button" class="rare-band ${c.className}"><span>${c.name}</span></button>
+            `).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-day-compass') {
+        return `<div class="mix-row mix-day-compass">
+          <div class="rare-dayclock mix-half">
+            ${[{t:'08',ids:[0,1]},{t:'14',ids:[2,3]},{t:'20',ids:[4,5]}].map((s)=>`
+              <div class="rare-hour">
+                <div class="rare-hour-meta"><strong>${s.t}:00</strong></div>
+                <div class="rare-hour-cats">${s.ids.map((i)=>`<button type="button" class="rare-hour-chip ${categories[i].className}">${categories[i].name}</button>`).join('')}</div>
+              </div>`).join('')}
+          </div>
+          <div class="rare-compass mix-half">
+            <div class="rare-compass-core">●</div>
+            ${[
+              {dir:'n',ids:[6,7]},{dir:'e',ids:[8,9]},{dir:'s',ids:[10]},{dir:'w',ids:[11]}
+            ].map((s)=>`
+              <div class="rare-compass-quad rare-q-${s.dir}">
+                ${s.ids.map((i)=>`<button type="button" class="rare-compass-item">${categories[i].name}</button>`).join('')}
+              </div>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-tarot-env') {
+        return `<div class="mix-col">
+          <div class="xeno-tarot-line mix-tarot-row">
+            ${categories.slice(0,5).map((c)=>`
+              <button type="button" class="xeno-tarot-card ${c.className}"><strong>${c.name}</strong></button>
+            `).join('')}
+          </div>
+          <div class="rare-envelopes">
+            ${categories.slice(5).map((c)=>`
+              <button type="button" class="rare-envelope">
+                <span class="rare-env-flap"></span>
+                <span class="rare-env-seal">●</span>
+                <span class="rare-env-title">${c.name}</span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-piano-morse') {
+        return `<div class="mix-col">
+          <div class="xeno-piano">
+            ${categories.slice(0,8).map((c,i)=>`
+              <button type="button" class="xeno-key ${i%3===1?'is-black':'is-white'}"><span>${c.name}</span></button>
+            `).join('')}
+          </div>
+          <div class="xeno-morse">
+            ${categories.slice(8).map((c,i)=>`
+              <button type="button" class="xeno-morse-row">
+                <span class="xeno-dots">${'· − '.repeat(i+1)}</span>
+                <span class="xeno-dash">${c.name}</span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-windows-vitrine') {
+        return `<div class="mix-col">
+          <div class="rare-windows">
+            ${categories.slice(0,6).map((c)=>`
+              <button type="button" class="rare-window">
+                <span class="rare-window-frame"><span class="rare-window-glass ${c.className}"></span></span>
+                <span class="rare-window-cap">${c.name}</span>
+              </button>`).join('')}
+          </div>
+          <div class="rare-shelf">
+            ${categories.slice(6).map((c)=>`
+              <button type="button" class="rare-exhibit">
+                <span class="rare-exhibit-photo ${c.className}"></span>
+                <span class="rare-exhibit-plinth">${c.name}</span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-blue-cross') {
+        return `<div class="mix-col">
+          <div class="rare-blueprint mix-bp-sm">
+            <div class="rare-bp-grid">
+              ${categories.slice(0,6).map((c,i)=>`
+                <button type="button" class="rare-bp-room"><span class="rare-bp-code">${codes[i]}</span><span class="rare-bp-name">${c.name}</span></button>
+              `).join('')}
+            </div>
+          </div>
+          <div class="xeno-crossword">
+            ${categories.slice(6).map((c,i)=>`
+              <button type="button" class="xeno-cell"><em>${i+1}</em><span>${c.name}</span></button>
+            `).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-fan-foil') {
+        return `<div class="mix-col">
+          <div class="card-fan mix-fan-sm">
+            ${categories.slice(0,6).map((c,i)=>`
+              <button type="button" class="card-fan-item rare-card" style="--i:${i};--n:6">
+                <span class="rare-card-photo ${c.className}"></span>
+                <span class="rare-card-name">${c.name}</span>
+              </button>`).join('')}
+          </div>
+          <div class="card-foil-grid">
+            ${categories.slice(6).map((c)=>`
+              <button type="button" class="card-foil">
+                <span class="card-foil-stripe ${c.className}"></span>
+                <span class="card-foil-name">${c.name}</span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-stack-portrait') {
+        return `<div class="mix-col">
+          <div class="card-stack mix-stack-sm">
+            ${categories.slice(0,5).map((c,i)=>`
+              <button type="button" class="card-stack-item rare-card" style="--i:${i}">
+                <span class="rare-card-photo ${c.className}"></span>
+                <span class="rare-card-name">${c.name}</span>
+              </button>`).join('')}
+          </div>
+          <div class="card-portrait-row">
+            ${categories.slice(5).map((c)=>`
+              <button type="button" class="card-portrait">
+                <span class="card-portrait-photo ${c.className}"></span>
+                <span class="card-portrait-name">${c.name}</span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-tags-tickets') {
+        return `<div class="mix-col">
+          <div class="rare-tags">
+            ${categories.slice(0,6).map((c,i)=>`
+              <button type="button" class="rare-tag" style="--tilt:${(i%3-1)*4}deg">
+                <span class="rare-tag-hole"></span>
+                <span class="rare-tag-body ${c.className}"><strong>${c.name}</strong></span>
+              </button>`).join('')}
+          </div>
+          <div class="rare-tickets">
+            ${categories.slice(6).map((c,i)=>`
+              <button type="button" class="rare-ticket">
+                <span class="rare-ticket-main ${c.className}"><strong>${c.name}</strong></span>
+                <span class="rare-ticket-tear"></span>
+                <span class="rare-ticket-stub">${codes[i+6]}</span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-sky-dna') {
+        return `<div class="mix-col">
+          <div class="rare-sky mix-sky-sm">
+            ${categories.slice(0,6).map((c,i)=>{
+              const pos=[[20,20],[70,15],[45,35],[15,55],[80,50],[50,70]];
+              return `<button type="button" class="rare-star" style="left:${pos[i][0]}%;top:${pos[i][1]}%">
+                <span class="rare-star-dot ${c.className}"></span><span class="rare-star-label">${c.name}</span>
+              </button>`;
+            }).join('')}
+          </div>
+          <div class="xeno-dna mix-dna-sm">
+            <span class="xeno-helix left"></span><span class="xeno-helix right"></span>
+            ${categories.slice(6).map((c,i)=>`
+              <button type="button" class="xeno-rung" style="--i:${i}"><span class="xeno-rung-lab">${c.name}</span></button>
+            `).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-abacus-vials') {
+        return `<div class="mix-col">
+          <div class="xeno-abacus">
+            ${[[0,1,2],[3,4,5]].map((row)=>`
+              <div class="xeno-abacus-row">
+                <span class="xeno-rod"></span>
+                ${row.map((i)=>`<button type="button" class="xeno-bead ${categories[i].className}"><span>${categories[i].name}</span></button>`).join('')}
+              </div>`).join('')}
+          </div>
+          <div class="xeno-vials">
+            ${categories.slice(6).map((c)=>`
+              <button type="button" class="xeno-vial">
+                <span class="xeno-vial-cap"></span>
+                <span class="xeno-vial-glass ${c.className}"></span>
+                <span class="xeno-vial-lab">${c.name}</span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-hex-blot') {
+        return `<div class="mix-col">
+          <div class="xeno-kaleido">
+            ${categories.slice(0,6).map((c)=>`
+              <button type="button" class="xeno-hex ${c.className}"><span>${c.name}</span></button>
+            `).join('')}
+          </div>
+          <div class="xeno-inkblots">
+            ${categories.slice(6).map((c,i)=>`
+              <button type="button" class="xeno-blot ${c.className}" style="--r:${45+i*5}% ${60-i*3}% ${50+i*4}% ${55-i*2}% / ${50+i*3}% ${48+i*2}% ${52-i}% ${50+i}%">
+                <span>${c.name}</span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-lib-type') {
+        return `<div class="mix-col">
+          <div class="xeno-catalog">
+            ${[0,1].map((d)=>`
+              <div class="xeno-drawer">
+                <span class="xeno-drawer-label">${String.fromCharCode(65+d)}</span>
+                <div class="xeno-drawer-cards">
+                  ${categories.slice(d*3,d*3+3).map((c)=>`<button type="button" class="xeno-libcard"><span>${c.name}</span></button>`).join('')}
+                </div>
+              </div>`).join('')}
+          </div>
+          <div class="xeno-typewriter">
+            ${categories.slice(6).map((c,i)=>`
+              <button type="button" class="xeno-tw-key">
+                <span class="xeno-tw-letter">${codes[i+6][0]}</span>
+                <span class="xeno-tw-name">${c.name}</span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-gauge-match') {
+        return `<div class="mix-col">
+          <div class="xeno-gauges">
+            ${categories.slice(0,6).map((c,i)=>`
+              <button type="button" class="xeno-gauge">
+                <span class="xeno-gauge-dial"><span class="xeno-gauge-needle" style="--a:${-30+i*12}deg"></span></span>
+                <span class="xeno-gauge-lab">${c.name}</span>
+              </button>`).join('')}
+          </div>
+          <div class="xeno-matchboxes">
+            ${categories.slice(6).map((c)=>`
+              <button type="button" class="xeno-match">
+                <span class="xeno-match-lid ${c.className}"><strong>${c.name}</strong></span>
+                <span class="xeno-match-side"></span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      if (variant.layout === 'mix-shadow-ropes') {
+        return `<div class="mix-col">
+          <div class="xeno-shadow-stage mix-shadow-sm">
+            ${categories.slice(0,6).map((c)=>`
+              <button type="button" class="xeno-shadow-item">
+                <span class="xeno-silhouette ${c.className}"></span>
+                <span class="xeno-shadow-cap">${c.name}</span>
+              </button>`).join('')}
+          </div>
+          <div class="xeno-ropes mix-ropes-sm">
+            ${categories.slice(6).map((c)=>`
+              <button type="button" class="xeno-rope">
+                <span class="xeno-cord"></span>
+                <span class="xeno-tassel"></span>
+                <span class="xeno-rope-tag">${c.name}</span>
+              </button>`).join('')}
+          </div>
+        </div>`;
+      }
+
+      return `<div class="category-layout layout-${variant.layout}">${all}</div>`;
+    }
+
+    function phone(variant, theme) {
+      let storiesBlock = '';
+      if (variant.stories === 'cats') storiesBlock = storiesCats();
+      if (variant.stories === 'elite') storiesBlock = storiesElite();
+      if (variant.stories === 'elite-mid') storiesBlock = '';
+      if (variant.stories === 'elite-large' || variant.stories === 'elite-rail') storiesBlock = '';
+
+      const animClass = variant.group === 'anim' ? ` anim-demo anim-${variant.layout}` : '';
+      const globeClass = variant.layout === 'globe' ? ' globe-phone' : '';
+      const planeClass = variant.layout === 'plane-fly' ? ' plane-phone' : '';
+      const hglobeLayouts = ['stories-hglobe', 'hybrid-double-strip', 'extra-hglobe-chips', 'tabs-body'];
+      const hglobeClass = hglobeLayouts.includes(variant.layout) ? ' hglobe-phone' : '';
+      const wglobeLayouts = ['stories-wglobe', 'wglobe-mosaic', 'wglobe-hcats', 'tabs-body', 'tabs-wglobe-stack', 'offers-wglobe-stack'];
+      const wglobeClass = wglobeLayouts.includes(variant.layout) ? ' wglobe-phone' : '';
+      const tabsClass = (variant.layout === 'tabs-body' || variant.layout === 'tabs-wglobe-stack') ? ' tabs-phone' : '';
+      const offersTuneClass = variant.offersTune === 'v121' ? ' offers-v121' : '';
+      const useInteractiveTabs = variant.layout === 'anim-tab-slide' || variant.layout === 'anim-pack';
+      const heroBlock = variant.hero
+        ? (variant.layout === 'anim-kenburns'
+          ? `<div class="category-hero anim-kenburns-hero">
+              <div class="anim-kenburns-media cat-hotel"></div>
+              <span class="hero-kicker">Актуальное</span>
+              <strong>Путешествуйте с привилегиями</strong>
+              <span>Персональные предложения и сервис 24/7</span>
+            </div>`
+          : hero())
+        : '';
+      const map = variant.map
+        ? (variant.layout === 'anim-map-pins'
+          ? `<div class="category-map anim-map">
+              <strong>Привилегии рядом</strong>
+              <span class="map-dot d1 anim-pin"></span>
+              <span class="map-dot d2 anim-pin"></span>
+              <span class="map-dot d3 anim-pin"></span>
+              <small>Москва · Сочи · Милан</small>
+            </div>`
+          : mapBlock())
+        : '';
+
+      return `<div class="phone-wrap theme-phone-wrap">
+        <div class="theme-label">${theme === 'dark' ? 'Тёмная' : 'Светлая'}</div>
+        <div class="phone variant-phone ${theme === 'light' ? 'phone-light' : 'phone-dark'}${animClass}${globeClass}${planeClass}${hglobeClass}${wglobeClass}${tabsClass}${offersTuneClass}" data-variant="${variant.id}" data-anim="${variant.layout || ''}" data-body="${variant.body || ''}">
+          <div class="phone-screen">
+            ${header()}
+            <div class="scroll category-scroll">
+              ${storiesBlock}
+              ${heroBlock}
+              ${map}
+              ${categoryLayout(variant)}
+            </div>
+            ${tabs(useInteractiveTabs)}
+          </div>
+        </div>
+      </div>`;
+    }
+
+    const groupLabels = {
+      offers: 'Offers + Сервисы',
+      cats: 'Каталог',
+      mosaic: 'Мозаики',
+      stories: 'Stories',
+      other: 'Прочее',
+      cards: 'Визитки',
+      hero: 'Hero + сетка'
+    };
+
+    document.getElementById('variant-nav').innerHTML = Object.entries(groupLabels).map(([key, label]) => {
+      const first = variants.find((v) => v.group === key);
+      return `<a href="#v${first.id}">${label}</a>`;
+    }).join('') + variants.map((v) => `<a href="#v${v.id}">V${v.id}</a>`).join('');
+
+    let lastGroup = '';
+    document.getElementById('variant-list').innerHTML = variants.map((variant) => {
+      const divider = variant.group !== lastGroup
+        ? `<div class="variant-group-divider" id="group-${variant.group}"><span>${groupLabels[variant.group]}</span></div>`
+        : '';
+      lastGroup = variant.group;
+      return `${divider}
+      <section class="variant-pair" id="v${variant.id}">
+        <div class="variant-heading">
+          <span class="variant-number">V${variant.id}</span>
+          <div><h2>${variant.name}</h2><p>${variant.note}</p></div>
+        </div>
+        <div class="theme-pair">
+          ${phone(variant, 'dark')}
+          ${phone(variant, 'light')}
+        </div>
+      </section>`;
+    }).join('');
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function replayAnim(phoneEl) {
+      if (reduceMotion || !phoneEl) return;
+      phoneEl.classList.remove('is-animating');
+      void phoneEl.offsetWidth;
+      phoneEl.classList.add('is-animating');
+    }
+
+    document.querySelectorAll('.anim-demo').forEach((phoneEl) => {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) replayAnim(phoneEl);
+        });
+      }, { threshold: 0.45 });
+      io.observe(phoneEl);
+
+      phoneEl.querySelectorAll('.story-preview').forEach((story) => {
+        story.addEventListener('click', () => {
+          const sheet = phoneEl.querySelector('.anim-story-sheet');
+          const title = phoneEl.querySelector('.anim-story-title');
+          if (!sheet) return;
+          if (title) title.textContent = story.querySelector('span')?.textContent || 'Story';
+          sheet.hidden = false;
+          sheet.classList.add('is-open');
+        });
+      });
+      phoneEl.querySelector('.anim-story-close')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const sheet = phoneEl.querySelector('.anim-story-sheet');
+        if (!sheet) return;
+        sheet.classList.remove('is-open');
+        sheet.hidden = true;
+      });
+
+      phoneEl.querySelector('.anim-flip-scene')?.addEventListener('click', () => {
+        phoneEl.querySelector('.anim-flip-scene').classList.toggle('is-flipped');
+      });
+
+      const tabBar = phoneEl.querySelector('.anim-tabs');
+      if (tabBar) {
+        const indicator = tabBar.querySelector('.anim-tab-indicator');
+        const move = (tab) => {
+          tabBar.querySelectorAll('.tab').forEach((t) => t.classList.remove('active'));
+          tab.classList.add('active');
+          if (indicator) {
+            indicator.style.transform = `translateX(${tab.offsetLeft + tab.offsetWidth / 2 - 3}px)`;
+          }
+        };
+        tabBar.querySelectorAll('.tab').forEach((tab) => {
+          tab.addEventListener('click', () => move(tab));
+        });
+        const active = tabBar.querySelector('.tab.active');
+        if (active) requestAnimationFrame(() => move(active));
+      }
+
+      phoneEl.querySelectorAll('.anim-chip-row').forEach((row) => {
+        row.addEventListener('click', (e) => {
+          const chip = e.target.closest('.anim-chip');
+          if (!chip) return;
+          row.querySelectorAll('.anim-chip').forEach((c) => c.classList.remove('on'));
+          chip.classList.add('on');
+        });
+      });
+
+      if (phoneEl.dataset.anim === 'anim-skeleton') {
+        const skel = phoneEl.querySelector('.anim-skel-block');
+        const content = phoneEl.querySelector('.anim-skel-content');
+        const run = () => {
+          if (!skel || !content) return;
+          skel.hidden = false;
+          content.hidden = true;
+          content.classList.remove('is-shown');
+          setTimeout(() => {
+            skel.hidden = true;
+            content.hidden = false;
+            requestAnimationFrame(() => content.classList.add('is-shown'));
+          }, reduceMotion ? 0 : 900);
+        };
+        run();
+      }
+
+      const statuses = ['new', 'progress', 'done'];
+      phoneEl.querySelector('.anim-inbox-cycle')?.addEventListener('click', () => {
+        phoneEl.querySelectorAll('.anim-inbox-row').forEach((row) => {
+          const cur = row.dataset.status;
+          const next = statuses[(statuses.indexOf(cur) + 1) % statuses.length];
+          row.dataset.status = next;
+          const label = { new: 'Новая', progress: 'В работе', done: 'Готово' }[next];
+          const text = row.querySelector('.anim-status-text');
+          if (text) text.textContent = label;
+        });
+      });
+
+      phoneEl.querySelector('.anim-search-toggle')?.addEventListener('click', () => {
+        phoneEl.querySelector('.anim-search-wrap')?.classList.toggle('is-open');
+      });
+
+      phoneEl.querySelector('.anim-refresh-run')?.addEventListener('click', () => {
+        const ring = phoneEl.querySelector('.anim-refresh-ring');
+        if (!ring) return;
+        ring.classList.remove('is-spinning');
+        void ring.offsetWidth;
+        ring.classList.add('is-spinning');
+      });
+
+      phoneEl.querySelector('.anim-success-btn')?.addEventListener('click', () => {
+        const toast = phoneEl.querySelector('.anim-success-toast');
+        if (!toast) return;
+        toast.hidden = false;
+        toast.classList.add('is-shown');
+        setTimeout(() => {
+          toast.classList.remove('is-shown');
+          toast.hidden = true;
+        }, 1600);
+      });
+
+      phoneEl.querySelector('.anim-theme-toggle')?.addEventListener('click', () => {
+        phoneEl.classList.add('theme-fading');
+        setTimeout(() => {
+          phoneEl.classList.toggle('phone-light');
+          phoneEl.classList.toggle('phone-dark');
+          phoneEl.classList.remove('theme-fading');
+        }, reduceMotion ? 0 : 180);
+      });
+
+      const scroll = phoneEl.querySelector('.category-scroll');
+      if (phoneEl.dataset.anim === 'anim-parallax' && scroll && !reduceMotion) {
+        scroll.addEventListener('scroll', () => {
+          scroll.querySelectorAll('.anim-parallax-card').forEach((card) => {
+            const bg = card.querySelector('.anim-parallax-bg');
+            if (!bg) return;
+            const y = Math.max(-6, Math.min(6, (card.offsetTop - scroll.scrollTop) * 0.04));
+            bg.style.transform = `translateY(${y}px) scale(1.06)`;
+          });
+        }, { passive: true });
+      }
+    });
+
+    /* V72 Globe-catalog: width shrinks away from vertical center */
+    function updateGlobe(scrollEl) {
+      const catalog = scrollEl.querySelector('.globe-catalog');
+      if (!catalog) return;
+      const tiles = catalog.querySelectorAll('.globe-tile');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const scrollRect = scrollEl.getBoundingClientRect();
+      const viewCenter = scrollRect.top + scrollRect.height / 2;
+      const radius = Math.max(scrollRect.height * 0.52, 1);
+
+      tiles.forEach((tile) => {
+        if (reduce) {
+          tile.style.transform = 'none';
+          tile.style.opacity = '1';
+          return;
+        }
+        const rect = tile.getBoundingClientRect();
+        const tileCenter = rect.top + rect.height / 2;
+        const dist = Math.abs(tileCenter - viewCenter);
+        const t = Math.min(1, dist / radius);
+        const curve = t * t;
+        const scaleX = 1 - curve * 0.36;
+        const scaleY = 1 - curve * 0.08;
+        const opacity = 1 - curve * 0.3;
+        tile.style.transform = `scale(${scaleX}, ${scaleY})`;
+        tile.style.opacity = String(opacity);
+      });
+    }
+
+    document.querySelectorAll('.globe-phone .category-scroll').forEach((scrollEl) => {
+      let ticking = false;
+      const run = () => updateGlobe(scrollEl);
+      const onScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          run();
+          ticking = false;
+        });
+      };
+      run();
+      scrollEl.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', run);
+    });
+
+    /* Horizontal globe / focus highlight on story rails */
+    function updateHGlobe(row) {
+      const cards = row.querySelectorAll('.story-hglobe-card');
+      if (!cards.length) return;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const mode = [...row.classList].find((c) => c.startsWith('hglobe-'))?.replace('hglobe-', '') || 'scale';
+      const rowRect = row.getBoundingClientRect();
+      const centerX = rowRect.left + rowRect.width / 2;
+      const radius = Math.max(rowRect.width * 0.48, 1);
+
+      cards.forEach((card) => {
+        if (reduce) {
+          card.style.transform = '';
+          card.style.opacity = '';
+          card.style.filter = '';
+          return;
+        }
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
+        const dist = Math.abs(cardCenter - centerX);
+        const t = Math.min(1, dist / radius);
+        const curve = t * t;
+
+        if (mode === 'fade') {
+          card.style.transform = `scale(${1 - curve * 0.12})`;
+          card.style.opacity = String(1 - curve * 0.55);
+          card.style.filter = `brightness(${1 - curve * 0.35})`;
+        } else if (mode === 'coverflow') {
+          const dir = cardCenter < centerX ? 1 : -1;
+          card.style.transform = `perspective(600px) rotateY(${dir * curve * 28}deg) scale(${1 - curve * 0.15})`;
+          card.style.opacity = String(1 - curve * 0.35);
+          card.style.filter = '';
+        } else if (mode === 'lift') {
+          card.style.transform = `translateY(${curve * 18}px) scale(${1 - curve * 0.14})`;
+          card.style.opacity = String(1 - curve * 0.25);
+          card.style.filter = '';
+        } else if (mode === 'meridian') {
+          card.style.transform = `scale(${1 - curve * 0.06}, ${1 - curve * 0.38})`;
+          card.style.opacity = String(1 - curve * 0.22);
+          card.style.filter = '';
+        } else {
+          /* scale */
+          card.style.transform = `scale(${1 - curve * 0.32})`;
+          card.style.opacity = String(1 - curve * 0.2);
+          card.style.filter = '';
+        }
+      });
+    }
+
+    document.querySelectorAll('.hglobe-phone .stories-hglobe-row').forEach((row) => {
+      let ticking = false;
+      const run = () => updateHGlobe(row);
+      const onScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          run();
+          ticking = false;
+        });
+      };
+      run();
+      row.addEventListener('scroll', onScroll, { passive: true });
+      const parentScroll = row.closest('.category-scroll');
+      parentScroll?.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', run);
+    });
+
+    /* Wide-Globe: shrink + darken edges */
+    function updateWGlobe(row) {
+      const cards = row.querySelectorAll('.story-wglobe-card');
+      if (!cards.length) return;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const rowRect = row.getBoundingClientRect();
+      const centerX = rowRect.left + rowRect.width / 2;
+      const radius = Math.max(rowRect.width * 0.5, 1);
+
+      cards.forEach((card) => {
+        if (reduce) {
+          card.style.transform = '';
+          card.style.opacity = '';
+          card.style.filter = '';
+          return;
+        }
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
+        const dist = Math.abs(cardCenter - centerX);
+        const t = Math.min(1, dist / radius);
+        const curve = t * t;
+        card.style.transform = `scale(${1 - curve * 0.22})`;
+        card.style.opacity = String(1 - curve * 0.45);
+        card.style.filter = `brightness(${1 - curve * 0.42})`;
+      });
+    }
+
+    document.querySelectorAll('.wglobe-phone .stories-wglobe-row').forEach((row) => {
+      let ticking = false;
+      const run = () => updateWGlobe(row);
+      const onScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          run();
+          ticking = false;
+        });
+      };
+      run();
+      row.addEventListener('scroll', onScroll, { passive: true });
+      row.closest('.category-scroll')?.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', run);
+    });
+
+    /* Category tabs on top */
+    document.querySelectorAll('.tabs-phone').forEach((phoneEl) => {
+      const body = phoneEl.dataset.body || 'grid';
+      const panel = phoneEl.querySelector('.tabs-body-panel');
+      const row = phoneEl.querySelector('.cat-tabs-row');
+      if (!row) return;
+      row.addEventListener('click', (e) => {
+        const tab = e.target.closest('.cat-tab');
+        if (!tab) return;
+        row.querySelectorAll('.cat-tab').forEach((t) => t.classList.remove('on'));
+        tab.classList.add('on');
+        if (!panel) return;
+        const idx = Number(tab.dataset.cat) || 0;
+        panel.innerHTML = tabsBodyContent(body, idx);
+        panel.querySelectorAll('.stories-wglobe-row').forEach((r) => {
+          updateWGlobe(r);
+          r.addEventListener('scroll', () => updateWGlobe(r), { passive: true });
+        });
+        panel.querySelectorAll('.stories-hglobe-row').forEach((r) => {
+          updateHGlobe(r);
+          r.addEventListener('scroll', () => updateHGlobe(r), { passive: true });
+        });
+      });
+    });
+
+    /* Plane trail — tile stays put */
+    document.querySelectorAll('.plane-phone').forEach((phoneEl) => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      phoneEl.querySelectorAll('.plane-tile').forEach((tile) => {
+        tile.addEventListener('click', () => {
+          if (tile.classList.contains('is-flying')) return;
+          tile.classList.add('is-flying');
+          if (reduce) {
+            setTimeout(() => tile.classList.remove('is-flying'), 400);
+            return;
+          }
+          const onEnd = (e) => {
+            if (e.target !== tile.querySelector('.plane-glyph')) return;
+            tile.removeEventListener('animationend', onEnd);
+            tile.classList.remove('is-flying');
+          };
+          tile.addEventListener('animationend', onEnd);
+          /* fallback if animationend misses */
+          setTimeout(() => tile.classList.remove('is-flying'), 900);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
