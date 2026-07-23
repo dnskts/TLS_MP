@@ -1173,6 +1173,234 @@ a {
 }
 
 .logo-tile.c-ink { background: #121820; }
+.logo-tile.c-ink.c-ink-box svg {
+  width: 100%;
+  height: 100%;
+}
+.logo-tile.c-ink-rim {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.42),
+    0 10px 28px rgba(0, 0, 0, 0.35);
+}
+.logo-tile.c-ink-asis {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.14), transparent 42%),
+    #121820;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 1px 0 0 rgba(255, 255, 255, 0.18),
+    inset 0 -10px 18px rgba(0, 0, 0, 0.35),
+    inset -6px 0 14px rgba(0, 0, 0, 0.18),
+    0 10px 28px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+.logo-tile.c-ink-asis::before {
+  content: "";
+  position: absolute;
+  top: -18%;
+  left: -14%;
+  width: 72%;
+  height: 52%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0) 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+.logo-tile.c-ink-asis svg {
+  position: relative;
+  z-index: 1;
+}
+
+/* iOS 27 Liquid Glass-inspired tiles */
+.logo-tile.ios27 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 22%;
+}
+.logo-tile.ios27 svg {
+  position: relative;
+  z-index: 1;
+}
+.logo-tile.ios27::before,
+.logo-tile.ios27::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.logo-tile.ios27-clear {
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.04) 45%, rgba(20, 40, 60, 0.35)),
+    linear-gradient(180deg, #4a7088, #1a3040);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25),
+    0 12px 28px rgba(0, 0, 0, 0.35);
+}
+.logo-tile.ios27-clear::before {
+  top: -25%;
+  left: -15%;
+  width: 75%;
+  height: 55%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.55), transparent 70%);
+}
+
+.logo-tile.ios27-tint {
+  background:
+    linear-gradient(155deg, rgba(201, 168, 106, 0.35), rgba(0, 183, 212, 0.2) 40%, rgba(10, 20, 30, 0.55)),
+    linear-gradient(180deg, #3a5060, #121820);
+  border: 1px solid rgba(201, 168, 106, 0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -8px 20px rgba(0, 0, 0, 0.35),
+    0 12px 28px rgba(0, 0, 0, 0.4);
+}
+.logo-tile.ios27-tint::before {
+  top: -20%;
+  left: -10%;
+  width: 70%;
+  height: 50%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 220, 160, 0.35), transparent 70%);
+}
+
+.logo-tile.ios27-layers {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.18), transparent 40%),
+    linear-gradient(180deg, #2a3848, #0c1218);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.45),
+    0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.logo-tile.ios27-edge {
+  background: linear-gradient(160deg, #243444, #0e1620 70%);
+  box-shadow:
+    inset 0 0 0 1.5px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.12),
+    0 12px 28px rgba(0, 0, 0, 0.4);
+}
+.logo-tile.ios27-edge::before {
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+.logo-tile.ios27-edge::after {
+  top: 6%;
+  left: 10%;
+  right: 10%;
+  height: 18%;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent);
+}
+
+.logo-tile.ios27-specular {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, transparent 18%, transparent 82%, rgba(255, 255, 255, 0.1) 100%),
+    linear-gradient(160deg, #1e2e3c, #0a1016);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -2px 0 rgba(255, 255, 255, 0.15),
+    0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.logo-tile.ios27-refract {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(126, 200, 227, 0.25), transparent 45%),
+    radial-gradient(circle at 70% 70%, rgba(201, 168, 106, 0.2), transparent 40%),
+    linear-gradient(160deg, #1a2834, #0c1218);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 12px 28px rgba(0, 0, 0, 0.4);
+}
+.logo-tile.ios27-refract::before {
+  top: -15%;
+  right: -10%;
+  width: 55%;
+  height: 45%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
+}
+
+.logo-tile.ios27-frost {
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.35) 40%, rgba(200, 220, 230, 0.45)),
+    linear-gradient(180deg, #e8f0f4, #c5d4de);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -6px 16px rgba(30, 60, 80, 0.12),
+    0 12px 28px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.logo-tile.ios27-frost::before {
+  top: -20%;
+  left: -10%;
+  width: 70%;
+  height: 50%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent 70%);
+}
+
+.logo-tile.ios27-depth {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.16), transparent 38%),
+    linear-gradient(180deg, #2a3a48, #0a1016);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -12px 24px rgba(0, 0, 0, 0.45),
+    0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.logo-tile.ios27-rimlight {
+  background: radial-gradient(circle at 50% 40%, #243442, #0a0e14 72%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+    inset 0 2px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -8px 18px rgba(0, 0, 0, 0.5),
+    0 12px 28px rgba(0, 0, 0, 0.4);
+}
+.logo-tile.ios27-rimlight::before {
+  top: 4%;
+  left: 12%;
+  right: 12%;
+  height: 22%;
+  border-radius: 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.logo-tile.ios27-liquid {
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.35), rgba(126, 200, 227, 0.18) 35%, rgba(201, 168, 106, 0.22) 70%, rgba(10, 20, 30, 0.5)),
+    linear-gradient(180deg, #3a5a6e, #121820);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -10px 22px rgba(0, 80, 110, 0.25),
+    0 12px 28px rgba(0, 0, 0, 0.4);
+}
+.logo-tile.ios27-liquid::before {
+  top: -22%;
+  left: -12%;
+  width: 72%;
+  height: 55%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent 68%);
+}
+
 .logo-tile.c-navy { background: #0e2436; }
 .logo-tile.c-teal { background: #0a3a44; }
 .logo-tile.c-cream { background: #f3eee4; }
