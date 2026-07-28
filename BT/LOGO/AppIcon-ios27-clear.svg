@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a7088"/>
+      <stop offset="100%" stop-color="#1a3040"/>
+    </linearGradient>
+    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#14283c" stop-opacity="0.35"/>
+    </linearGradient>
+    <radialGradient id="spec" cx="30%" cy="20%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#base)"/>
+  <rect width="1024" height="1024" fill="url(#wash)"/>
+  <ellipse cx="280" cy="180" rx="380" ry="280" fill="url(#spec)"/>
+  <text x="512" y="471" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="140" fill="#ffffff" font-weight="700">&#1052;&#1054;&#1049; TLS</text>
+  <path d="M225 594 Q512 696 799 594" fill="none" stroke="#ffffff" stroke-opacity="0.75" stroke-width="16"/>
+  <circle cx="512" cy="717" r="29" fill="#ffffff"/>
+</svg>

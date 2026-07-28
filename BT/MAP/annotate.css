@@ -1,0 +1,105 @@
+.bt-page { max-width: 1280px; }
+
+.bt-map-legend {
+  margin: 16px 0 40px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 183, 212, 0.28);
+  background: rgba(0, 183, 212, 0.06);
+}
+
+.bt-map-legend h2 { margin: 0 0 8px; font-size: 16px; }
+.bt-map-legend ol { margin: 0; padding-left: 0; list-style: none; color: var(--text-muted); font-size: 13px; line-height: 1.55; display: grid; gap: 6px; }
+.bt-map-legend strong { color: var(--text); }
+
+.tag {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #041018;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.tag.a { background: #5ef0ff; }
+.tag.b { background: #c9a86a; }
+.tag.c { background: #ff8a5c; }
+.tag.d { background: #7ec8e3; }
+.tag.e { background: #9d7cff; }
+.tag.f { background: #6ee7a8; }
+
+.phones {
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.annotate-frame {
+  position: relative;
+  width: max-content;
+  padding-right: 150px;
+}
+
+.annotate-frame .phone {
+  position: relative;
+  z-index: 1;
+}
+
+.annotate-frame .zone-a { outline: 2px dashed #0aa8c0; outline-offset: 2px; border-radius: 8px; }
+.annotate-frame .zone-b { outline: 2px dashed #a07a2e; outline-offset: -2px; }
+.annotate-frame .zone-c { outline: 2px dashed #d45a2a; outline-offset: 2px; border-radius: 10px; }
+.annotate-frame .zone-d { outline: 2px dashed #2a8aab; outline-offset: 2px; border-radius: 12px; }
+.annotate-frame .zone-e { outline: 2px dashed #6b4fd4; outline-offset: 2px; border-radius: 10px; }
+.annotate-frame .zone-f { outline: 2px dashed #1fa86a; outline-offset: 2px; }
+
+.callout {
+  position: absolute;
+  right: 0;
+  width: 132px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 11px;
+  line-height: 1.35;
+  color: #1a2a32;
+  z-index: 2;
+}
+
+.callout::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 50%;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.7;
+  transform: translateY(-50%);
+}
+
+/* Карта */
+.annotate-frame.annotate-map .callout-a { top: 42px; color: #0aa8c0; }
+.annotate-frame.annotate-map .callout-b { top: 140px; color: #a07a2e; }
+.annotate-frame.annotate-map .callout-c { top: 300px; color: #d45a2a; }
+.annotate-frame.annotate-map .callout-d { top: 380px; color: #2a8aab; }
+.annotate-frame.annotate-map .callout-e { top: 460px; color: #6b4fd4; }
+.annotate-frame.annotate-map .callout-f { bottom: 18px; color: #1fa86a; }
+
+/* Список */
+.annotate-frame.annotate-list .callout-a { top: 42px; color: #0aa8c0; }
+.annotate-frame.annotate-list .callout-b { top: 88px; color: #a07a2e; }
+.annotate-frame.annotate-list .callout-c { top: 128px; color: #d45a2a; }
+.annotate-frame.annotate-list .callout-d { top: 190px; color: #2a8aab; }
+.annotate-frame.annotate-list .callout-e { top: 228px; color: #6b4fd4; }
+.annotate-frame.annotate-list .callout-f { bottom: 18px; color: #1fa86a; }
+
+/* Выбранный пин — chips над картой, пин в центре, card/CTA внизу */
+.annotate-frame.annotate-selected .callout-a { top: 42px; color: #0aa8c0; }
+.annotate-frame.annotate-selected .callout-c { top: 98px; color: #d45a2a; }
+.annotate-frame.annotate-selected .callout-b { top: 230px; color: #a07a2e; }
+.annotate-frame.annotate-selected .callout-d { top: 455px; color: #2a8aab; }
+.annotate-frame.annotate-selected .callout-e { top: 545px; color: #6b4fd4; }
+.annotate-frame.annotate-selected .callout-f { bottom: 18px; color: #1fa86a; }

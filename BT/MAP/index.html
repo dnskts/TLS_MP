@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ТЛС Путешествия — карта привилегий рядом</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>BT · MAP · постановка</title>
+  <link rel="stylesheet" href="../../mockups/styles.css" />
+  <link rel="stylesheet" href="annotate.css" />
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
@@ -33,19 +34,18 @@
     </symbol>
   </svg>
 
-  <div class="page">
+  <div class="page bt-page">
     <header class="page-header">
-      <nav class="site-nav" aria-label="Разделы макетов">
-        <a href="index.html">AS IS</a>
-        <a href="home-variants.html">TO BE MAIN</a>
-        <a href="home-variants-archive.html">Архив MAIN</a>
-        <a href="map-nearby.html" class="on">TO BE MAP</a>
-        <a href="../BT/Main/index.html">BT Main</a>
-        <a href="../BT/MAP/index.html">BT MAP</a>
-        <a href="../BT/LOGO/preview.html">BT LOGO</a>
+            <nav class="site-nav" aria-label="BT">
+        <a href="../AS IS/index.html">AS IS</a>
+        <span class="site-nav-sep" aria-hidden="true"></span>
+        <a href="../index.html">TO BE</a>
+        <a href="../LOGO/preview.html">Значок</a>
+        <a href="../Main/index.html">Главная</a>
+        <a href="../MAP/index.html" class="on">Карта</a>
       </nav>
-      <h1>ТЛС Путешествия TO BE MAP</h1>
-      <p>Постановка для разработки: <a href="../BT/MAP/index.html">BT/MAP</a></p>
+      <h1>BT · MAP</h1>
+      <p>Постановка «привилегии рядом» · см. <a href="SPEC.md">SPEC.md</a></p>
     </header>
 
     <section class="section" id="overview">
@@ -151,10 +151,11 @@
 
         <div class="phone-wrap">
           <div class="phone-label"><strong>Карта</strong> · light</div>
-          <div class="phone phone-light">
+          <div class="annotate-frame annotate-map">
+            <div class="phone phone-light annotate-map">
             <div class="phone-screen map-screen">
               <div class="status-bar"><span>15:28</span><span class="icons">▮ Wi‑Fi 74</span></div>
-              <div class="top-bar">
+              <div class="top-bar zone-a">
                 <div class="avatar-sm"><svg class="ico"><use href="#i-avatar"/></svg></div>
                 <div class="map-segment">
                   <span>Список</span>
@@ -166,7 +167,7 @@
               </div>
 
               <div class="map-stage">
-                <div class="map-canvas map-canvas-light" aria-hidden="true">
+                <div class="map-canvas map-canvas-light zone-b" aria-hidden="true">
                   <div class="map-water"></div>
                   <div class="map-park map-park-a"></div>
                   <div class="map-park map-park-b"></div>
@@ -190,25 +191,25 @@
                   <button type="button" class="map-pin rest" style="left:68%;top:62%"><i></i></button>
                 </div>
 
-                <div class="map-chips">
+                <div class="map-chips zone-c">
                   <button type="button" class="map-chip on">Все · 12</button>
                   <button type="button" class="map-chip">Отели</button>
                   <button type="button" class="map-chip">Рестораны</button>
                   <button type="button" class="map-chip">Другое</button>
                 </div>
 
-                <div class="map-radius">
+                <div class="map-radius zone-d">
                   <span>Рядом · 5 км</span>
                 </div>
 
-                <div class="map-sheet">
+                <div class="map-sheet zone-d">
                   <div class="map-sheet-handle"></div>
                   <div class="map-sheet-head">
                     <strong>12 привилегий рядом</strong>
                     <span>в области</span>
                   </div>
                   <div class="map-sheet-list">
-                    <div class="map-row">
+                    <div class="map-row zone-e">
                       <div class="map-row-photo g-rest"></div>
                       <div class="map-row-body">
                         <strong>Nebo Bistro</strong>
@@ -236,7 +237,7 @@
                 </div>
               </div>
 
-              <div class="tab-bar">
+              <div class="tab-bar zone-f">
                 <div class="tab"><svg class="ico"><use href="#i-diamond"/></svg></div>
                 <div class="tab active"><svg class="ico"><use href="#i-map"/></svg></div>
                 <div class="tab"><svg class="ico"><use href="#i-chat"/></svg></div>
@@ -244,8 +245,28 @@
               </div>
             </div>
           </div>
+            <div class="callout callout-a"><span class="tag a">A</span> Top bar</div>
+            <div class="callout callout-b"><span class="tag b">B</span> Map · pins</div>
+            <div class="callout callout-c"><span class="tag c">C</span> Chips</div>
+            <div class="callout callout-d"><span class="tag d">D</span> Radius + sheet</div>
+            <div class="callout callout-e"><span class="tag e">E</span> Row</div>
+            <div class="callout callout-f"><span class="tag f">F</span> Tab bar</div>
+          </div>
         </div>
       </div>
+
+    <section class="bt-map-legend">
+      <h2>Зоны · Карта</h2>
+      <ol>
+        <li><span class="tag a">A</span> <strong>Top bar</strong> — segment Список/Карта + locate</li>
+        <li><span class="tag b">B</span> <strong>Map</strong> — canvas + pins / cluster</li>
+        <li><span class="tag c">C</span> <strong>Chips</strong> — Все / Отели / Рестораны / Другое</li>
+        <li><span class="tag d">D</span> <strong>Radius + sheet</strong> — «Рядом · 5 км» + превью</li>
+        <li><span class="tag e">E</span> <strong>Row</strong> — photo · name · distance · address</li>
+        <li><span class="tag f">F</span> <strong>Tab bar</strong> — активна map</li>
+      </ol>
+    </section>
+
     </section>
 
     <section class="section" id="list">
@@ -372,10 +393,11 @@
 
         <div class="phone-wrap">
           <div class="phone-label"><strong>Список</strong> · light</div>
-          <div class="phone phone-light">
+          <div class="annotate-frame annotate-list">
+            <div class="phone phone-light annotate-map">
             <div class="phone-screen map-screen">
               <div class="status-bar"><span>15:28</span><span class="icons">▮ Wi‑Fi 74</span></div>
-              <div class="top-bar">
+              <div class="top-bar zone-a">
                 <div class="avatar-sm"><svg class="ico"><use href="#i-avatar"/></svg></div>
                 <div class="map-segment">
                   <span class="on">Список</span>
@@ -386,17 +408,17 @@
                 </div>
               </div>
               <div class="scroll map-list-mode">
-                <div class="map-list-meta">
+                <div class="map-list-meta zone-b">
                   <strong>Рядом · 5 км</strong>
                   <span>Москва</span>
                 </div>
-                <div class="map-chips map-chips-inline">
+                <div class="map-chips map-chips-inline zone-c">
                   <button type="button" class="map-chip on">Рестораны</button>
                   <button type="button" class="map-chip">Отели</button>
                   <button type="button" class="map-chip">Другое</button>
                 </div>
-                <div class="map-sheet-list map-list-page">
-                  <div class="map-row">
+                <div class="map-sheet-list map-list-page zone-d">
+                  <div class="map-row zone-e">
                     <div class="map-row-photo g-rest"></div>
                     <div class="map-row-body">
                       <strong>Nebo Bistro</strong>
@@ -478,7 +500,7 @@
                   </div>
                 </div>
               </div>
-              <div class="tab-bar">
+              <div class="tab-bar zone-f">
                 <div class="tab"><svg class="ico"><use href="#i-diamond"/></svg></div>
                 <div class="tab active"><svg class="ico"><use href="#i-map"/></svg></div>
                 <div class="tab"><svg class="ico"><use href="#i-chat"/></svg></div>
@@ -486,8 +508,28 @@
               </div>
             </div>
           </div>
+            <div class="callout callout-a"><span class="tag a">A</span> Top bar</div>
+            <div class="callout callout-b"><span class="tag b">B</span> Meta</div>
+            <div class="callout callout-c"><span class="tag c">C</span> Chips</div>
+            <div class="callout callout-d"><span class="tag d">D</span> Список</div>
+            <div class="callout callout-e"><span class="tag e">E</span> Row</div>
+            <div class="callout callout-f"><span class="tag f">F</span> Tab bar</div>
+          </div>
         </div>
       </div>
+
+    <section class="bt-map-legend">
+      <h2>Зоны · Список</h2>
+      <ol>
+        <li><span class="tag a">A</span> <strong>Top bar</strong> — segment (активен Список)</li>
+        <li><span class="tag b">B</span> <strong>Meta</strong> — «Рядом · 5 км» + город</li>
+        <li><span class="tag c">C</span> <strong>Chips</strong> — фильтр типов</li>
+        <li><span class="tag d">D</span> <strong>Список</strong> — вертикальный список точек</li>
+        <li><span class="tag e">E</span> <strong>Row</strong> — photo · name · км · address</li>
+        <li><span class="tag f">F</span> <strong>Tab bar</strong></li>
+      </ol>
+    </section>
+
     </section>
 
     <section class="section" id="selected">
@@ -557,10 +599,11 @@
 
         <div class="phone-wrap">
           <div class="phone-label"><strong>Выбран пин</strong> · light</div>
-          <div class="phone phone-light">
+          <div class="annotate-frame annotate-selected">
+            <div class="phone phone-light annotate-map">
             <div class="phone-screen map-screen">
               <div class="status-bar"><span>15:29</span><span class="icons">▮ Wi‑Fi 74</span></div>
-              <div class="top-bar">
+              <div class="top-bar zone-a">
                 <div class="avatar-sm"><svg class="ico"><use href="#i-avatar"/></svg></div>
                 <div class="map-segment">
                   <span>Список</span>
@@ -572,7 +615,7 @@
               </div>
 
               <div class="map-stage">
-                <div class="map-canvas map-canvas-light" aria-hidden="true">
+                <div class="map-canvas map-canvas-light zone-b" aria-hidden="true">
                   <div class="map-water"></div>
                   <div class="map-park map-park-a"></div>
                   <div class="map-road map-h1"></div>
@@ -587,26 +630,26 @@
                   <button type="button" class="map-pin rest" style="left:44%;top:60%"><i></i></button>
                 </div>
 
-                <div class="map-chips">
+                <div class="map-chips zone-c">
                   <button type="button" class="map-chip">Все</button>
                   <button type="button" class="map-chip on">Отели</button>
                   <button type="button" class="map-chip">Рестораны</button>
                   <button type="button" class="map-chip">Другое</button>
                 </div>
 
-                <div class="map-card">
+                <div class="map-card zone-d">
                   <div class="map-card-photo g-hotel"></div>
                   <div class="map-card-body">
                     <span class="map-card-cat">Отель · 1,2 км</span>
                     <strong>Rocco Forte · апгрейд номера</strong>
                     <span class="map-card-addr">Тверская ул., 3</span>
                     <p>Привилегия для участников RS TLS в выбранных отелях сети</p>
-                    <button type="button" class="map-cta">Воспользоваться</button>
+                    <button type="button" class="map-cta zone-e">Воспользоваться</button>
                   </div>
                 </div>
               </div>
 
-              <div class="tab-bar">
+              <div class="tab-bar zone-f">
                 <div class="tab"><svg class="ico"><use href="#i-diamond"/></svg></div>
                 <div class="tab active"><svg class="ico"><use href="#i-map"/></svg></div>
                 <div class="tab"><svg class="ico"><use href="#i-chat"/></svg></div>
@@ -614,9 +657,97 @@
               </div>
             </div>
           </div>
+            <div class="callout callout-a"><span class="tag a">A</span> Top bar</div>
+            <div class="callout callout-c"><span class="tag c">C</span> Chips</div>
+            <div class="callout callout-b"><span class="tag b">B</span> Selected pin</div>
+            <div class="callout callout-d"><span class="tag d">D</span> Detail card</div>
+            <div class="callout callout-e"><span class="tag e">E</span> CTA</div>
+            <div class="callout callout-f"><span class="tag f">F</span> Tab bar</div>
+          </div>
         </div>
       </div>
+
+    <section class="bt-map-legend">
+      <h2>Зоны · Выбранный пин</h2>
+      <ol>
+        <li><span class="tag a">A</span> <strong>Top bar</strong> — segment</li>
+        <li><span class="tag b">B</span> <strong>Map</strong> — selected pin (акцент / label)</li>
+        <li><span class="tag c">C</span> <strong>Chips</strong> — фильтр</li>
+        <li><span class="tag d">D</span> <strong>Card</strong> — photo · cat · title · addr · copy</li>
+        <li><span class="tag e">E</span> <strong>CTA</strong> — «Воспользоваться»</li>
+        <li><span class="tag f">F</span> <strong>Tab bar</strong></li>
+      </ol>
     </section>
+
+    </section>
+    <p class="footer"><a href="SPEC.md">SPEC.md</a> · source: mockups/map-nearby.html</p>
   </div>
+  <script>
+    function placeAnnotateCallouts() {
+      document.querySelectorAll('.annotate-frame').forEach((frame) => {
+        const fr = frame.getBoundingClientRect();
+        const clipEl = frame.querySelector('.phone-screen') || frame.querySelector('.phone');
+        const clip = clipEl.getBoundingClientRect();
+
+        const bounds = (sel) => {
+          const nodes = [...frame.querySelectorAll(sel)];
+          if (!nodes.length) return null;
+          let top = Infinity;
+          let bottom = -Infinity;
+          for (const el of nodes) {
+            const r = el.getBoundingClientRect();
+            top = Math.min(top, r.top);
+            bottom = Math.max(bottom, r.bottom);
+          }
+          return { top, bottom, height: bottom - top };
+        };
+
+        const pin = (calloutSel, zoneSel, anchor = 0.5, opts = {}) => {
+          const callout = frame.querySelector(calloutSel);
+          const zr = bounds(zoneSel);
+          if (!callout || !zr) return;
+          let top = Math.max(zr.top, clip.top);
+          let bottom = Math.min(zr.bottom, clip.bottom);
+          if (opts.above) {
+            const blocker = frame.querySelector(opts.above);
+            if (blocker) bottom = Math.min(bottom, blocker.getBoundingClientRect().top);
+          }
+          const h = Math.max(1, bottom - top);
+          const y = top - fr.top + h * anchor - callout.offsetHeight / 2;
+          callout.style.top = `${Math.round(Math.max(0, y))}px`;
+          callout.style.bottom = 'auto';
+        };
+
+        if (frame.classList.contains('annotate-map')) {
+          pin('.callout-a', '.zone-a');
+          /* карта под sheet — якорим в видимую зону с пинами */
+          pin('.callout-b', '.zone-b', 0.42, { above: '.map-sheet' });
+          pin('.callout-c', '.zone-c');
+          /* D = radius + sheet: линия к верхней части sheet */
+          pin('.callout-d', '.map-sheet.zone-d', 0.12);
+          pin('.callout-e', '.zone-e');
+          pin('.callout-f', '.zone-f');
+        } else if (frame.classList.contains('annotate-list')) {
+          pin('.callout-a', '.zone-a');
+          pin('.callout-b', '.zone-b');
+          pin('.callout-c', '.zone-c');
+          pin('.callout-d', '.zone-d', 0.18);
+          pin('.callout-e', '.zone-e');
+          pin('.callout-f', '.zone-f');
+        } else if (frame.classList.contains('annotate-selected')) {
+          pin('.callout-a', '.zone-a');
+          pin('.callout-c', '.zone-c');
+          pin('.callout-b', '.zone-b', 0.48, { above: '.map-card' });
+          pin('.callout-d', '.zone-d', 0.35);
+          pin('.callout-e', '.zone-e');
+          pin('.callout-f', '.zone-f');
+        }
+      });
+    }
+
+    placeAnnotateCallouts();
+    window.addEventListener('resize', placeAnnotateCallouts);
+    requestAnimationFrame(placeAnnotateCallouts);
+  </script>
 </body>
 </html>

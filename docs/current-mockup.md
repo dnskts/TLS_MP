@@ -5,7 +5,8 @@
 **Источник:** 28 скринов в [`_screens/`](../_screens/) (папка «Скрины»).  
 **Версия в TestFlight (справочно):** 1.48.  
 **Статичный preview:** [`mockups/index.html`](../mockups/index.html) — открыть в браузере.  
-**Варианты главной:** [`mockups/home-variants.html`](../mockups/home-variants.html) — **22** раскладки (V1–V22) для постановки iOS-задач.  
+**Варианты главной:** [`mockups/home-variants.html`](../mockups/home-variants.html) — **V15** + **V40–V49** (эффекты пролистывания сторис, горизонтальный compare).  
+**Архив раскладок:** [`mockups/home-variants-archive.html`](../mockups/home-variants-archive.html) — V1–V14, V16–V22 (+ эксперименты V23–V39 в коде).  
 **Концепт карты:** [`mockups/map-nearby.html`](../mockups/map-nearby.html) — привилегии рядом на 2-й вкладке (Yandex MapKit).  
 **Иконка приложения:** тёмно-синий квадрат, белый текст **RS TLS**, подпись на Springboard **«Путешествия»** (скрин `…42_10.387`, отмечена стрелкой).
 
@@ -127,7 +128,7 @@ flowchart TB
 
 ### Варианты размещения (exploration)
 
-Сравнение: [`mockups/home-variants.html`](../mockups/home-variants.html) — **22 варианта**. V1–V21 сохранены; V22 — hero + сетка (бывш. V27) с золотой обводкой `#c9a227`.
+Сравнение: [`mockups/home-variants.html`](../mockups/home-variants.html) — **V15** + горизонтальная лента **V40–V49** (эффекты пролистывания сторис). Остальные: [`home-variants-archive.html`](../mockups/home-variants-archive.html).
 
 | Вариант | Компоновка |
 |---------|------------|

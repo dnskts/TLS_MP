@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BT · LOGO · App Icon</title>
+  <link rel="stylesheet" href="../../mockups/styles.css" />
+  <style>
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      margin: 24px 0 48px;
+    }
+    .logo-card {
+      text-align: center;
+    }
+    .logo-card > img {
+      width: min(100%, 280px);
+      height: auto;
+      border-radius: 22.5%;
+      box-shadow: 0 12px 40px rgba(0,0,0,.22);
+      background: #111;
+    }
+    .logo-card h3 {
+      margin: 16px 0 6px;
+      font-size: 16px;
+    }
+    .logo-card p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    .logo-card a {
+      font-size: 12px;
+    }
+    .size-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: flex-end;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .size-row figure {
+      margin: 0;
+      text-align: center;
+    }
+    .size-row img {
+      border-radius: 22.5%;
+      display: block;
+      box-shadow: 0 4px 14px rgba(0,0,0,.18);
+    }
+    .size-row figcaption {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    .bt-note {
+      max-width: 640px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+            <nav class="site-nav" aria-label="BT">
+        <a href="../AS IS/index.html">AS IS</a>
+        <span class="site-nav-sep" aria-hidden="true"></span>
+        <a href="../index.html">TO BE</a>
+        <a href="../LOGO/preview.html" class="on">Значок</a>
+        <a href="../Main/index.html">Главная</a>
+        <a href="../MAP/index.html">Карта</a>
+      </nav>
+      <h1>BT · LOGO</h1>
+      <p>Четыре кандидата App Icon · 1024×1024 PNG · см. <a href="SPEC.md">SPEC.md</a></p>
+    </header>
+
+    <p class="bt-note">
+      Квадратные ассеты без прозрачности. Скругление на превью — маска iOS (~22.5%).
+      Исходники SVG + скрипт <code>export.mjs</code> (sharp).
+    </p>
+
+    <div class="logo-grid">
+      <article class="logo-card">
+        <img src="AppIcon-mint-light-1024.png" alt="Mint light App Icon" width="280" height="280" />
+        <h3>1 · Mint light</h3>
+        <p>Светлый фон · внешнее кольцо · внутренние полукруга с градиентом (верх 2× толще)</p>
+        <p><a href="AppIcon-mint-light-1024.png">PNG 1024</a> · <a href="AppIcon-mint-light.svg">SVG</a></p>
+        <div class="size-row">
+          <figure>
+            <img src="AppIcon-mint-light-1024.png" width="60" height="60" alt="" />
+            <figcaption>60</figcaption>
+          </figure>
+          <figure>
+            <img src="AppIcon-mint-light-1024.png" width="120" height="120" alt="" />
+            <figcaption>120</figcaption>
+          </figure>
+          <figure>
+            <img src="AppIcon-mint-light-1024.png" width="180" height="180" alt="" />
+            <figcaption>180</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="logo-card">
+        <img src="AppIcon-ink-rim-1024.png" alt="Ink rim App Icon" width="280" height="280" />
+        <h3>2 · Ink rim</h3>
+        <p>Тёмный #121820 · золотой маршрут · cream wordmark</p>
+        <p><a href="AppIcon-ink-rim-1024.png">PNG 1024</a> · <a href="AppIcon-ink-rim.svg">SVG</a></p>
+        <div class="size-row">
+          <figure>
+            <img src="AppIcon-ink-rim-1024.png" width="60" height="60" alt="" />
+            <figcaption>60</figcaption>
+          </figure>
+          <figure>
+            <img src="AppIcon-ink-rim-1024.png" width="120" height="120" alt="" />
+            <figcaption>120</figcaption>
+          </figure>
+          <figure>
+            <img src="AppIcon-ink-rim-1024.png" width="180" height="180" alt="" />
+            <figcaption>180</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="logo-card">
+        <img src="AppIcon-ios27-clear-1024.png" alt="iOS Clear-style App Icon" width="280" height="280" />
+        <h3>3 · Clear (baked)</h3>
+        <p>Стеклянный градиент «запечён» в PNG · белый wordmark + route</p>
+        <p><a href="AppIcon-ios27-clear-1024.png">PNG 1024</a> · <a href="AppIcon-ios27-clear.svg">SVG</a></p>
+        <div class="size-row">
+          <figure>
+            <img src="AppIcon-ios27-clear-1024.png" width="60" height="60" alt="" />
+            <figcaption>60</figcaption>
+          </figure>
+          <figure>
+            <img src="AppIcon-ios27-clear-1024.png" width="120" height="120" alt="" />
+            <figcaption>120</figcaption>
+          </figure>
+          <figure>
+            <img src="AppIcon-ios27-clear-1024.png" width="180" height="180" alt="" />
+            <figcaption>180</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="logo-card">
+        <img src="AppIcon-ink-white-1024.png" alt="Ink white rim App Icon" width="280" height="280" />
+        <h3>4 · Ink + white rim</h3>
+        <p>Как #2 · тонкая белая обводка по скруглению иконки</p>
+        <p><a href="AppIcon-ink-white-1024.png">PNG 1024</a> · <a href="AppIcon-ink-white.svg">SVG</a></p>
+        <div class="size-row">
+          <figure>
+            <img src="AppIcon-ink-white-1024.png" width="60" height="60" alt="" />
+            <figcaption>60</figcaption>
+          </figure>
+          <figure>
+            <img src="AppIcon-ink-white-1024.png" width="120" height="120" alt="" />
+            <figcaption>120</figcaption>
+          </figure>
+          <figure>
+            <img src="AppIcon-ink-white-1024.png" width="180" height="180" alt="" />
+            <figcaption>180</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

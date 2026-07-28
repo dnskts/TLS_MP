@@ -3,29 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ТЛС Путешествия — карта привилегий рядом</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>BT · TO BE</title>
+  <link rel="stylesheet" href="../mockups/styles.css" />
+  <style>
+    .hub-section { margin: 36px 0 48px; }
+    .hub-section h2 { margin: 0 0 6px; font-size: 22px; }
+    .hub-more { display: inline-block; margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; }
+    .hub-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      align-items: flex-end;
+    }
+    .hub-icons > img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 22.5%;
+      box-shadow: 0 12px 40px rgba(0,0,0,.22);
+      display: block;
+    }
+    .hub-sizes {
+      display: flex;
+      gap: 16px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    .hub-sizes figure { margin: 0; text-align: center; }
+    .hub-sizes img {
+      border-radius: 22.5%;
+      display: block;
+      box-shadow: 0 4px 14px rgba(0,0,0,.18);
+    }
+    .hub-sizes figcaption {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    .theme-pair { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
+  </style>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
     <symbol id="i-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
-      <path d="M12 3.5 L20.5 10 L12 20.5 L3.5 10 Z"/><path d="M3.5 10 H20.5"/><path d="M8 3.8 L12 10 L16 3.8"/>
+      <path d="M12 3.5 20.5 10 12 20.5 3.5 10Z"/><path d="M3.5 10h17M8 3.8 12 10l4-6.2"/>
     </symbol>
     <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M4.5 6.2 9.2 4.5 14.8 6.2 19.5 4.5v13.3l-4.7 1.7-5.6-1.7-4.7 1.7Z"/>
       <path d="M9.2 4.5v13.3M14.8 6.2v13.3"/>
     </symbol>
-    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M7 15.5 V17.2 A1.8 1.8 0 0 0 10 18.5 H16.5 L19.5 21 V10.5 A2 2 0 0 0 17.5 8.5 H14"/>
-      <path d="M4.5 4.5 H14.5 A2 2 0 0 1 16.5 6.5 V13 A2 2 0 0 1 14.5 15 H8 L4.5 17.5 Z"/>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+      <path d="M4.5 4.5h10a2 2 0 0 1 2 2V13a2 2 0 0 1-2 2H8l-3.5 2.5Z"/>
+      <path d="M9 18.5h7.5l3 2.5V10.5a2 2 0 0 0-2-2h-1"/>
     </symbol>
     <symbol id="i-profile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-      <circle cx="12" cy="8" r="3.2"/><path d="M5.5 19.5 C5.5 15.8 8.2 13.5 12 13.5 C15.8 13.5 18.5 15.8 18.5 19.5"/>
+      <circle cx="12" cy="8" r="3.2"/><path d="M5.5 19.5c0-3.7 2.7-6 6.5-6s6.5 2.3 6.5 6"/>
     </symbol>
     <symbol id="i-avatar" viewBox="0 0 48 48">
-      <circle cx="24" cy="24" r="24" fill="#E4EAF3"/>
-      <circle cx="24" cy="18" r="8" fill="#8A929C"/>
-      <path d="M8 42 C10 32 16 28 24 28 C32 28 38 32 40 42" fill="#8A929C"/>
+      <circle cx="24" cy="24" r="24" fill="#E4EAF3"/><circle cx="24" cy="18" r="8" fill="#8A929C"/>
+      <path d="M8 42c2-10 8-14 16-14s14 4 16 14" fill="#8A929C"/>
     </symbol>
     <symbol id="i-locate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
       <circle cx="12" cy="12" r="3.2"/><path d="M12 3.5 V6.5 M12 17.5 V20.5 M3.5 12 H6.5 M17.5 12 H20.5"/>
@@ -33,24 +69,51 @@
     </symbol>
   </svg>
 
-  <div class="page">
+  <main class="page bt-page">
     <header class="page-header">
-      <nav class="site-nav" aria-label="Разделы макетов">
-        <a href="index.html">AS IS</a>
-        <a href="home-variants.html">TO BE MAIN</a>
-        <a href="home-variants-archive.html">Архив MAIN</a>
-        <a href="map-nearby.html" class="on">TO BE MAP</a>
-        <a href="../BT/Main/index.html">BT Main</a>
-        <a href="../BT/MAP/index.html">BT MAP</a>
-        <a href="../BT/LOGO/preview.html">BT LOGO</a>
+      <nav class="site-nav" aria-label="BT">
+        <a href="AS IS/index.html">AS IS</a>
+        <span class="site-nav-sep" aria-hidden="true"></span>
+        <a href="index.html" class="on">TO BE</a>
+        <a href="LOGO/preview.html">Значок</a>
+        <a href="Main/index.html">Главная</a>
+        <a href="MAP/index.html">Карта</a>
       </nav>
-      <h1>ТЛС Путешествия TO BE MAP</h1>
-      <p>Постановка для разработки: <a href="../BT/MAP/index.html">BT/MAP</a></p>
+      <h1>BT · TO BE</h1>
+      <p>Сводка результата: иконка · главная · карта</p>
     </header>
 
-    <section class="section" id="overview">
-      <h2>Режим «Карта»</h2>
-      <p class="section-desc">Тёмная и светлая · пины + sheet с превью</p>
+    <section class="hub-section" id="icon">
+      <h2>Иконка:</h2>
+      <a class="hub-more" href="LOGO/preview.html">Подробнее</a>
+      <div class="hub-icons">
+        <img src="LOGO/AppIcon-mint-light-1024.png" alt="" width="280" height="280" />
+        <div class="hub-sizes">
+          <figure>
+            <img src="LOGO/AppIcon-mint-light-1024.png" width="180" height="180" alt="" />
+            <figcaption>180</figcaption>
+          </figure>
+          <figure>
+            <img src="LOGO/AppIcon-mint-light-1024.png" width="120" height="120" alt="" />
+            <figcaption>120</figcaption>
+          </figure>
+          <figure>
+            <img src="LOGO/AppIcon-mint-light-1024.png" width="60" height="60" alt="" />
+            <figcaption>60</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="hub-section" id="main">
+      <h2>Главная страница</h2>
+      <a class="hub-more" href="Main/index.html">Подробнее</a>
+      <div id="phones"></div>
+    </section>
+
+    <section class="hub-section" id="map">
+      <h2>Карта</h2>
+      <a class="hub-more" href="MAP/index.html">Подробнее</a>
       <div class="phones">
         <div class="phone-wrap">
           <div class="phone-label"><strong>Карта</strong> · dark</div>
@@ -67,7 +130,6 @@
                   <div class="icon-btn map-locate"><svg class="ico"><use href="#i-locate"/></svg></div>
                 </div>
               </div>
-
               <div class="map-stage">
                 <div class="map-canvas" aria-hidden="true">
                   <div class="map-water"></div>
@@ -92,18 +154,13 @@
                   <button type="button" class="map-cluster" style="left:22%;top:36%">4</button>
                   <button type="button" class="map-pin rest" style="left:68%;top:62%"><i></i></button>
                 </div>
-
                 <div class="map-chips">
                   <button type="button" class="map-chip on">Все · 12</button>
                   <button type="button" class="map-chip">Отели</button>
                   <button type="button" class="map-chip">Рестораны</button>
                   <button type="button" class="map-chip">Другое</button>
                 </div>
-
-                <div class="map-radius">
-                  <span>Рядом · 5 км</span>
-                </div>
-
+                <div class="map-radius"><span>Рядом · 5 км</span></div>
                 <div class="map-sheet">
                   <div class="map-sheet-handle"></div>
                   <div class="map-sheet-head">
@@ -113,32 +170,22 @@
                   <div class="map-sheet-list">
                     <div class="map-row">
                       <div class="map-row-photo g-rest"></div>
-                      <div class="map-row-body">
-                        <strong>Nebo Bistro</strong>
-                        <span>Ресторан · 0,8 км</span>
-                      </div>
+                      <div class="map-row-body"><strong>Nebo Bistro</strong><span>Ресторан · 0,8 км</span></div>
                       <div class="map-row-addr">Пресненская наб., 12</div>
                     </div>
                     <div class="map-row">
                       <div class="map-row-photo g-hotel"></div>
-                      <div class="map-row-body">
-                        <strong>Rocco Forte</strong>
-                        <span>Отель · 1,2 км</span>
-                      </div>
+                      <div class="map-row-body"><strong>Rocco Forte</strong><span>Отель · 1,2 км</span></div>
                       <div class="map-row-addr">Тверская, 3</div>
                     </div>
                     <div class="map-row">
                       <div class="map-row-photo g-spa"></div>
-                      <div class="map-row-body">
-                        <strong>THE BANYA</strong>
-                        <span>Другое · 2,4 км</span>
-                      </div>
+                      <div class="map-row-body"><strong>THE BANYA</strong><span>Другое · 2,4 км</span></div>
                       <div class="map-row-addr">Кузнецкий Мост, 7</div>
                     </div>
                   </div>
                 </div>
               </div>
-
               <div class="tab-bar">
                 <div class="tab"><svg class="ico"><use href="#i-diamond"/></svg></div>
                 <div class="tab active"><svg class="ico"><use href="#i-map"/></svg></div>
@@ -164,7 +211,6 @@
                   <div class="icon-btn map-locate"><svg class="ico"><use href="#i-locate"/></svg></div>
                 </div>
               </div>
-
               <div class="map-stage">
                 <div class="map-canvas map-canvas-light" aria-hidden="true">
                   <div class="map-water"></div>
@@ -189,18 +235,13 @@
                   <button type="button" class="map-cluster" style="left:22%;top:36%">4</button>
                   <button type="button" class="map-pin rest" style="left:68%;top:62%"><i></i></button>
                 </div>
-
                 <div class="map-chips">
                   <button type="button" class="map-chip on">Все · 12</button>
                   <button type="button" class="map-chip">Отели</button>
                   <button type="button" class="map-chip">Рестораны</button>
                   <button type="button" class="map-chip">Другое</button>
                 </div>
-
-                <div class="map-radius">
-                  <span>Рядом · 5 км</span>
-                </div>
-
+                <div class="map-radius"><span>Рядом · 5 км</span></div>
                 <div class="map-sheet">
                   <div class="map-sheet-handle"></div>
                   <div class="map-sheet-head">
@@ -210,32 +251,22 @@
                   <div class="map-sheet-list">
                     <div class="map-row">
                       <div class="map-row-photo g-rest"></div>
-                      <div class="map-row-body">
-                        <strong>Nebo Bistro</strong>
-                        <span>Ресторан · 0,8 км</span>
-                      </div>
+                      <div class="map-row-body"><strong>Nebo Bistro</strong><span>Ресторан · 0,8 км</span></div>
                       <div class="map-row-addr">Пресненская наб., 12</div>
                     </div>
                     <div class="map-row">
                       <div class="map-row-photo g-hotel"></div>
-                      <div class="map-row-body">
-                        <strong>Rocco Forte</strong>
-                        <span>Отель · 1,2 км</span>
-                      </div>
+                      <div class="map-row-body"><strong>Rocco Forte</strong><span>Отель · 1,2 км</span></div>
                       <div class="map-row-addr">Тверская, 3</div>
                     </div>
                     <div class="map-row">
                       <div class="map-row-photo g-spa"></div>
-                      <div class="map-row-body">
-                        <strong>THE BANYA</strong>
-                        <span>Другое · 2,4 км</span>
-                      </div>
+                      <div class="map-row-body"><strong>THE BANYA</strong><span>Другое · 2,4 км</span></div>
                       <div class="map-row-addr">Кузнецкий Мост, 7</div>
                     </div>
                   </div>
                 </div>
               </div>
-
               <div class="tab-bar">
                 <div class="tab"><svg class="ico"><use href="#i-diamond"/></svg></div>
                 <div class="tab active"><svg class="ico"><use href="#i-map"/></svg></div>
@@ -246,12 +277,8 @@
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="list">
-      <h2>Режим «Список»</h2>
-      <p class="section-desc">Тот же segment · активен Список · название и расстояние</p>
-      <div class="phones">
+      <div class="phones" style="margin-top:28px">
         <div class="phone-wrap">
           <div class="phone-label"><strong>Список</strong> · dark</div>
           <div class="phone">
@@ -280,83 +307,33 @@
                 <div class="map-sheet-list map-list-page">
                   <div class="map-row">
                     <div class="map-row-photo g-rest"></div>
-                    <div class="map-row-body">
-                      <strong>Nebo Bistro</strong>
-                      <span>0,8 км</span>
-                    </div>
+                    <div class="map-row-body"><strong>Nebo Bistro</strong><span>0,8 км</span></div>
                     <div class="map-row-addr">Пресненская наб., 12</div>
                   </div>
                   <div class="map-row">
                     <div class="map-row-photo g-hotel"></div>
-                    <div class="map-row-body">
-                      <strong>White Rabbit</strong>
-                      <span>1,1 км</span>
-                    </div>
+                    <div class="map-row-body"><strong>White Rabbit</strong><span>1,1 км</span></div>
                     <div class="map-row-addr">Смоленская пл., 3</div>
                   </div>
                   <div class="map-row">
                     <div class="map-row-photo g-spa"></div>
-                    <div class="map-row-body">
-                      <strong>Selfie</strong>
-                      <span>1,4 км</span>
-                    </div>
+                    <div class="map-row-body"><strong>Selfie</strong><span>1,4 км</span></div>
                     <div class="map-row-addr">Новый Арбат, 21</div>
                   </div>
                   <div class="map-row">
                     <div class="map-row-photo g-coast"></div>
-                    <div class="map-row-body">
-                      <strong>Twins Garden</strong>
-                      <span>1,9 км</span>
-                    </div>
+                    <div class="map-row-body"><strong>Twins Garden</strong><span>1,9 км</span></div>
                     <div class="map-row-addr">Страстной бул., 8а</div>
                   </div>
                   <div class="map-row">
                     <div class="map-row-photo g-yacht"></div>
-                    <div class="map-row-body">
-                      <strong>Savva</strong>
-                      <span>2,3 км</span>
-                    </div>
+                    <div class="map-row-body"><strong>Savva</strong><span>2,3 км</span></div>
                     <div class="map-row-addr">Тверская, 3</div>
                   </div>
                   <div class="map-row">
                     <div class="map-row-photo g-promo"></div>
-                    <div class="map-row-body">
-                      <strong>Beluga</strong>
-                      <span>2,7 км</span>
-                    </div>
+                    <div class="map-row-body"><strong>Beluga</strong><span>2,7 км</span></div>
                     <div class="map-row-addr">Моховая, 15/1</div>
-                  </div>
-                  <div class="map-row">
-                    <div class="map-row-photo g-china"></div>
-                    <div class="map-row-body">
-                      <strong>Dr. Zhivago</strong>
-                      <span>3,1 км</span>
-                    </div>
-                    <div class="map-row-addr">Моховая, 15/1</div>
-                  </div>
-                  <div class="map-row">
-                    <div class="map-row-photo g-mountains"></div>
-                    <div class="map-row-body">
-                      <strong>Café Pushkin</strong>
-                      <span>3,5 км</span>
-                    </div>
-                    <div class="map-row-addr">Тверской бул., 26а</div>
-                  </div>
-                  <div class="map-row">
-                    <div class="map-row-photo g-car"></div>
-                    <div class="map-row-body">
-                      <strong>BQ</strong>
-                      <span>4,2 км</span>
-                    </div>
-                    <div class="map-row-addr">Кутузовский пр., 2/1</div>
-                  </div>
-                  <div class="map-row">
-                    <div class="map-row-photo g-visa"></div>
-                    <div class="map-row-body">
-                      <strong>Uilliam’s</strong>
-                      <span>4,8 км</span>
-                    </div>
-                    <div class="map-row-addr">Малая Бронная, 20а</div>
                   </div>
                 </div>
               </div>
@@ -398,83 +375,33 @@
                 <div class="map-sheet-list map-list-page">
                   <div class="map-row">
                     <div class="map-row-photo g-rest"></div>
-                    <div class="map-row-body">
-                      <strong>Nebo Bistro</strong>
-                      <span>0,8 км</span>
-                    </div>
+                    <div class="map-row-body"><strong>Nebo Bistro</strong><span>0,8 км</span></div>
                     <div class="map-row-addr">Пресненская наб., 12</div>
                   </div>
                   <div class="map-row">
                     <div class="map-row-photo g-hotel"></div>
-                    <div class="map-row-body">
-                      <strong>White Rabbit</strong>
-                      <span>1,1 км</span>
-                    </div>
+                    <div class="map-row-body"><strong>White Rabbit</strong><span>1,1 км</span></div>
                     <div class="map-row-addr">Смоленская пл., 3</div>
                   </div>
                   <div class="map-row">
                     <div class="map-row-photo g-spa"></div>
-                    <div class="map-row-body">
-                      <strong>Selfie</strong>
-                      <span>1,4 км</span>
-                    </div>
+                    <div class="map-row-body"><strong>Selfie</strong><span>1,4 км</span></div>
                     <div class="map-row-addr">Новый Арбат, 21</div>
                   </div>
                   <div class="map-row">
                     <div class="map-row-photo g-coast"></div>
-                    <div class="map-row-body">
-                      <strong>Twins Garden</strong>
-                      <span>1,9 км</span>
-                    </div>
+                    <div class="map-row-body"><strong>Twins Garden</strong><span>1,9 км</span></div>
                     <div class="map-row-addr">Страстной бул., 8а</div>
                   </div>
                   <div class="map-row">
                     <div class="map-row-photo g-yacht"></div>
-                    <div class="map-row-body">
-                      <strong>Savva</strong>
-                      <span>2,3 км</span>
-                    </div>
+                    <div class="map-row-body"><strong>Savva</strong><span>2,3 км</span></div>
                     <div class="map-row-addr">Тверская, 3</div>
                   </div>
                   <div class="map-row">
                     <div class="map-row-photo g-promo"></div>
-                    <div class="map-row-body">
-                      <strong>Beluga</strong>
-                      <span>2,7 км</span>
-                    </div>
+                    <div class="map-row-body"><strong>Beluga</strong><span>2,7 км</span></div>
                     <div class="map-row-addr">Моховая, 15/1</div>
-                  </div>
-                  <div class="map-row">
-                    <div class="map-row-photo g-china"></div>
-                    <div class="map-row-body">
-                      <strong>Dr. Zhivago</strong>
-                      <span>3,1 км</span>
-                    </div>
-                    <div class="map-row-addr">Моховая, 15/1</div>
-                  </div>
-                  <div class="map-row">
-                    <div class="map-row-photo g-mountains"></div>
-                    <div class="map-row-body">
-                      <strong>Café Pushkin</strong>
-                      <span>3,5 км</span>
-                    </div>
-                    <div class="map-row-addr">Тверской бул., 26а</div>
-                  </div>
-                  <div class="map-row">
-                    <div class="map-row-photo g-car"></div>
-                    <div class="map-row-body">
-                      <strong>BQ</strong>
-                      <span>4,2 км</span>
-                    </div>
-                    <div class="map-row-addr">Кутузовский пр., 2/1</div>
-                  </div>
-                  <div class="map-row">
-                    <div class="map-row-photo g-visa"></div>
-                    <div class="map-row-body">
-                      <strong>Uilliam’s</strong>
-                      <span>4,8 км</span>
-                    </div>
-                    <div class="map-row-addr">Малая Бронная, 20а</div>
                   </div>
                 </div>
               </div>
@@ -488,12 +415,8 @@
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="selected">
-      <h2>Выбранный пин</h2>
-      <p class="section-desc">Тап по метке → акцент на пине + карточка · dark / light</p>
-      <div class="phones">
+      <div class="phones" style="margin-top:28px">
         <div class="phone-wrap">
           <div class="phone-label"><strong>Выбран пин</strong> · dark</div>
           <div class="phone">
@@ -509,7 +432,6 @@
                   <div class="icon-btn map-locate"><svg class="ico"><use href="#i-locate"/></svg></div>
                 </div>
               </div>
-
               <div class="map-stage">
                 <div class="map-canvas" aria-hidden="true">
                   <div class="map-water"></div>
@@ -525,14 +447,12 @@
                   <button type="button" class="map-pin other" style="left:28%;top:55%"><i></i></button>
                   <button type="button" class="map-pin rest" style="left:44%;top:60%"><i></i></button>
                 </div>
-
                 <div class="map-chips">
                   <button type="button" class="map-chip">Все</button>
                   <button type="button" class="map-chip on">Отели</button>
                   <button type="button" class="map-chip">Рестораны</button>
                   <button type="button" class="map-chip">Другое</button>
                 </div>
-
                 <div class="map-card">
                   <div class="map-card-photo g-hotel"></div>
                   <div class="map-card-body">
@@ -544,7 +464,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="tab-bar">
                 <div class="tab"><svg class="ico"><use href="#i-diamond"/></svg></div>
                 <div class="tab active"><svg class="ico"><use href="#i-map"/></svg></div>
@@ -570,7 +489,6 @@
                   <div class="icon-btn map-locate"><svg class="ico"><use href="#i-locate"/></svg></div>
                 </div>
               </div>
-
               <div class="map-stage">
                 <div class="map-canvas map-canvas-light" aria-hidden="true">
                   <div class="map-water"></div>
@@ -586,14 +504,12 @@
                   <button type="button" class="map-pin other" style="left:28%;top:55%"><i></i></button>
                   <button type="button" class="map-pin rest" style="left:44%;top:60%"><i></i></button>
                 </div>
-
                 <div class="map-chips">
                   <button type="button" class="map-chip">Все</button>
                   <button type="button" class="map-chip on">Отели</button>
                   <button type="button" class="map-chip">Рестораны</button>
                   <button type="button" class="map-chip">Другое</button>
                 </div>
-
                 <div class="map-card">
                   <div class="map-card-photo g-hotel"></div>
                   <div class="map-card-body">
@@ -605,7 +521,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="tab-bar">
                 <div class="tab"><svg class="ico"><use href="#i-diamond"/></svg></div>
                 <div class="tab active"><svg class="ico"><use href="#i-map"/></svg></div>
@@ -617,6 +532,118 @@
         </div>
       </div>
     </section>
-  </div>
+  </main>
+
+  <script>
+    const categories = [
+      { name: 'Акции', className: 'cat-promo' },
+      { name: 'Авиабилеты', className: 'cat-air' },
+      { name: 'Рестораны', className: 'cat-rest' },
+      { name: 'Отели', className: 'cat-hotel' },
+      { name: 'Привилегии', className: 'cat-priv' },
+      { name: 'Визы', className: 'cat-visa' },
+      { name: 'ВНЖ', className: 'cat-residence' },
+      { name: 'Туры', className: 'cat-tour' },
+      { name: 'Медицина', className: 'cat-med' },
+      { name: 'Страхование', className: 'cat-insurance' },
+      { name: 'Сервисы', className: 'cat-service' },
+      { name: 'Авто', className: 'cat-auto' }
+    ];
+    const railStories = [
+      { name: 'Апгрейд в Four Seasons', cta: 'Смотреть', image: '../mockups/assets/stories/hotel-suite.jpg' },
+      { name: 'Столик в Nobu Dubai', cta: 'Смотреть', image: '../mockups/assets/stories/fine-dining.jpg' },
+      { name: 'Lounge Emirates A380', cta: 'Смотреть', image: '../mockups/assets/stories/airport-lounge.jpg' },
+      { name: 'Яхта · Côte d’Azur', cta: 'Смотреть', image: '../mockups/assets/stories/yacht-coast.jpg' },
+      { name: 'Трансфер на Maybach', cta: 'Смотреть', image: '../mockups/assets/stories/chauffeur.jpg' },
+      { name: 'Вечер в городе', cta: 'Смотреть', image: '../mockups/assets/stories/city-night.jpg' }
+    ];
+
+    const svg = (id) => `<svg class="ico"><use href="#${id}"/></svg>`;
+    const icoMask = (name) => `<span class="ico-mask ico-mask-${name}" aria-hidden="true"></span>`;
+
+    function header() {
+      return `<div class="status-bar"><span>13:12</span><span class="icons">Wi-Fi 74</span></div>
+        <div class="top-bar">
+          <div class="avatar-sm">${svg('i-avatar')}</div>
+          <div class="icon-row">
+            <div class="icon-btn">${icoMask('search')}</div>
+            <div class="icon-btn">${icoMask('folder')}</div>
+            <div class="icon-btn">${icoMask('phone')}</div>
+          </div>
+        </div>`;
+    }
+    function tabs() {
+      return `<div class="tab-bar">
+        <div class="tab active">${svg('i-diamond')}</div>
+        <div class="tab">${svg('i-map')}</div>
+        <div class="tab">${svg('i-chat')}</div>
+        <div class="tab">${svg('i-profile')}</div>
+      </div>`;
+    }
+    function banner(c) {
+      return `<div class="category-banner ${c.className}"><span class="category-name">${c.name}</span><span class="category-arrow">›</span></div>`;
+    }
+    function storiesRail() {
+      return `<div class="stories-rail-row rail-default rail-fx rail-fx-shrink-dim" data-rail-fx="shrink-dim">
+        ${railStories.map((s) => `<div class="story-rail-card story-rail-photo" style="background-image:url('${s.image}')">
+          <strong>${s.name}</strong><em>${s.cta}</em>
+        </div>`).join('')}
+      </div>`;
+    }
+    function phone(theme) {
+      const light = theme === 'light';
+      return `<div class="phone-wrap theme-phone-wrap">
+        <div class="phone-label"><strong>${light ? 'Светлая' : 'Тёмная'}</strong></div>
+        <div class="phone variant-phone ${light ? 'phone-light' : 'phone-dark'} rail-phone" data-rail-demo="manual" data-rail-fx="shrink-dim">
+          <div class="phone-screen">
+            ${header()}
+            <div class="scroll category-scroll">
+              ${storiesRail()}
+              <div class="offers-sep offers-sep-line"><span>Сервисы</span></div>
+              <div class="category-layout layout-hero-list">${categories.map(banner).join('')}</div>
+            </div>
+            ${tabs()}
+          </div>
+        </div>
+      </div>`;
+    }
+
+    function applyRailFx(row, focus) {
+      [...row.querySelectorAll('.story-rail-card')].forEach((card, i) => {
+        const dist = Math.abs(i - focus);
+        const t = Math.min(1, dist / 1.65);
+        const curve = t * t;
+        card.style.transform = `scale(${Math.max(0.58, 1 - curve * 0.45)})`;
+        card.style.opacity = String(Math.max(0.55, 1 - curve * 0.25));
+        card.style.filter = `brightness(${Math.max(0.35, 1 - curve * 0.7)})`;
+        card.style.zIndex = String(Math.round((1 - Math.min(1, dist)) * 20));
+      });
+    }
+    function updateFromScroll(row) {
+      const cards = [...row.querySelectorAll('.story-rail-card')];
+      const rowRect = row.getBoundingClientRect();
+      const centerX = rowRect.left + rowRect.width / 2;
+      let best = 0, bestDist = Infinity;
+      cards.forEach((card, i) => {
+        const r = card.getBoundingClientRect();
+        const d = Math.abs(r.left + r.width / 2 - centerX);
+        if (d < bestDist) { bestDist = d; best = i; }
+      });
+      applyRailFx(row, best);
+    }
+
+    document.getElementById('phones').innerHTML = `<div class="theme-pair">${phone('dark')}${phone('light')}</div>`;
+    document.querySelectorAll('.rail-phone .stories-rail-row').forEach((row) => {
+      updateFromScroll(row);
+      row.addEventListener('scroll', () => updateFromScroll(row), { passive: true });
+      row.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          row.scrollLeft += e.deltaY;
+          e.preventDefault();
+          updateFromScroll(row);
+        }
+      }, { passive: false });
+    });
+  </script>
 </body>
 </html>

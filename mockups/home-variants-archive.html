@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ТЛС Путешествия — TO BE MAIN</title>
+  <title>ТЛС Путешествия — архив вариантов главной</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,9 +11,8 @@
     <symbol id="i-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
       <path d="M12 3.5 20.5 10 12 20.5 3.5 10Z"/><path d="M3.5 10h17M8 3.8 12 10l4-6.2"/>
     </symbol>
-    <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4.5 6.2 9.2 4.5 14.8 6.2 19.5 4.5v13.3l-4.7 1.7-5.6-1.7-4.7 1.7Z"/>
-      <path d="M9.2 4.5v13.3M14.8 6.2v13.3"/>
+    <symbol id="i-suitcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8M9 12v5m3-5v5m3-5v5"/>
     </symbol>
     <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
       <path d="M4.5 4.5h10a2 2 0 0 1 2 2V13a2 2 0 0 1-2 2H8l-3.5 2.5Z"/>
@@ -46,19 +45,16 @@
     <header class="page-header">
       <nav class="site-nav" aria-label="Разделы макетов">
         <a href="index.html">AS IS</a>
-        <a href="home-variants.html" class="on">TO BE MAIN</a>
-        <a href="home-variants-archive.html">Архив MAIN</a>
+        <a href="home-variants.html">TO BE MAIN</a>
+        <a href="home-variants-archive.html" class="on">Архив MAIN</a>
         <a href="map-nearby.html">TO BE MAP</a>
-        <a href="../BT/Main/index.html">BT Main</a>
-        <a href="../BT/MAP/index.html">BT MAP</a>
-        <a href="../BT/LOGO/preview.html">BT LOGO</a>
       </nav>
-      <h1>ТЛС Путешествия TO BE MAIN</h1>
-      <p>Выбранный вариант · V46 (shrink-dim) · постановка: <a href="../BT/Main/index.html">BT/Main</a></p>
+      <h1>ТЛС Путешествия · Архив MAIN</h1>
+      <p>Архив раскладок V1–V14, V16–V22 · выбранный вариант остаётся на <a href="home-variants.html">TO BE MAIN</a> (V15).</p>
     </header>
 
     <div id="variant-list"></div>
-    <p class="footer"><a href="../BT/Main/index.html">BT/Main постановка</a> · <a href="home-variants-archive.html">Архив</a></p>
+    <p class="footer"><a href="home-variants.html">← TO BE MAIN (V15)</a> · mockups/home-variants-archive.html</p>
   </main>
 
   <script>
@@ -92,26 +88,6 @@
       { name: 'Gucci Osteria', short: 'Gucci', className: 'cat-rest' }
     ];
 
-    /* Новости travel / concierge для карусели сторис (V15+) */
-    const railStories = [
-      { name: 'Апгрейд в Four Seasons', cta: 'Смотреть', image: 'assets/stories/hotel-suite.jpg' },
-      { name: 'Столик в Nobu Dubai', cta: 'Смотреть', image: 'assets/stories/fine-dining.jpg' },
-      { name: 'Lounge Emirates A380', cta: 'Смотреть', image: 'assets/stories/airport-lounge.jpg' },
-      { name: 'Яхта · Côte d’Azur', cta: 'Смотреть', image: 'assets/stories/yacht-coast.jpg' },
-      { name: 'Трансфер на Maybach', cta: 'Смотреть', image: 'assets/stories/chauffeur.jpg' },
-      { name: 'Вечер в городе', cta: 'Смотреть', image: 'assets/stories/city-night.jpg' }
-    ];
-
-    const productCategories = [
-      { name: 'Акции', className: 'cat-promo' },
-      { name: 'Привилегии в отелях', className: 'cat-hotel' },
-      { name: 'Привилегии в ресторанах', className: 'cat-rest' },
-      { name: 'Другие привилегии', className: 'cat-priv' },
-      { name: 'Туры', className: 'cat-tour' },
-      { name: 'Услуги', className: 'cat-service' },
-      { name: 'Авиапривилегии', className: 'cat-air' }
-    ];
-
     const allVariants = [
       /* —— Offers + «Сервисы» —— */
       { id: 1, group: 'offers', name: 'Offers · stack', note: 'UIScrollView: заголовок «Специальные предложения» → горизонтальный UICollectionView (wide cards, peek, scale/fade краёв) → разделитель «Сервисы» → вертикальный stack фото-баннеров категорий', layout: 'offers-wglobe-stack', wglobe: 'offer-peek', plaques: 'stack', sep: 'line', offersTune: 'v121' },
@@ -133,34 +109,6 @@
       /* —— Stories rails —— */
       { id: 14, group: 'stories', name: 'Elite + сетка', note: 'Горизонтальные story-кружки (отели/рестораны) → сетка 2 кол. категорий', layout: 'stories-elite-grid', stories: 'elite' },
       { id: 15, group: 'stories', name: 'Rail fullscreen', note: 'Горизонтальный UICollectionView высоких portrait-карточек (почти fullscreen по высоте), snap по центру', layout: 'stories-rail', rail: 'default', stories: 'elite-rail' },
-      { id: 23, group: 'stories', name: 'Rail · curated cats', note: 'Как V15: rail fullscreen → «Сервисы» → список категорий продукта: Акции, привилегии (отели/рестораны/другие), Туры, Услуги, Авиапривилегии', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product' },
-      { id: 24, group: 'rail-fx', name: 'Rail FX · scale', note: 'V23 + scroll: центр крупнее, края сжимаются (focus scale)', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'scale' },
-      { id: 25, group: 'rail-fx', name: 'Rail FX · fade', note: 'V23 + scroll: края гаснут по opacity/brightness', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'fade' },
-      { id: 26, group: 'rail-fx', name: 'Rail FX · coverflow', note: 'V23 + scroll: 3D coverflow (rotateY + perspective)', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'coverflow' },
-      { id: 27, group: 'rail-fx', name: 'Rail FX · lift', note: 'V23 + scroll: края опускаются вниз, центр приподнят', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'lift' },
-      { id: 28, group: 'rail-fx', name: 'Rail FX · blur', note: 'V23 + scroll: края в blur + лёгкий scale', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'blur' },
-      { id: 29, group: 'rail-fx', name: 'Rail FX · stack', note: 'V23 + scroll: depth-stack — края уходят назад (scale + translateZ)', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'stack' },
-      { id: 30, group: 'rail-fx', name: 'Rail FX · wheel', note: 'V23 + scroll: cylinder/wheel — rotateX по дуге', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'wheel' },
-      { id: 31, group: 'rail-fx', name: 'Rail FX · stretch', note: 'V23 + scroll: края сплющиваются по высоте (meridian)', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'stretch' },
-      { id: 32, group: 'rail-fx', name: 'Rail FX · glow', note: 'V23 + scroll: центр ярче + soft glow, края затемнены', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'glow' },
-      { id: 33, group: 'rail-fx', name: 'Rail FX · peek', note: 'V23 + scroll: сильный peek — соседние карточки сильно уменьшены', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'peek' },
-      { id: 34, group: 'rail-fx', name: 'Rail FX · shrink+dim', note: 'Уменьшение + затемнение карточек по краям (scale + brightness)', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'shrink-dim' },
-      { id: 35, group: 'rail-fx', name: 'Rail FX · shrink+dim hard', note: 'Сильнее: заметный scale и тёмные края', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'shrink-dim-hard' },
-      { id: 36, group: 'rail-fx', name: 'Rail FX · edge dim', note: 'Только затемнение краёв (без сильного уменьшения)', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'edge-dim' },
-      { id: 37, group: 'rail-fx', name: 'Rail FX · edge vignette', note: 'Виньетка по краям viewport rail + лёгкое dim карточек', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'edge-vignette' },
-      { id: 38, group: 'rail-fx', name: 'Rail FX · shrink + vignette', note: 'Уменьшение/затемнение карточек + тёмные градиенты по краям ленты', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'shrink-vignette' },
-      { id: 39, group: 'rail-fx', name: 'Rail FX · vignette hard', note: 'Глубокая виньетка краёв + dim соседних карточек', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', cats: 'product', railFx: 'edge-vignette-hard' },
-      /* —— V15-based: swipe FX lab (full category list as V15) —— */
-      { id: 40, group: 'v15-swipe', name: 'Stories FX', note: 'Focus scale — центр крупнее, края уменьшаются', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', railFx: 'scale', railDemo: 'manual' },
-      { id: 41, group: 'v15-swipe', name: 'Stories FX', note: 'Fade — края гаснут по opacity и brightness', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', railFx: 'fade', railDemo: 'manual' },
-      { id: 42, group: 'v15-swipe', name: 'Stories FX', note: 'Coverflow — 3D поворот карточек при скролле', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', railFx: 'coverflow', railDemo: 'manual' },
-      { id: 43, group: 'v15-swipe', name: 'Stories FX', note: 'Globe — сферическое сжатие + затемнение краёв', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', railFx: 'globe', railDemo: 'manual' },
-      { id: 44, group: 'v15-swipe', name: 'Stories FX', note: 'Globe dim — сильнее затемнение краёв, мягкий scale', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', railFx: 'globe-dim', railDemo: 'manual' },
-      { id: 45, group: 'v15-swipe', name: 'Stories FX', note: 'Meridian — сжатие по высоте как меридиан глобуса', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', railFx: 'stretch', railDemo: 'manual' },
-      { id: 46, group: 'v15-swipe', name: 'Stories FX', note: 'Shrink + dim — уменьшение и затемнение соседних карточек', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', railFx: 'shrink-dim', railDemo: 'manual' },
-      { id: 47, group: 'v15-swipe', name: 'Stories FX', note: 'Edge dim — только затемнение краёв без сильного scale', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', railFx: 'edge-dim', railDemo: 'manual' },
-      { id: 48, group: 'v15-swipe', name: 'Stories FX', note: 'Peek — сильное уменьшение соседних карточек', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', railFx: 'peek', railDemo: 'manual' },
-      { id: 49, group: 'v15-swipe', name: 'Stories FX', note: 'Lift — края опускаются вниз, центр приподнят', layout: 'stories-rail', rail: 'default', stories: 'elite-rail', railFx: 'lift', railDemo: 'manual' },
       { id: 16, group: 'stories', name: 'Rail compact', note: 'Как V15, но компактные карточки меньшей высоты/ширины', layout: 'stories-rail', rail: 'compact', stories: 'elite-rail' },
 
       /* —— Прочее —— */
@@ -175,7 +123,7 @@
       /* —— V22: hero + сетка (бывш. V27), прежняя золотая обводка —— */
       { id: 22, group: 'hero', name: 'Hero + сетка', note: 'Одна wide-accent визитка → сетка 2 кол. ниже; обводка #c9a227', layout: 'card-hero-grid' }
     ];
-    const variants = allVariants.filter((v) => v.id === 46);
+    const variants = allVariants.filter((v) => v.id !== 15);
 
     const svg = (id, cls = 'ico') => `<svg class="${cls}"><use href="#${id}"/></svg>`;
     const icoMask = (name) => `<span class="ico-mask ico-mask-${name}" aria-hidden="true"></span>`;
@@ -197,7 +145,7 @@
       const cls = interactive ? 'tab-bar anim-tabs' : 'tab-bar';
       return `<div class="${cls}">
         <div class="tab active" data-tab="0">${svg('i-diamond')}</div>
-        <div class="tab" data-tab="1">${svg('i-map')}</div>
+        <div class="tab" data-tab="1">${svg('i-suitcase')}</div>
         <div class="tab" data-tab="2">${svg('i-chat')}</div>
         <div class="tab" data-tab="3">${svg('i-profile')}</div>
         ${interactive ? '<span class="anim-tab-indicator"></span>' : ''}
@@ -255,22 +203,15 @@
       </div>`;
     }
 
-    function storiesRail(size = 'default', count = 6, fx = '') {
-      const list = railStories.slice(0, Math.min(count, railStories.length));
-      const fxClass = fx ? ` rail-fx rail-fx-${fx}` : '';
-      const row = `<div class="stories-rail-row rail-${size}${fxClass}"${fx ? ` data-rail-fx="${fx}"` : ''}>
+    function storiesRail(size = 'default', count = 4) {
+      const list = eliteStories.slice(0, count);
+      return `<div class="stories-rail-row rail-${size}">
         ${list.map((s) => `
-          <div class="story-rail-card story-rail-photo" style="background-image:url('${s.image}')">
+          <div class="story-rail-card ${s.className}">
             <strong>${s.name}</strong>
-            <em>${s.cta}</em>
+            <em>Смотреть</em>
           </div>`).join('')}
       </div>`;
-      const needsEdgeMask = fx === 'edge-vignette' || fx === 'shrink-vignette' || fx === 'edge-vignette-hard';
-      if (needsEdgeMask) {
-        const tone = fx === 'edge-vignette-hard' ? ' rail-edge-hard' : fx === 'edge-vignette' ? ' rail-edge-soft' : ' rail-edge-mid';
-        return `<div class="stories-rail-wrap${tone}">${row}</div>`;
-      }
-      return row;
     }
 
     function storiesStrip(kind = 'classic', count = 5) {
@@ -420,12 +361,10 @@
 
       if (variant.layout === 'stories-rail') {
         const size = variant.rail || 'default';
-        const count = variant.railFx ? 7 : (size === 'peek' || size === 'panorama' ? 3 : size === 'slim' || size === 'mixed' ? 5 : 6);
-        const railCats = variant.cats === 'product' ? productCategories : categories;
-        const railList = railCats.map((c, i) => banner(c, i)).join('');
-        return `${storiesRail(size, count, variant.railFx || '')}
+        const count = size === 'peek' || size === 'panorama' ? 3 : size === 'slim' || size === 'mixed' ? 5 : 4;
+        return `${storiesRail(size, count)}
           <div class="offers-sep offers-sep-line"><span>Сервисы</span></div>
-          <div class="category-layout layout-hero-list">${railList}</div>`;
+          <div class="category-layout layout-hero-list">${all}</div>`;
       }
 
       if (variant.layout === 'stories-strip') {
@@ -2227,7 +2166,6 @@
       const hglobeClass = hglobeLayouts.includes(variant.layout) ? ' hglobe-phone' : '';
       const wglobeLayouts = ['stories-wglobe', 'wglobe-mosaic', 'wglobe-hcats', 'tabs-body', 'tabs-wglobe-stack', 'offers-wglobe-stack'];
       const wglobeClass = wglobeLayouts.includes(variant.layout) ? ' wglobe-phone' : '';
-      const railClass = (variant.layout === 'stories-rail' && variant.railFx) ? ' rail-phone' : '';
       const tabsClass = (variant.layout === 'tabs-body' || variant.layout === 'tabs-wglobe-stack') ? ' tabs-phone' : '';
       const offersTuneClass = variant.offersTune === 'v121' ? ' offers-v121' : '';
       const useInteractiveTabs = variant.layout === 'anim-tab-slide' || variant.layout === 'anim-pack';
@@ -2255,7 +2193,7 @@
 
       return `<div class="phone-wrap theme-phone-wrap">
         <div class="theme-label">${theme === 'dark' ? 'Тёмная' : 'Светлая'}</div>
-        <div class="phone variant-phone ${theme === 'light' ? 'phone-light' : 'phone-dark'}${animClass}${globeClass}${planeClass}${hglobeClass}${wglobeClass}${railClass}${tabsClass}${offersTuneClass}" data-variant="${variant.id}" data-anim="${variant.layout || ''}" data-body="${variant.body || ''}" data-rail-fx="${variant.railFx || ''}" data-rail-demo="${variant.railDemo || 'auto'}">
+        <div class="phone variant-phone ${theme === 'light' ? 'phone-light' : 'phone-dark'}${animClass}${globeClass}${planeClass}${hglobeClass}${wglobeClass}${tabsClass}${offersTuneClass}" data-variant="${variant.id}" data-anim="${variant.layout || ''}" data-body="${variant.body || ''}">
           <div class="phone-screen">
             ${header()}
             <div class="scroll category-scroll">
@@ -2275,39 +2213,29 @@
       cats: 'Каталог',
       mosaic: 'Мозаики',
       stories: 'Stories',
-      'rail-fx': 'Rail · анимации скролла',
-      'v15-swipe': 'V15 · пролистывание сторис',
       other: 'Прочее',
       cards: 'Визитки',
       hero: 'Hero + сетка'
     };
 
-    function renderVariantSection(variant) {
-      const isSwipe = variant.group === 'v15-swipe';
-      return `<section class="variant-pair" id="v${variant.id}">
+    let lastGroup = '';
+    document.getElementById('variant-list').innerHTML = variants.map((variant) => {
+      const divider = variant.group !== lastGroup
+        ? `<div class="variant-group-divider" id="group-${variant.group}"><span>${groupLabels[variant.group]}</span></div>`
+        : '';
+      lastGroup = variant.group;
+      return `${divider}
+      <section class="variant-pair" id="v${variant.id}">
         <div class="variant-heading">
           <span class="variant-number">V${variant.id}</span>
-          <div><h2>${isSwipe ? 'Stories · на базе V15' : variant.name}</h2>${isSwipe ? '' : `<p>${variant.note}</p>`}</div>
+          <div><h2>${variant.name}</h2><p>${variant.note}</p></div>
         </div>
         <div class="theme-pair">
           ${phone(variant, 'dark')}
           ${phone(variant, 'light')}
         </div>
-        ${isSwipe ? `<p class="story-fx-desc">${variant.note}</p>` : ''}
       </section>`;
-    }
-
-    let listHtml = '';
-    let lastGroup = '';
-    variants.forEach((variant) => {
-      const divider = variant.group !== lastGroup
-        ? `<div class="variant-group-divider" id="group-${variant.group}"><span>${groupLabels[variant.group] || variant.group}</span></div>`
-        : '';
-      lastGroup = variant.group;
-      listHtml += divider + renderVariantSection(variant);
-    });
-
-    document.getElementById('variant-list').innerHTML = listHtml;
+    }).join('');
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -2602,255 +2530,6 @@
       row.addEventListener('scroll', onScroll, { passive: true });
       row.closest('.category-scroll')?.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('resize', run);
-    });
-
-    /* V23 rail scroll FX (V24–V33) — focus-driven demo (не зависит от scroll-snap) */
-    function applyRailFx(row, focus) {
-      const cards = [...row.querySelectorAll('.story-rail-card')];
-      if (!cards.length) return;
-      /* В мокапах FX всегда видимы (review), даже при OS reduce-motion */
-      const reduce = false;
-      const mode = row.dataset.railFx || 'scale';
-
-      cards.forEach((card, i) => {
-        if (reduce) {
-          card.style.transform = '';
-          card.style.opacity = '';
-          card.style.filter = '';
-          card.style.zIndex = '';
-          return;
-        }
-        const dist = Math.abs(i - focus);
-        const t = Math.min(1, dist / 1.65);
-        const curve = t * t;
-        const dir = i < focus ? 1 : -1;
-
-        if (mode === 'fade') {
-          card.style.transform = `scale(${1 - curve * 0.18})`;
-          card.style.opacity = String(Math.max(0.28, 1 - curve * 0.72));
-          card.style.filter = `brightness(${1 - curve * 0.5})`;
-        } else if (mode === 'coverflow') {
-          card.style.transform = `perspective(900px) rotateY(${dir * curve * 55}deg) translateZ(${-curve * 40}px) scale(${1 - curve * 0.22})`;
-          card.style.opacity = String(Math.max(0.4, 1 - curve * 0.4));
-          card.style.filter = '';
-        } else if (mode === 'lift') {
-          card.style.transform = `translateY(${curve * 36}px) scale(${1 - curve * 0.2})`;
-          card.style.opacity = String(Math.max(0.45, 1 - curve * 0.35));
-          card.style.filter = '';
-        } else if (mode === 'blur') {
-          card.style.transform = `scale(${1 - curve * 0.2})`;
-          card.style.opacity = String(Math.max(0.4, 1 - curve * 0.35));
-          card.style.filter = `blur(${curve * 5.5}px) brightness(${1 - curve * 0.3})`;
-        } else if (mode === 'stack') {
-          card.style.transform = `perspective(900px) translateZ(${-curve * 120}px) scale(${1 - curve * 0.28})`;
-          card.style.opacity = String(Math.max(0.35, 1 - curve * 0.4));
-          card.style.filter = '';
-        } else if (mode === 'wheel') {
-          card.style.transform = `perspective(1000px) rotateX(${curve * 48}deg) translateY(${curve * 22}px) scale(${1 - curve * 0.14})`;
-          card.style.opacity = String(Math.max(0.4, 1 - curve * 0.4));
-          card.style.filter = '';
-        } else if (mode === 'stretch') {
-          card.style.transform = `scale(${1 - curve * 0.08}, ${Math.max(0.45, 1 - curve * 0.55)})`;
-          card.style.opacity = String(Math.max(0.45, 1 - curve * 0.3));
-          card.style.filter = '';
-        } else if (mode === 'glow') {
-          card.style.transform = `scale(${1.06 - curve * 0.28})`;
-          card.style.opacity = String(Math.max(0.45, 1 - curve * 0.3));
-          card.style.filter = curve < 0.2
-            ? 'brightness(1.18) drop-shadow(0 0 16px rgba(0,183,212,.55))'
-            : `brightness(${1 - curve * 0.5})`;
-        } else if (mode === 'peek') {
-          card.style.transform = `scale(${Math.max(0.48, 1 - curve * 0.55)})`;
-          card.style.opacity = String(Math.max(0.3, 1 - curve * 0.5));
-          card.style.filter = `brightness(${1 - curve * 0.35})`;
-        } else if (mode === 'globe') {
-          /* сферическое сжатие + затемнение, как wide-globe */
-          const sx = Math.max(0.72, 1 - curve * 0.32);
-          const sy = Math.max(0.78, 1 - curve * 0.24);
-          card.style.transform = `scale(${sx}, ${sy})`;
-          card.style.opacity = String(Math.max(0.42, 1 - curve * 0.5));
-          card.style.filter = `brightness(${Math.max(0.38, 1 - curve * 0.62)})`;
-        } else if (mode === 'globe-dim') {
-          const sx = Math.max(0.78, 1 - curve * 0.22);
-          card.style.transform = `scale(${sx})`;
-          card.style.opacity = String(Math.max(0.35, 1 - curve * 0.55));
-          card.style.filter = `brightness(${Math.max(0.22, 1 - curve * 0.82)}) contrast(${1 + curve * 0.08})`;
-        } else if (mode === 'shrink-dim') {
-          card.style.transform = `scale(${Math.max(0.58, 1 - curve * 0.45)})`;
-          card.style.opacity = String(Math.max(0.55, 1 - curve * 0.25));
-          card.style.filter = `brightness(${Math.max(0.35, 1 - curve * 0.7)})`;
-        } else if (mode === 'shrink-dim-hard') {
-          card.style.transform = `scale(${Math.max(0.48, 1 - curve * 0.58)})`;
-          card.style.opacity = String(Math.max(0.4, 1 - curve * 0.4));
-          card.style.filter = `brightness(${Math.max(0.22, 1 - curve * 0.85)}) contrast(${1 - curve * 0.15})`;
-        } else if (mode === 'edge-dim') {
-          card.style.transform = `scale(${1 - curve * 0.08})`;
-          card.style.opacity = '1';
-          card.style.filter = `brightness(${Math.max(0.28, 1 - curve * 0.78)})`;
-        } else if (mode === 'edge-vignette') {
-          card.style.transform = `scale(${1 - curve * 0.12})`;
-          card.style.opacity = String(Math.max(0.65, 1 - curve * 0.28));
-          card.style.filter = `brightness(${Math.max(0.45, 1 - curve * 0.5)})`;
-        } else if (mode === 'shrink-vignette') {
-          card.style.transform = `scale(${Math.max(0.55, 1 - curve * 0.48)})`;
-          card.style.opacity = String(Math.max(0.5, 1 - curve * 0.3));
-          card.style.filter = `brightness(${Math.max(0.3, 1 - curve * 0.72)})`;
-        } else if (mode === 'edge-vignette-hard') {
-          card.style.transform = `scale(${1 - curve * 0.16})`;
-          card.style.opacity = String(Math.max(0.5, 1 - curve * 0.35));
-          card.style.filter = `brightness(${Math.max(0.2, 1 - curve * 0.88)})`;
-        } else {
-          card.style.transform = `scale(${Math.max(0.62, 1 - curve * 0.42)})`;
-          card.style.opacity = String(Math.max(0.45, 1 - curve * 0.35));
-          card.style.filter = '';
-        }
-        card.style.zIndex = String(Math.round((1 - Math.min(1, dist)) * 20));
-      });
-    }
-
-    function syncRailScrollToFocus(row, focus) {
-      const cards = row.querySelectorAll('.story-rail-card');
-      if (!cards.length) return;
-      const idx = Math.max(0, Math.min(cards.length - 1, Math.round(focus)));
-      const card = cards[idx];
-      if (!card) return;
-      const target = card.offsetLeft - (row.clientWidth - card.offsetWidth) / 2;
-      row.scrollLeft = Math.max(0, target);
-    }
-
-    function updateRailFxFromScroll(row) {
-      const cards = [...row.querySelectorAll('.story-rail-card')];
-      if (!cards.length) return;
-      const rowRect = row.getBoundingClientRect();
-      const centerX = rowRect.left + rowRect.width / 2;
-      let best = 0;
-      let bestDist = Infinity;
-      cards.forEach((card, i) => {
-        const rect = card.getBoundingClientRect();
-        const dist = Math.abs(rect.left + rect.width / 2 - centerX);
-        if (dist < bestDist) {
-          bestDist = dist;
-          best = i;
-        }
-      });
-      /* fractional focus between nearest cards for smoother manual scroll */
-      let focus = best;
-      if (best > 0 && best < cards.length - 1) {
-        const left = cards[best - 1].getBoundingClientRect();
-        const mid = cards[best].getBoundingClientRect();
-        const right = cards[best + 1].getBoundingClientRect();
-        const lc = left.left + left.width / 2;
-        const mc = mid.left + mid.width / 2;
-        const rc = right.left + right.width / 2;
-        if (centerX < mc) {
-          const span = mc - lc || 1;
-          focus = best - Math.max(0, Math.min(1, (mc - centerX) / span));
-        } else {
-          const span = rc - mc || 1;
-          focus = best + Math.max(0, Math.min(1, (centerX - mc) / span));
-        }
-      }
-      applyRailFx(row, focus);
-    }
-
-    document.querySelectorAll('.rail-phone .stories-rail-row.rail-fx').forEach((row) => {
-      const phoneEl = row.closest('.rail-phone');
-      const cards = row.querySelectorAll('.story-rail-card');
-      if (!cards.length) return;
-      const manual = phoneEl?.dataset.railDemo === 'manual';
-
-      let focus = 0;
-      let dir = 1;
-      let raf = 0;
-      let demo = !manual;
-      let last = 0;
-
-      const paint = (f) => {
-        applyRailFx(row, f);
-        if (!manual) syncRailScrollToFocus(row, f);
-      };
-
-      if (manual) {
-        /* стартовый кадр + FX от реальной позиции скролла */
-        row.scrollLeft = 0;
-        updateRailFxFromScroll(row);
-      } else {
-        paint(0);
-      }
-
-      const tick = (now) => {
-        if (!demo) {
-          raf = 0;
-          return;
-        }
-        if (!last) last = now;
-        const dt = Math.min(32, now - last);
-        last = now;
-        focus += dir * dt * 0.00115;
-        if (focus >= cards.length - 1) {
-          focus = cards.length - 1;
-          dir = -1;
-        } else if (focus <= 0) {
-          focus = 0;
-          dir = 1;
-        }
-        paint(focus);
-        raf = requestAnimationFrame(tick);
-      };
-
-      const startDemo = () => {
-        if (manual || raf) return;
-        demo = true;
-        phoneEl?.classList.add('is-rail-demo');
-        last = 0;
-        raf = requestAnimationFrame(tick);
-      };
-
-      const stopDemo = () => {
-        demo = false;
-        phoneEl?.classList.remove('is-rail-demo');
-        if (raf) cancelAnimationFrame(raf);
-        raf = 0;
-      };
-
-      if (!manual) {
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) startDemo();
-            else stopDemo();
-          });
-        }, { threshold: 0.25 });
-        io.observe(phoneEl || row);
-
-        requestAnimationFrame(() => {
-          const rect = (phoneEl || row).getBoundingClientRect();
-          if (rect.top < window.innerHeight && rect.bottom > 0) startDemo();
-        });
-
-        row.addEventListener('pointerdown', () => {
-          stopDemo();
-        }, { passive: true });
-      }
-
-      let ticking = false;
-      row.addEventListener('scroll', () => {
-        if (demo && !manual) return;
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(() => {
-          updateRailFxFromScroll(row);
-          ticking = false;
-        });
-      }, { passive: true });
-
-      /* wheel внутри телефона — горизонтальный скролл сторис */
-      row.addEventListener('wheel', (e) => {
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-          row.scrollLeft += e.deltaY;
-          e.preventDefault();
-          updateRailFxFromScroll(row);
-        }
-      }, { passive: false });
     });
 
     /* Category tabs on top */

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BT · Main · постановка V46</title>
+  <link rel="stylesheet" href="../../mockups/styles.css" />
+  <link rel="stylesheet" href="annotate.css" />
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="i-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 10 12 20.5 3.5 10Z"/><path d="M3.5 10h17M8 3.8 12 10l4-6.2"/>
+    </symbol>
+    <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.5 6.2 9.2 4.5 14.8 6.2 19.5 4.5v13.3l-4.7 1.7-5.6-1.7-4.7 1.7Z"/>
+      <path d="M9.2 4.5v13.3M14.8 6.2v13.3"/>
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+      <path d="M4.5 4.5h10a2 2 0 0 1 2 2V13a2 2 0 0 1-2 2H8l-3.5 2.5Z"/>
+      <path d="M9 18.5h7.5l3 2.5V10.5a2 2 0 0 0-2-2h-1"/>
+    </symbol>
+    <symbol id="i-profile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <circle cx="12" cy="8" r="3.2"/><path d="M5.5 19.5c0-3.7 2.7-6 6.5-6s6.5 2.3 6.5 6"/>
+    </symbol>
+    <symbol id="i-avatar" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="24" fill="#E4EAF3"/><circle cx="24" cy="18" r="8" fill="#8A929C"/>
+      <path d="M8 42c2-10 8-14 16-14s14 4 16 14" fill="#8A929C"/>
+    </symbol>
+  </svg>
+
+  <main class="page bt-page">
+    <header class="page-header">
+            <nav class="site-nav" aria-label="BT">
+        <a href="../AS IS/index.html">AS IS</a>
+        <span class="site-nav-sep" aria-hidden="true"></span>
+        <a href="../index.html">TO BE</a>
+        <a href="../LOGO/preview.html">Значок</a>
+        <a href="../Main/index.html" class="on">Главная</a>
+        <a href="../MAP/index.html">Карта</a>
+      </nav>
+      <h1>BT · Main · V46</h1>
+      <p>Постановка экрана «Бриллиант» · Stories rail + shrink-dim · см. <a href="SPEC.md">SPEC.md</a></p>
+    </header>
+
+    <div class="bt-stage" id="phones"></div>
+
+    <section class="bt-legend">
+      <h2>Зоны экрана</h2>
+      <ol class="bt-legend-list">
+        <li><span class="tag a">A</span> <strong>Top bar</strong> — avatar ~36pt, search / folder / phone</li>
+        <li><span class="tag b">B</span> <strong>Новости</strong> — горизонтальный rail контента, card ~210×280, r22, gap 10</li>
+        <li><span class="tag c">C</span> <strong>Scroll FX shrink-dim</strong> — scale + brightness по удалению от центра</li>
+        <li><span class="tag d">D</span> <strong>Separator</strong> — line + label «Сервисы»</li>
+        <li><span class="tag e">E</span> <strong>Categories</strong> — vertical stack, row h ~62</li>
+        <li><span class="tag f">F</span> <strong>Tab bar</strong> — 4 tabs, active = diamond</li>
+      </ol>
+    </section>
+
+    <p class="footer"><a href="SPEC.md">SPEC.md</a> · source: mockups/home-variants.html V46</p>
+  </main>
+
+  <script>
+    const categories = [
+      { name: 'Акции', className: 'cat-promo' },
+      { name: 'Авиабилеты', className: 'cat-air' },
+      { name: 'Рестораны', className: 'cat-rest' },
+      { name: 'Отели', className: 'cat-hotel' },
+      { name: 'Привилегии', className: 'cat-priv' },
+      { name: 'Визы', className: 'cat-visa' },
+      { name: 'ВНЖ', className: 'cat-residence' },
+      { name: 'Туры', className: 'cat-tour' },
+      { name: 'Медицина', className: 'cat-med' },
+      { name: 'Страхование', className: 'cat-insurance' },
+      { name: 'Сервисы', className: 'cat-service' },
+      { name: 'Авто', className: 'cat-auto' }
+    ];
+    const railStories = [
+      { name: 'Апгрейд в Four Seasons', cta: 'Смотреть', image: '../../mockups/assets/stories/hotel-suite.jpg' },
+      { name: 'Столик в Nobu Dubai', cta: 'Смотреть', image: '../../mockups/assets/stories/fine-dining.jpg' },
+      { name: 'Lounge Emirates A380', cta: 'Смотреть', image: '../../mockups/assets/stories/airport-lounge.jpg' },
+      { name: 'Яхта · Côte d’Azur', cta: 'Смотреть', image: '../../mockups/assets/stories/yacht-coast.jpg' },
+      { name: 'Трансфер на Maybach', cta: 'Смотреть', image: '../../mockups/assets/stories/chauffeur.jpg' },
+      { name: 'Вечер в городе', cta: 'Смотреть', image: '../../mockups/assets/stories/city-night.jpg' }
+    ];
+
+    const svg = (id) => `<svg class="ico"><use href="#${id}"/></svg>`;
+    const icoMask = (name) => `<span class="ico-mask ico-mask-${name}" aria-hidden="true"></span>`;
+
+    function header(annotate) {
+      return `<div class="status-bar"><span>13:12</span><span class="icons">Wi-Fi 74</span></div>
+        <div class="top-bar${annotate ? ' zone-a' : ''}">
+          <div class="avatar-sm">${svg('i-avatar')}</div>
+          <div class="icon-row">
+            <div class="icon-btn">${icoMask('search')}</div>
+            <div class="icon-btn">${icoMask('folder')}</div>
+            <div class="icon-btn">${icoMask('phone')}</div>
+          </div>
+        </div>`;
+    }
+    function tabs(annotate) {
+      return `<div class="tab-bar${annotate ? ' zone-f' : ''}">
+        <div class="tab active">${svg('i-diamond')}</div>
+        <div class="tab">${svg('i-map')}</div>
+        <div class="tab">${svg('i-chat')}</div>
+        <div class="tab">${svg('i-profile')}</div>
+      </div>`;
+    }
+    function banner(c) {
+      return `<div class="category-banner ${c.className}"><span class="category-name">${c.name}</span><span class="category-arrow">›</span></div>`;
+    }
+    function storiesRail(annotate) {
+      return `<div class="stories-rail-row rail-default rail-fx rail-fx-shrink-dim${annotate ? ' zone-b' : ''}" data-rail-fx="shrink-dim">
+        ${railStories.map((s) => `<div class="story-rail-card story-rail-photo" style="background-image:url('${s.image}')">
+          <strong>${s.name}</strong><em>${s.cta}</em>
+        </div>`).join('')}
+      </div>`;
+    }
+
+    function phone(theme) {
+      const annotate = theme === 'light';
+      const callouts = annotate ? `
+          <div class="callout callout-a"><span class="tag a">A</span> Top bar</div>
+          <div class="callout callout-b"><span class="tag b">B</span> Новости · 210×280</div>
+          <div class="callout callout-c"><span class="tag c">C</span> Scroll FX shrink-dim</div>
+          <div class="callout callout-d"><span class="tag d">D</span> Separator</div>
+          <div class="callout callout-e"><span class="tag e">E</span> Categories · h62</div>
+          <div class="callout callout-f"><span class="tag f">F</span> Tab bar</div>` : '';
+      return `<div class="phone-wrap theme-phone-wrap">
+        <div class="phone-label"><strong>${annotate ? 'Светлая' : 'Тёмная'}</strong></div>
+        ${annotate ? `<div class="annotate-frame">` : ''}
+          <div class="phone variant-phone ${annotate ? 'phone-light' : 'phone-dark'} rail-phone" data-rail-demo="manual" data-rail-fx="shrink-dim">
+            <div class="phone-screen">
+              ${header(annotate)}
+              <div class="scroll category-scroll">
+                ${storiesRail(annotate)}
+                <div class="offers-sep offers-sep-line${annotate ? ' zone-d' : ''}"><span>Сервисы</span></div>
+                <div class="category-layout layout-hero-list${annotate ? ' zone-e' : ''}">${categories.map(banner).join('')}</div>
+              </div>
+              ${tabs(annotate)}
+            </div>
+          </div>
+          ${callouts}
+        ${annotate ? `</div>` : ''}
+      </div>`;
+    }
+
+    function applyRailFx(row, focus) {
+      [...row.querySelectorAll('.story-rail-card')].forEach((card, i) => {
+        const dist = Math.abs(i - focus);
+        const t = Math.min(1, dist / 1.65);
+        const curve = t * t;
+        card.style.transform = `scale(${Math.max(0.58, 1 - curve * 0.45)})`;
+        card.style.opacity = String(Math.max(0.55, 1 - curve * 0.25));
+        card.style.filter = `brightness(${Math.max(0.35, 1 - curve * 0.7)})`;
+        card.style.zIndex = String(Math.round((1 - Math.min(1, dist)) * 20));
+      });
+    }
+    function updateFromScroll(row) {
+      const cards = [...row.querySelectorAll('.story-rail-card')];
+      const rowRect = row.getBoundingClientRect();
+      const centerX = rowRect.left + rowRect.width / 2;
+      let best = 0, bestDist = Infinity;
+      cards.forEach((card, i) => {
+        const r = card.getBoundingClientRect();
+        const d = Math.abs(r.left + r.width / 2 - centerX);
+        if (d < bestDist) { bestDist = d; best = i; }
+      });
+      applyRailFx(row, best);
+    }
+
+    function placeAnnotateCallouts() {
+      document.querySelectorAll('.annotate-frame').forEach((frame) => {
+        const fr = frame.getBoundingClientRect();
+        const pin = (calloutSel, zoneSel, anchor = 0.5) => {
+          const zone = frame.querySelector(zoneSel);
+          const callout = frame.querySelector(calloutSel);
+          if (!zone || !callout) return;
+          const zr = zone.getBoundingClientRect();
+          const clipEl = zone.closest('.scroll') || frame.querySelector('.phone');
+          const clip = clipEl.getBoundingClientRect();
+          const top = Math.max(zr.top, clip.top);
+          const bottom = Math.min(zr.bottom, clip.bottom);
+          const h = Math.max(1, bottom - top);
+          const y = top - fr.top + h * anchor - callout.offsetHeight / 2;
+          callout.style.top = `${Math.round(Math.max(0, y))}px`;
+          callout.style.bottom = 'auto';
+        };
+        pin('.callout-a', '.zone-a');
+        pin('.callout-b', '.zone-b', 0.22);
+        /* C = FX на том же rail: якорь ниже, к peek/dim карточкам */
+        pin('.callout-c', '.zone-b', 0.78);
+        pin('.callout-d', '.zone-d');
+        pin('.callout-e', '.zone-e', 0.42);
+        pin('.callout-f', '.zone-f');
+      });
+    }
+
+    document.getElementById('phones').innerHTML = `<div class="theme-pair bt-pair">${phone('dark')}${phone('light')}</div>`;
+    document.querySelectorAll('.rail-phone .stories-rail-row').forEach((row) => {
+      updateFromScroll(row);
+      row.addEventListener('scroll', () => updateFromScroll(row), { passive: true });
+      row.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          row.scrollLeft += e.deltaY;
+          e.preventDefault();
+          updateFromScroll(row);
+        }
+      }, { passive: false });
+    });
+    placeAnnotateCallouts();
+    window.addEventListener('resize', placeAnnotateCallouts);
+    requestAnimationFrame(placeAnnotateCallouts);
+  </script>
+</body>
+</html>
