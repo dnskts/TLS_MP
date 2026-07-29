@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1290" height="2796" viewBox="0 0 1290 2796" fill="none">
+  <rect width="1290" height="2796" fill="#f7fcf9"/>
+  <g transform="translate(645 1280)">
+    <circle r="220" stroke="#1a5a6e" stroke-opacity="0.18" stroke-width="2.5" fill="none"/>
+    <circle r="168" stroke="#1a5a6e" stroke-opacity="0.32" stroke-width="2.5" fill="none"/>
+    <circle r="118" stroke="#c9a86a" stroke-opacity="0.55" stroke-width="2" fill="none"/>
+    <text text-anchor="middle" fill="#1a5a6e" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="0.18em" y="-18">&#1052;&#1054;&#1049;</text>
+    <text text-anchor="middle" fill="#1a5a6e" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700" letter-spacing="0.28em" y="72">TLS</text>
+  </g>
+</svg>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BT · Авторизация · фоны</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .auth-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 24px 16px;
+      margin-top: 28px;
+    }
+    .auth-card .phone {
+      width: 200px;
+      height: 434px;
+      border-radius: 26px;
+    }
+    .auth-card .phone-screen { background: #111; }
+    .auth-card .phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .auth-card .phone-label { max-width: 200px; }
+    .auth-note {
+      margin-top: 8px;
+      max-width: 720px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+  </style>
+</head>
+<body>
+  <main class="page bt-page">
+    <header class="page-header">
+      <nav class="site-nav" aria-label="BT">
+        <a href="../AS IS/index.html">AS IS</a>
+        <span class="site-nav-sep" aria-hidden="true"></span>
+        <a href="../index.html">TO BE</a>
+        <a href="../LOGO/preview.html">Значок</a>
+        <a href="index.html">Заставка</a>
+        <a href="auth.html" class="on">Авторизация</a>
+        <a href="../Main/index.html">Главная</a>
+        <a href="../MAP/index.html">Карта</a>
+      </nav>
+      <h1>Фоны авторизации · туризм</h1>
+      <p>30 full-bleed фото · только «МОЙ TLS» · без формы · <a href="SPEC.md">SPEC.md</a></p>
+      <p class="auth-note">Мастер: <strong>1290 × 2796</strong>. Реалистичные travel-кадры (берег, города, отели, авиация) + mint/teal overlay для читаемости wordmark.</p>
+    </header>
+
+    <div class="auth-grid" id="grid"></div>
+
+    <p class="footer"><a href="SPEC.md">SPEC.md</a> · <a href="assets/">assets/</a> · <a href="index.html">← Заставка</a></p>
+  </main>
+
+  <script type="module">
+    const res = await fetch('src/auth-variants.json');
+    const variants = await res.json();
+    document.getElementById('grid').innerHTML = variants.map((v) => `
+      <div class="phone-wrap auth-card">
+        <div class="phone-label"><strong>${v.id}</strong> · ${v.name}</div>
+        <div class="phone">
+          <div class="phone-screen">
+            <img src="assets/auth-bg-${v.id}-1290x2796.png" alt="МОЙ TLS · ${v.name}" width="1290" height="2796" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>
