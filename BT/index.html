@@ -41,6 +41,165 @@
       margin-top: 6px;
     }
     .theme-pair { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
+
+    /* Hub · Splash Spin 2D */
+    .hub-splash .phone-screen {
+      background: #f7fcf9;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hub-splash .logo-mark {
+      width: 200px;
+      height: 200px;
+      margin: auto;
+    }
+    .hub-splash .logo-mark svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
+    }
+    .hub-splash .ring-outer {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: hub-spin-outer 8s linear infinite;
+    }
+    .hub-splash .ring-inner {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: hub-spin-inner 10s linear infinite;
+    }
+    @keyframes hub-spin-outer {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes hub-spin-inner {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
+
+    /* Hub · Auth preview with form overlay */
+    .hub-auth-card .phone-screen {
+      position: relative;
+      background: #111;
+      overflow: hidden;
+    }
+    .hub-auth-card .phone-screen > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .hub-auth-card .auth-ui {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 48px 22px 24px;
+      box-sizing: border-box;
+      color: #fff;
+      font-family: "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    .hub-auth-card .auth-ui .back {
+      position: absolute;
+      top: 48px;
+      left: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(40, 40, 42, 0.45);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      line-height: 0;
+    }
+    .hub-auth-card .auth-ui .back svg { width: 14px; height: 14px; }
+    .hub-auth-card .auth-ui .brand-block {
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 28px;
+    }
+    .hub-auth-card .auth-ui .brand-title {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      color: #fff;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+    }
+    .hub-auth-card .auth-ui .brand-sub {
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.85);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    }
+    .hub-auth-card .auth-ui .phone-id {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    }
+    .hub-auth-card .auth-ui label {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    .hub-auth-card .auth-ui .input {
+      height: 44px;
+      margin-bottom: 14px;
+      background: rgba(255, 255, 255, 0.36);
+      border-radius: 12px;
+    }
+    .hub-auth-card .auth-ui .cta {
+      display: block;
+      width: 100%;
+      height: 48px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.32);
+      font-family: inherit;
+      cursor: default;
+    }
+    .hub-auth-card .auth-ui .face {
+      width: 40px;
+      height: 40px;
+      margin: 16px auto;
+      color: #fff;
+    }
+    .hub-auth-card .auth-ui .face svg { width: 100%; height: 100%; display: block; }
+    .hub-auth-card .auth-ui .secondary {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 8px;
+    }
+    .hub-auth-card .auth-ui .secondary .btn {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: none;
+      border-radius: 999px;
+      padding: 8px 16px;
+      width: fit-content;
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.95);
+      box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.18);
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body>
@@ -108,14 +267,37 @@
     </section>
 
     <section class="hub-section" id="splash">
-      <h2>Заставка</h2>
-      <a class="hub-more" href="Splash/index.html">Подробнее · Pulse Brand / Orbit</a>
+      <h2>Заставка при запуске приложения</h2>
+      <a class="hub-more" href="Splash/index.html">Подробнее · Spin 2D</a>
       <div class="phones">
-        <div class="phone-wrap">
-          <div class="phone-label"><strong>Mint light</strong> · 1290×2796</div>
-          <div class="phone" style="width:220px;height:476px;border-radius:28px">
-            <div class="phone-screen" style="background:#f7fcf9">
-              <img src="Splash/assets/splash-mint-light-1290x2796.png" alt="Заставка МОЙ TLS" style="width:100%;height:100%;object-fit:cover;display:block" />
+        <div class="phone-wrap hub-splash">
+          <div class="phone-label"><strong>Spin 2D</strong> · outer CW · inner CCW</div>
+          <div class="phone">
+            <div class="phone-screen anim-spin2d">
+              <div class="logo-mark" aria-hidden="true">
+                <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="hubOuterS" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#1a5a6e"/><stop offset="100%" stop-color="#c9a86a"/>
+                    </linearGradient>
+                    <linearGradient id="hubInnerTopS" gradientUnits="userSpaceOnUse" x1="154" y1="492" x2="870" y2="492">
+                      <stop offset="0%" stop-color="#c9a86a"/><stop offset="35%" stop-color="#7eb8a8"/>
+                      <stop offset="70%" stop-color="#2a8aa0"/><stop offset="100%" stop-color="#1a5a6e"/>
+                    </linearGradient>
+                    <linearGradient id="hubInnerBotS" gradientUnits="userSpaceOnUse" x1="870" y1="492" x2="154" y2="492">
+                      <stop offset="0%" stop-color="#c9a86a"/><stop offset="40%" stop-color="#a8b4b8"/>
+                      <stop offset="75%" stop-color="#4a7a88"/><stop offset="100%" stop-color="#1a5a6e"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="ring-outer" cx="512" cy="492" r="420" fill="none" stroke="url(#hubOuterS)" stroke-width="31"/>
+                  <g class="ring-inner">
+                    <path d="M870 492 A358 358 0 0 1 154 492" fill="none" stroke="url(#hubInnerBotS)" stroke-width="22" stroke-linecap="butt"/>
+                    <path d="M154 492 A358 358 0 0 1 870 492" fill="none" stroke="url(#hubInnerTopS)" stroke-width="44" stroke-linecap="butt"/>
+                  </g>
+                  <text x="512" y="465" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="170" fill="#0e2436" font-weight="700">&#1052;&#1054;&#1049;</text>
+                  <text x="512" y="655" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="170" fill="#1a5a6e" font-weight="700">TLS</text>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -123,26 +305,56 @@
     </section>
 
     <section class="hub-section" id="auth">
-      <h2>Авторизация · фоны</h2>
-      <a class="hub-more" href="Splash/auth.html">Подробнее · 30 вариантов</a>
-      <div class="hub-icons" style="align-items:flex-start;gap:12px;flex-wrap:wrap">
-        <img src="Splash/assets/auth-bg-01-1290x2796.png" alt="01" width="100" height="217" style="width:100px;height:217px;border-radius:16px;object-fit:cover" />
-        <img src="Splash/assets/auth-bg-03-1290x2796.png" alt="03" width="100" height="217" style="width:100px;height:217px;border-radius:16px;object-fit:cover" />
-        <img src="Splash/assets/auth-bg-12-1290x2796.png" alt="12" width="100" height="217" style="width:100px;height:217px;border-radius:16px;object-fit:cover" />
-        <img src="Splash/assets/auth-bg-15-1290x2796.png" alt="15" width="100" height="217" style="width:100px;height:217px;border-radius:16px;object-fit:cover" />
-        <img src="Splash/assets/auth-bg-18-1290x2796.png" alt="18" width="100" height="217" style="width:100px;height:217px;border-radius:16px;object-fit:cover" />
-        <img src="Splash/assets/auth-bg-30-1290x2796.png" alt="30" width="100" height="217" style="width:100px;height:217px;border-radius:16px;object-fit:cover" />
+      <h2>Страница авторизации</h2>
+      <a class="hub-more" href="Splash/auth.html">Подробнее · 22 варианта</a>
+      <div class="phones">
+        <div class="phone-wrap hub-auth-card">
+          <div class="phone-label"><strong>01</strong> · Private jet</div>
+          <div class="phone">
+            <div class="phone-screen">
+              <img src="Splash/assets/auth-bg-01-1290x2796.png" alt="Private jet" width="1290" height="2796" />
+              <div class="auth-ui">
+                <div class="back" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                </div>
+                <div class="brand-block">
+                  <p class="brand-title">МОЙ TLS</p>
+                  <p class="brand-sub">Travel &amp; Lifestyle Service</p>
+                </div>
+                <div class="phone-id">+7 964 712-15-97</div>
+                <label>Пароль</label>
+                <div class="input"></div>
+                <button class="cta" type="button">Войти</button>
+                <div class="face" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                    <path d="M8 3.8H6.2A2.2 2.2 0 0 0 4 6v1.8"/>
+                    <path d="M16 3.8h1.8A2.2 2.2 0 0 1 20 6v1.8"/>
+                    <path d="M8 20.2H6.2A2.2 2.2 0 0 1 4 18v-1.8"/>
+                    <path d="M16 20.2h1.8A2.2 2.2 0 0 0 20 18v-1.8"/>
+                    <path d="M9 10.2v1.2"/>
+                    <path d="M15 10.2v1.2"/>
+                    <path d="M9.2 15c.9.9 2.1 1.35 3.8 1.35 1.7 0 2.9-.45 3.8-1.35"/>
+                  </svg>
+                </div>
+                <div class="secondary">
+                  <div class="btn">Восстановить пароль</div>
+                  <div class="btn">Сменить пользователя</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="hub-section" id="main">
-      <h2>Главная страница</h2>
+      <h2>1 вкладка: Главная страница</h2>
       <a class="hub-more" href="Main/index.html">Подробнее</a>
       <div id="phones"></div>
     </section>
 
     <section class="hub-section" id="map">
-      <h2>Карта</h2>
+      <h2>2 вкладка: Карта</h2>
       <a class="hub-more" href="MAP/index.html">Подробнее</a>
       <div class="phones">
         <div class="phone-wrap">

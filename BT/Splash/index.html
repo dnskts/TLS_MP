@@ -23,179 +23,41 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      perspective: 900px;
     }
     .logo-stage {
       position: relative;
       width: 200px;
       height: 200px;
       margin: auto;
-      transform-style: preserve-3d;
     }
-    .logo-stage svg {
+    .anim-spin2d .logo-mark {
       width: 200px;
       height: 200px;
+      margin: auto;
+    }
+    .anim-spin2d .logo-mark svg {
+      width: 100%;
+      height: 100%;
       display: block;
       overflow: visible;
     }
-    .icon-tile {
-      width: 200px;
-      height: 200px;
-      border-radius: 22.5%;
-      background: #f7fcf9;
-      overflow: hidden;
-      box-shadow: 0 8px 28px rgba(26, 90, 110, 0.12);
-    }
-    .icon-tile svg { width: 100%; height: 100%; }
-
-    /* —— Pulse Brand (цвета итогового значка) —— */
-    .anim-pulse-brand .icon-tile {
-      animation: brand-pulse 2.4s ease-in-out infinite;
-    }
-    @keyframes brand-pulse {
-      0%, 100% {
-        transform: scale(1);
-        box-shadow:
-          0 8px 28px rgba(26, 90, 110, 0.12),
-          0 0 0 0 rgba(201, 168, 106, 0);
-      }
-      50% {
-        transform: scale(1.07);
-        box-shadow:
-          0 14px 36px rgba(26, 90, 110, 0.22),
-          0 0 28px 2px rgba(201, 168, 106, 0.35);
-      }
-    }
-    .anim-pulse-brand .ring-outer {
-      transform-origin: 512px 492px;
-      animation: brand-ring 2.4s ease-in-out infinite;
-    }
-    .anim-pulse-brand .ring-inner-top,
-    .anim-pulse-brand .ring-inner-bot {
-      transform-origin: 512px 492px;
-      animation: brand-ring 2.4s ease-in-out infinite 0.12s;
-    }
-    .anim-pulse-brand .wm-moy,
-    .anim-pulse-brand .wm-tls {
-      animation: brand-ink 2.4s ease-in-out infinite;
-    }
-    @keyframes brand-ring {
-      0%, 100% { opacity: 1; filter: brightness(1); }
-      50% { opacity: 0.85; filter: brightness(1.15) saturate(1.1); }
-    }
-    @keyframes brand-ink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.88; }
-    }
-
-    /* —— Orbit: outer rotateY, inner rotateX, text L/R —— */
-    .anim-orbit .logo-stage { width: 220px; height: 220px; }
-    .anim-orbit .layer {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform-style: preserve-3d;
-      backface-visibility: visible;
-    }
-    .anim-orbit .layer svg {
-      width: 200px;
-      height: 200px;
-    }
-    .anim-orbit .layer-outer {
-      animation: orbit-y 5.5s linear infinite;
-    }
-    .anim-orbit .layer-inner {
-      animation: orbit-x 5.5s linear infinite;
-    }
-    @keyframes orbit-y {
-      from { transform: rotateY(0deg); }
-      to { transform: rotateY(360deg); }
-    }
-    @keyframes orbit-x {
-      from { transform: rotateX(0deg); }
-      to { transform: rotateX(360deg); }
-    }
-    .anim-orbit .wm-row {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2px;
-      pointer-events: none;
-      z-index: 2;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 700;
-      line-height: 1;
-      text-align: center;
-    }
-    .anim-orbit .wm-moy {
-      color: #0e2436;
-      font-size: 33px;
-      letter-spacing: 0.06em;
-      animation: slide-from-left 5.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
-    }
-    .anim-orbit .wm-tls {
-      color: #1a5a6e;
-      font-size: 33px;
-      letter-spacing: 0.12em;
-      margin-top: 8px;
-      animation: slide-from-right 5.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
-    }
-    @keyframes slide-from-left {
-      0% { opacity: 0; transform: translateX(-140px); }
-      18% { opacity: 1; transform: translateX(0); }
-      72% { opacity: 1; transform: translateX(0); }
-      88%, 100% { opacity: 0; transform: translateX(-40px); }
-    }
-    @keyframes slide-from-right {
-      0% { opacity: 0; transform: translateX(140px); }
-      18% { opacity: 1; transform: translateX(0); }
-      72% { opacity: 1; transform: translateX(0); }
-      88%, 100% { opacity: 0; transform: translateX(40px); }
-    }
-
-    /* —— Assemble (legacy candidate) —— */
-    .anim-assemble .part {
-      animation-fill-mode: both;
-      animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-      animation-iteration-count: infinite;
+    .anim-spin2d .ring-outer {
       transform-box: fill-box;
       transform-origin: center;
-      animation-duration: 2.8s;
+      animation: spin-outer-2d 8s linear infinite;
     }
-    .anim-assemble .ring-outer { animation-name: fly-outer; }
-    .anim-assemble .ring-inner-bot { animation-name: fly-bot; animation-delay: 0.08s; }
-    .anim-assemble .ring-inner-top { animation-name: fly-top; animation-delay: 0.12s; }
-    .anim-assemble .wm-moy { animation-name: fly-moy; animation-delay: 0.18s; }
-    .anim-assemble .wm-tls { animation-name: fly-tls; animation-delay: 0.22s; }
-    @keyframes fly-outer {
-      0% { opacity: 0; transform: translate(-120px, -80px) scale(0.4) rotate(-40deg); }
-      35% { opacity: 1; transform: translate(0, 0) scale(1) rotate(0); }
-      70%, 100% { opacity: 1; transform: none; }
+    .anim-spin2d .ring-inner {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: spin-inner-ccw 10s linear infinite;
     }
-    @keyframes fly-bot {
-      0% { opacity: 0; transform: translate(100px, 90px) scale(0.5) rotate(35deg); }
-      38% { opacity: 1; transform: translate(0, 0) scale(1) rotate(0); }
-      70%, 100% { opacity: 1; transform: none; }
+    @keyframes spin-outer-2d {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
-    @keyframes fly-top {
-      0% { opacity: 0; transform: translate(-90px, 110px) scale(0.45) rotate(50deg); }
-      40% { opacity: 1; transform: translate(0, 0) scale(1) rotate(0); }
-      70%, 100% { opacity: 1; transform: none; }
-    }
-    @keyframes fly-moy {
-      0% { opacity: 0; transform: translate(0, -70px) scale(0.6); }
-      42% { opacity: 1; transform: translate(0, 0) scale(1); }
-      70%, 100% { opacity: 1; transform: none; }
-    }
-    @keyframes fly-tls {
-      0% { opacity: 0; transform: translate(0, 80px) scale(0.6); }
-      45% { opacity: 1; transform: translate(0, 0) scale(1); }
-      70%, 100% { opacity: 1; transform: none; }
+    @keyframes spin-inner-ccw {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
     }
 
     .dev-card {
@@ -204,9 +66,7 @@
       border-radius: 16px;
       padding: 24px 28px;
       max-width: 560px;
-      grid-column: 1 / -1;
     }
-    .dev-card h2 { margin: 0 0 12px; font-size: 1.15rem; }
     .dev-card dl {
       margin: 0;
       display: grid;
@@ -249,137 +109,70 @@
         <a href="../MAP/index.html">Карта</a>
       </nav>
       <h1>Заставка · Mint light</h1>
-      <p>Статика PNG · анимации-кандидаты · <a href="SPEC.md">SPEC.md</a></p>
+      <p>Статика PNG · анимация Spin 2D · <a href="SPEC.md">SPEC.md</a></p>
     </header>
 
     <div class="splash-layout">
-      <!-- Pulse Brand -->
       <div class="phone-wrap splash-phone">
-        <div class="phone-label"><strong>Pulse Brand</strong> · цвета значка</div>
+        <div class="phone-label"><strong>Spin 2D</strong> · outer CW · inner CCW</div>
         <div class="phone">
-          <div class="phone-screen anim-pulse-brand">
+          <div class="phone-screen anim-spin2d">
             <div class="logo-stage">
-              <div class="icon-tile" aria-hidden="true">
+              <div class="logo-mark" aria-hidden="true">
                 <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="1024" height="1024" fill="#f7fcf9"/>
                   <defs>
-                    <linearGradient id="outerB" x1="0" y1="0" x2="1" y2="0">
+                    <linearGradient id="outerS" x1="0" y1="0" x2="1" y2="0">
                       <stop offset="0%" stop-color="#1a5a6e"/><stop offset="100%" stop-color="#c9a86a"/>
                     </linearGradient>
-                    <linearGradient id="innerTopB" gradientUnits="userSpaceOnUse" x1="154" y1="492" x2="870" y2="492">
+                    <linearGradient id="innerTopS" gradientUnits="userSpaceOnUse" x1="154" y1="492" x2="870" y2="492">
                       <stop offset="0%" stop-color="#c9a86a"/><stop offset="35%" stop-color="#7eb8a8"/>
                       <stop offset="70%" stop-color="#2a8aa0"/><stop offset="100%" stop-color="#1a5a6e"/>
                     </linearGradient>
-                    <linearGradient id="innerBotB" gradientUnits="userSpaceOnUse" x1="870" y1="492" x2="154" y2="492">
+                    <linearGradient id="innerBotS" gradientUnits="userSpaceOnUse" x1="870" y1="492" x2="154" y2="492">
                       <stop offset="0%" stop-color="#c9a86a"/><stop offset="40%" stop-color="#a8b4b8"/>
                       <stop offset="75%" stop-color="#4a7a88"/><stop offset="100%" stop-color="#1a5a6e"/>
                     </linearGradient>
                   </defs>
-                  <circle class="ring-outer" cx="512" cy="492" r="420" fill="none" stroke="url(#outerB)" stroke-width="31"/>
-                  <path class="ring-inner-bot" d="M870 492 A358 358 0 0 1 154 492" fill="none" stroke="url(#innerBotB)" stroke-width="22" stroke-linecap="butt"/>
-                  <path class="ring-inner-top" d="M154 492 A358 358 0 0 1 870 492" fill="none" stroke="url(#innerTopB)" stroke-width="44" stroke-linecap="butt"/>
-                  <text class="wm-moy" x="512" y="465" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="170" fill="#0e2436" font-weight="700">&#1052;&#1054;&#1049;</text>
-                  <text class="wm-tls" x="512" y="655" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="170" fill="#1a5a6e" font-weight="700">TLS</text>
+                  <circle class="ring-outer" cx="512" cy="492" r="420" fill="none" stroke="url(#outerS)" stroke-width="31"/>
+                  <g class="ring-inner">
+                    <path d="M870 492 A358 358 0 0 1 154 492" fill="none" stroke="url(#innerBotS)" stroke-width="22" stroke-linecap="butt"/>
+                    <path d="M154 492 A358 358 0 0 1 870 492" fill="none" stroke="url(#innerTopS)" stroke-width="44" stroke-linecap="butt"/>
+                  </g>
+                  <text x="512" y="465" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="170" fill="#0e2436" font-weight="700">&#1052;&#1054;&#1049;</text>
+                  <text x="512" y="655" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="170" fill="#1a5a6e" font-weight="700">TLS</text>
                 </svg>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Orbit -->
-      <div class="phone-wrap splash-phone">
-        <div class="phone-label"><strong>Orbit</strong> · кольца + текст L/R</div>
-        <div class="phone">
-          <div class="phone-screen anim-orbit">
-            <div class="logo-stage" aria-hidden="true">
-              <div class="layer layer-outer">
-                <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="outerO" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stop-color="#1a5a6e"/><stop offset="100%" stop-color="#c9a86a"/>
-                    </linearGradient>
-                  </defs>
-                  <circle cx="512" cy="492" r="420" fill="none" stroke="url(#outerO)" stroke-width="31"/>
-                </svg>
-              </div>
-              <div class="layer layer-inner">
-                <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="innerTopO" gradientUnits="userSpaceOnUse" x1="154" y1="492" x2="870" y2="492">
-                      <stop offset="0%" stop-color="#c9a86a"/><stop offset="35%" stop-color="#7eb8a8"/>
-                      <stop offset="70%" stop-color="#2a8aa0"/><stop offset="100%" stop-color="#1a5a6e"/>
-                    </linearGradient>
-                    <linearGradient id="innerBotO" gradientUnits="userSpaceOnUse" x1="870" y1="492" x2="154" y2="492">
-                      <stop offset="0%" stop-color="#c9a86a"/><stop offset="40%" stop-color="#a8b4b8"/>
-                      <stop offset="75%" stop-color="#4a7a88"/><stop offset="100%" stop-color="#1a5a6e"/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M870 492 A358 358 0 0 1 154 492" fill="none" stroke="url(#innerBotO)" stroke-width="22" stroke-linecap="butt"/>
-                  <path d="M154 492 A358 358 0 0 1 870 492" fill="none" stroke="url(#innerTopO)" stroke-width="44" stroke-linecap="butt"/>
-                </svg>
-              </div>
-              <div class="wm-row">
-                <span class="wm-moy">&#1052;&#1054;&#1049;</span>
-                <span class="wm-tls">TLS</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Assemble -->
-      <div class="phone-wrap splash-phone">
-        <div class="phone-label"><strong>Assemble</strong> · сборка из частей</div>
-        <div class="phone">
-          <div class="phone-screen anim-assemble">
-            <div class="logo-stage" aria-hidden="true">
-              <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="outerA" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#1a5a6e"/><stop offset="100%" stop-color="#c9a86a"/>
-                  </linearGradient>
-                  <linearGradient id="innerTopA" gradientUnits="userSpaceOnUse" x1="154" y1="492" x2="870" y2="492">
-                    <stop offset="0%" stop-color="#c9a86a"/><stop offset="35%" stop-color="#7eb8a8"/>
-                    <stop offset="70%" stop-color="#2a8aa0"/><stop offset="100%" stop-color="#1a5a6e"/>
-                  </linearGradient>
-                  <linearGradient id="innerBotA" gradientUnits="userSpaceOnUse" x1="870" y1="492" x2="154" y2="492">
-                    <stop offset="0%" stop-color="#c9a86a"/><stop offset="40%" stop-color="#a8b4b8"/>
-                    <stop offset="75%" stop-color="#4a7a88"/><stop offset="100%" stop-color="#1a5a6e"/>
-                  </linearGradient>
-                </defs>
-                <circle class="part ring-outer" cx="512" cy="492" r="420" fill="none" stroke="url(#outerA)" stroke-width="31"/>
-                <path class="part ring-inner-bot" d="M870 492 A358 358 0 0 1 154 492" fill="none" stroke="url(#innerBotA)" stroke-width="22"/>
-                <path class="part ring-inner-top" d="M154 492 A358 358 0 0 1 870 492" fill="none" stroke="url(#innerTopA)" stroke-width="44"/>
-                <text class="part wm-moy" x="512" y="465" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="170" fill="#0e2436" font-weight="700">&#1052;&#1054;&#1049;</text>
-                <text class="part wm-tls" x="512" y="655" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="170" fill="#1a5a6e" font-weight="700">TLS</text>
-              </svg>
             </div>
           </div>
         </div>
       </div>
 
       <aside class="dev-card">
-        <h2>Для разработчика</h2>
         <dl>
-          <dt>Статика (PNG)</dt>
-          <dd><strong>1290 × 2796</strong> · <code>assets/splash-mint-light-1290x2796.png</code></dd>
-          <dt>Фон</dt>
-          <dd><code>#f7fcf9</code> · палитра App Icon Mint light</dd>
-          <dt>Анимации</dt>
-          <dd>CSS/SVG превью на этой странице</dd>
+          <dt>Launch (статика)</dt>
+          <dd><strong>1290 × 2796</strong> PNG · <code>assets/splash-mint-light-1290x2796.png</code> · без альфы · фон <code>#f7fcf9</code></dd>
+          <dt>Анимация</dt>
+          <dd><strong>не из PNG</strong> · референс справа (HTML) · первый VC после Launch ~1.5–2 с</dd>
+          <dt>Слои</dt>
+          <dd>1) внешнее кольцо · 2) внутренние дуги (цвета) · 3) wordmark «МОЙ» / «TLS» <em>статичен</em></dd>
+          <dt>Внешнее</dt>
+          <dd>вращение <strong>по часовой</strong> · <code>rotate Z</code> · период <strong>8 с</strong> · linear · stroke teal→gold <code>#1a5a6e</code>→<code>#c9a86a</code> · width ~31 @1024</dd>
+          <dt>Внутреннее</dt>
+          <dd>вращение <strong>против часовой</strong> · период <strong>10 с</strong> · linear · две дуги (верх толще ~44, низ ~22) · градиент gold→teal</dd>
+          <dt>Wordmark</dt>
+          <dd>«МОЙ» <code>#0e2436</code> · «TLS» <code>#1a5a6e</code> · один кегль · две строки · без вращения</dd>
+          <dt>Центр / радиусы</dt>
+          <dd>viewBox 1024 · центр ~(512, 492) · outer r≈420 · inner r≈358 · см. SVG в превью / App Icon mint</dd>
         </dl>
         <p class="note">
-          <strong>Pulse Brand</strong> — пульс плитки значка (скругление iOS ~22.5%, teal→gold кольца, ink wordmark).<br />
-          <strong>Orbit</strong> — среднее вращение: внешнее кольцо <code>rotateY</code> (горизонталь), внутренние дуги <code>rotateX</code> (вертикаль), цикл 5.5 с; «МОЙ» въезжает слева, «TLS» справа.<br />
-          <strong>Assemble</strong> — разлёт/сборка частей.
+          Launch Screen (storyboard) = только PNG. Spin 2D = векторные слои + <code>CABasicAnimation</code> / SwiftUI / Lottie·Rive.
+          Полная постановка: <a href="SPEC.md">SPEC.md</a> · геометрия значка: <a href="../LOGO/AppIcon-mint-light.svg">AppIcon-mint-light.svg</a>.
         </p>
-        <a class="btn" href="assets/splash-mint-light-1290x2796.png" download>Скачать PNG</a>
-        <a class="btn" href="auth.html">30 фонов авторизации →</a>
+        <a class="btn" href="assets/splash-mint-light-1290x2796.png" download>Скачать PNG (Launch)</a>
       </aside>
     </div>
 
-    <p class="footer"><a href="SPEC.md">SPEC.md</a> · Pulse Brand · Orbit · Assemble</p>
+    <p class="footer"><a href="SPEC.md">SPEC.md</a> · Spin 2D</p>
   </main>
 </body>
 </html>

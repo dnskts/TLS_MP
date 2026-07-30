@@ -13,41 +13,31 @@ fs.mkdirSync(outDir, { recursive: true });
 
 const W = 1290;
 const H = 2796;
-const MOY = '&#1052;&#1054;&#1049;';
-const FONT = 'Arial, Helvetica, sans-serif';
 
-/** 30 tourism auth backgrounds — photo + overlay treatment */
+/** 22 tourism auth backgrounds — photo + overlay treatment */
 const VARIANTS = [
-  { id: '01', name: 'Beach mint', file: 'travel-gen-beach.png', overlay: 'mint', ink: '#1a5a6e', gold: false, y: 460 },
-  { id: '02', name: 'Yacht coast', file: 'yacht-coast.jpg', overlay: 'teal', ink: '#f7fcf9', gold: false, y: 480 },
-  { id: '03', name: 'Santorini', file: 'travel-gen-santorini.png', overlay: 'sky', ink: '#f7fcf9', gold: true, y: 440 },
-  { id: '04', name: 'Private jet', file: 'travel-gen-jet.png', overlay: 'teal', ink: '#f7fcf9', gold: false, y: 480 },
-  { id: '05', name: 'Infinity pool', file: 'travel-gen-pool.png', overlay: 'dusk', ink: '#f7fcf9', gold: true, y: 460 },
-  { id: '06', name: 'Alpine lake', file: 'travel-gen-alps.png', overlay: 'mist', ink: '#0e2436', gold: false, y: 480 },
-  { id: '07', name: 'Marina night', file: 'travel-gen-marina.png', overlay: 'deep', ink: '#f7fcf9', gold: true, y: 460 },
-  { id: '08', name: 'Tokyo glow', file: 'travel-gen-tokyo.png', overlay: 'deep', ink: '#f7fcf9', gold: false, y: 480 },
-  { id: '09', name: 'Desert dunes', file: 'travel-gen-desert.png', overlay: 'warm', ink: '#f7fcf9', gold: true, y: 460 },
-  { id: '10', name: 'Sky lounge', file: 'travel-gen-lounge.png', overlay: 'teal', ink: '#f7fcf9', gold: false, y: 480 },
-  { id: '11', name: 'Venice canal', file: 'travel-gen-venice.png', overlay: 'mist', ink: '#f7fcf9', gold: false, y: 460 },
-  { id: '12', name: 'Maldives', file: 'travel-gen-maldives.png', overlay: 'mint', ink: '#1a5a6e', gold: false, y: 440 },
-  { id: '13', name: 'Terrace brunch', file: 'travel-gen-terrace.png', overlay: 'sky', ink: '#f7fcf9', gold: true, y: 460 },
-  { id: '14', name: 'Ski resort', file: 'travel-gen-ski.png', overlay: 'mist', ink: '#0e2436', gold: false, y: 480 },
-  { id: '15', name: 'Dubai dusk', file: 'travel-gen-dubai.png', overlay: 'dusk', ink: '#f7fcf9', gold: true, y: 460 },
-  { id: '16', name: 'Waterfall', file: 'travel-gen-waterfall.png', overlay: 'teal', ink: '#f7fcf9', gold: false, y: 480 },
-  { id: '17', name: 'Chauffeur hotel', file: 'travel-gen-car.png', overlay: 'deep', ink: '#f7fcf9', gold: false, y: 460 },
-  { id: '18', name: 'Amalfi coast', file: 'travel-gen-amalfi.png', overlay: 'sky', ink: '#f7fcf9', gold: true, y: 440 },
-  { id: '19', name: 'Airport lounge', file: 'airport-lounge.jpg', overlay: 'teal', ink: '#f7fcf9', gold: true, y: 480 },
-  { id: '20', name: 'Hotel suite', file: 'hotel-suite.jpg', overlay: 'mint', ink: '#1a5a6e', gold: false, y: 460 },
-  { id: '21', name: 'Fine dining', file: 'fine-dining.jpg', overlay: 'deep', ink: '#f7fcf9', gold: true, y: 480 },
-  { id: '22', name: 'City night', file: 'city-night.jpg', overlay: 'deep', ink: '#f7fcf9', gold: false, y: 460 },
-  { id: '23', name: 'Maybach transfer', file: 'chauffeur.jpg', overlay: 'dusk', ink: '#f7fcf9', gold: false, y: 480 },
-  { id: '24', name: 'Beach dusk', file: 'travel-gen-beach.png', overlay: 'dusk', ink: '#f7fcf9', gold: true, y: 500 },
-  { id: '25', name: 'Maldives air', file: 'travel-gen-maldives.png', overlay: 'sky', ink: '#f7fcf9', gold: false, y: 520 },
-  { id: '26', name: 'Amalfi gold', file: 'travel-gen-amalfi.png', overlay: 'warm', ink: '#f7fcf9', gold: true, y: 480 },
-  { id: '27', name: 'Dubai mint', file: 'travel-gen-dubai.png', overlay: 'mint', ink: '#1a5a6e', gold: false, y: 460 },
-  { id: '28', name: 'Alps dusk', file: 'travel-gen-alps.png', overlay: 'dusk', ink: '#f7fcf9', gold: true, y: 500 },
-  { id: '29', name: 'Pool teal', file: 'travel-gen-pool.png', overlay: 'teal', ink: '#f7fcf9', gold: false, y: 480 },
-  { id: '30', name: 'Santorini deep', file: 'travel-gen-santorini.png', overlay: 'deep', ink: '#f7fcf9', gold: true, y: 460 }
+  { id: '01', name: 'Private jet', file: 'travel-gen-jet.png', overlay: 'teal', ink: '#f7fcf9', gold: false, y: 480 },
+  { id: '02', name: 'Infinity pool', file: 'travel-gen-pool.png', overlay: 'dusk', ink: '#f7fcf9', gold: true, y: 460 },
+  { id: '03', name: 'Marina night', file: 'travel-gen-marina.png', overlay: 'deep', ink: '#f7fcf9', gold: true, y: 460 },
+  { id: '04', name: 'Desert dunes', file: 'travel-gen-desert.png', overlay: 'warm', ink: '#f7fcf9', gold: true, y: 460 },
+  { id: '05', name: 'Sky lounge', file: 'travel-gen-lounge.png', overlay: 'teal', ink: '#f7fcf9', gold: false, y: 480 },
+  { id: '06', name: 'Venice canal', file: 'travel-gen-venice.png', overlay: 'mist', ink: '#f7fcf9', gold: false, y: 460 },
+  { id: '07', name: 'Maldives', file: 'travel-gen-maldives.png', overlay: 'mint', ink: '#1a5a6e', gold: false, y: 440 },
+  { id: '08', name: 'Terrace brunch', file: 'travel-gen-terrace.png', overlay: 'sky', ink: '#f7fcf9', gold: true, y: 460 },
+  { id: '09', name: 'Chauffeur hotel', file: 'travel-gen-car.png', overlay: 'deep', ink: '#f7fcf9', gold: false, y: 460 },
+  { id: '10', name: 'Airport lounge', file: 'airport-lounge.jpg', overlay: 'teal', ink: '#f7fcf9', gold: true, y: 480 },
+  { id: '11', name: 'Hotel suite', file: 'hotel-suite.jpg', overlay: 'mint', ink: '#1a5a6e', gold: false, y: 460 },
+  { id: '12', name: 'Fine dining', file: 'fine-dining.jpg', overlay: 'deep', ink: '#f7fcf9', gold: true, y: 480 },
+  { id: '13', name: 'Beach dusk', file: 'travel-gen-beach.png', overlay: 'dusk', ink: '#f7fcf9', gold: true, y: 500 },
+  { id: '14', name: 'Volcanic coast', file: 'travel-gen-volcanic-coast.png', overlay: 'elite', ink: '#f7fcf9', gold: false, y: 440 },
+  { id: '15', name: 'Yacht dusk', file: 'travel-gen-yacht-dusk.png', overlay: 'elite', ink: '#f7fcf9', gold: true, y: 460 },
+  { id: '16', name: 'Cliff pool', file: 'travel-gen-cliff-pool.png', overlay: 'dusk', ink: '#f7fcf9', gold: true, y: 440 },
+  { id: '17', name: 'Jet cabin', file: 'travel-gen-jet-cabin.png', overlay: 'deep', ink: '#f7fcf9', gold: false, y: 480 },
+  { id: '18', name: 'Alpine chalet', file: 'travel-gen-chalet.png', overlay: 'elite', ink: '#f7fcf9', gold: true, y: 460 },
+  { id: '19', name: 'Desert resort', file: 'travel-gen-desert-resort.png', overlay: 'dusk', ink: '#f7fcf9', gold: true, y: 460 },
+  { id: '20', name: 'Heli coast', file: 'travel-gen-heli-coast.png', overlay: 'elite', ink: '#f7fcf9', gold: false, y: 440 },
+  { id: '21', name: 'Overwater villa', file: 'travel-gen-overwater.png', overlay: 'deep', ink: '#f7fcf9', gold: false, y: 480 },
+  { id: '22', name: 'First-class lounge', file: 'travel-gen-fclass-lounge.png', overlay: 'elite', ink: '#f7fcf9', gold: true, y: 460 }
 ];
 
 const OVERLAYS = {
@@ -85,22 +75,16 @@ const OVERLAYS = {
     ['0%', '#1a5a6e', 0.4],
     ['35%', '#c9a86a', 0.12],
     ['100%', '#0a2833', 0.55]
+  ],
+  /* Strong top/bottom vignette for white UI like prod screenshot */
+  elite: [
+    ['0%', '#061018', 0.62],
+    ['22%', '#0a2833', 0.28],
+    ['48%', '#0a2833', 0.06],
+    ['78%', '#0a2833', 0.22],
+    ['100%', '#040a10', 0.58]
   ]
 };
-
-function wordmarkSvg(fill, y, gold) {
-  const goldLine = gold
-    ? `<rect x="545" y="${y + 100}" width="200" height="2" rx="1" fill="#c9a86a" fill-opacity="0.9"/>`
-    : '';
-  return `
-<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
-  <g transform="translate(645 ${y})">
-    <text text-anchor="middle" fill="${fill}" font-family="${FONT}" font-size="64" font-weight="700" letter-spacing="0.18em" y="-14">${MOY}</text>
-    <text text-anchor="middle" fill="${fill}" font-family="${FONT}" font-size="84" font-weight="700" letter-spacing="0.28em" y="68">TLS</text>
-  </g>
-  ${goldLine}
-</svg>`;
-}
 
 function overlaySvg(key) {
   const stops = OVERLAYS[key].map(
@@ -129,15 +113,11 @@ async function exportAuth(v) {
     fitTo: { mode: 'width', value: W }
   }).render().asPng();
 
-  const markBuf = new Resvg(wordmarkSvg(v.ink, v.y, v.gold), {
-    fitTo: { mode: 'width', value: W }
-  }).render().asPng();
-
   const out = path.join(outDir, `auth-bg-${v.id}-1290x2796.png`);
+  /* Master = photo + overlay only; wordmark is drawn by app UI («МОЙ TLS») */
   await sharp(base)
     .composite([
-      { input: overlayBuf, blend: 'over' },
-      { input: markBuf, blend: 'over' }
+      { input: overlayBuf, blend: 'over' }
     ])
     .removeAlpha()
     .png({ compressionLevel: 8 })

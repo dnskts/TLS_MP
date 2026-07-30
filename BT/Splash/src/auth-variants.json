@@ -1,33 +1,6 @@
 [
   {
     "id": "01",
-    "name": "Beach mint",
-    "file": "travel-gen-beach.png",
-    "overlay": "mint",
-    "ink": "#1a5a6e",
-    "gold": false,
-    "y": 460
-  },
-  {
-    "id": "02",
-    "name": "Yacht coast",
-    "file": "yacht-coast.jpg",
-    "overlay": "teal",
-    "ink": "#f7fcf9",
-    "gold": false,
-    "y": 480
-  },
-  {
-    "id": "03",
-    "name": "Santorini",
-    "file": "travel-gen-santorini.png",
-    "overlay": "sky",
-    "ink": "#f7fcf9",
-    "gold": true,
-    "y": 440
-  },
-  {
-    "id": "04",
     "name": "Private jet",
     "file": "travel-gen-jet.png",
     "overlay": "teal",
@@ -36,7 +9,7 @@
     "y": 480
   },
   {
-    "id": "05",
+    "id": "02",
     "name": "Infinity pool",
     "file": "travel-gen-pool.png",
     "overlay": "dusk",
@@ -45,16 +18,7 @@
     "y": 460
   },
   {
-    "id": "06",
-    "name": "Alpine lake",
-    "file": "travel-gen-alps.png",
-    "overlay": "mist",
-    "ink": "#0e2436",
-    "gold": false,
-    "y": 480
-  },
-  {
-    "id": "07",
+    "id": "03",
     "name": "Marina night",
     "file": "travel-gen-marina.png",
     "overlay": "deep",
@@ -63,16 +27,7 @@
     "y": 460
   },
   {
-    "id": "08",
-    "name": "Tokyo glow",
-    "file": "travel-gen-tokyo.png",
-    "overlay": "deep",
-    "ink": "#f7fcf9",
-    "gold": false,
-    "y": 480
-  },
-  {
-    "id": "09",
+    "id": "04",
     "name": "Desert dunes",
     "file": "travel-gen-desert.png",
     "overlay": "warm",
@@ -81,7 +36,7 @@
     "y": 460
   },
   {
-    "id": "10",
+    "id": "05",
     "name": "Sky lounge",
     "file": "travel-gen-lounge.png",
     "overlay": "teal",
@@ -90,7 +45,7 @@
     "y": 480
   },
   {
-    "id": "11",
+    "id": "06",
     "name": "Venice canal",
     "file": "travel-gen-venice.png",
     "overlay": "mist",
@@ -99,7 +54,7 @@
     "y": 460
   },
   {
-    "id": "12",
+    "id": "07",
     "name": "Maldives",
     "file": "travel-gen-maldives.png",
     "overlay": "mint",
@@ -108,7 +63,7 @@
     "y": 440
   },
   {
-    "id": "13",
+    "id": "08",
     "name": "Terrace brunch",
     "file": "travel-gen-terrace.png",
     "overlay": "sky",
@@ -117,34 +72,7 @@
     "y": 460
   },
   {
-    "id": "14",
-    "name": "Ski resort",
-    "file": "travel-gen-ski.png",
-    "overlay": "mist",
-    "ink": "#0e2436",
-    "gold": false,
-    "y": 480
-  },
-  {
-    "id": "15",
-    "name": "Dubai dusk",
-    "file": "travel-gen-dubai.png",
-    "overlay": "dusk",
-    "ink": "#f7fcf9",
-    "gold": true,
-    "y": 460
-  },
-  {
-    "id": "16",
-    "name": "Waterfall",
-    "file": "travel-gen-waterfall.png",
-    "overlay": "teal",
-    "ink": "#f7fcf9",
-    "gold": false,
-    "y": 480
-  },
-  {
-    "id": "17",
+    "id": "09",
     "name": "Chauffeur hotel",
     "file": "travel-gen-car.png",
     "overlay": "deep",
@@ -153,16 +81,7 @@
     "y": 460
   },
   {
-    "id": "18",
-    "name": "Amalfi coast",
-    "file": "travel-gen-amalfi.png",
-    "overlay": "sky",
-    "ink": "#f7fcf9",
-    "gold": true,
-    "y": 440
-  },
-  {
-    "id": "19",
+    "id": "10",
     "name": "Airport lounge",
     "file": "airport-lounge.jpg",
     "overlay": "teal",
@@ -171,7 +90,7 @@
     "y": 480
   },
   {
-    "id": "20",
+    "id": "11",
     "name": "Hotel suite",
     "file": "hotel-suite.jpg",
     "overlay": "mint",
@@ -180,7 +99,7 @@
     "y": 460
   },
   {
-    "id": "21",
+    "id": "12",
     "name": "Fine dining",
     "file": "fine-dining.jpg",
     "overlay": "deep",
@@ -189,25 +108,7 @@
     "y": 480
   },
   {
-    "id": "22",
-    "name": "City night",
-    "file": "city-night.jpg",
-    "overlay": "deep",
-    "ink": "#f7fcf9",
-    "gold": false,
-    "y": 460
-  },
-  {
-    "id": "23",
-    "name": "Maybach transfer",
-    "file": "chauffeur.jpg",
-    "overlay": "dusk",
-    "ink": "#f7fcf9",
-    "gold": false,
-    "y": 480
-  },
-  {
-    "id": "24",
+    "id": "13",
     "name": "Beach dusk",
     "file": "travel-gen-beach.png",
     "overlay": "dusk",
@@ -216,55 +117,82 @@
     "y": 500
   },
   {
-    "id": "25",
-    "name": "Maldives air",
-    "file": "travel-gen-maldives.png",
-    "overlay": "sky",
+    "id": "14",
+    "name": "Volcanic coast",
+    "file": "travel-gen-volcanic-coast.png",
+    "overlay": "elite",
     "ink": "#f7fcf9",
     "gold": false,
-    "y": 520
+    "y": 440
   },
   {
-    "id": "26",
-    "name": "Amalfi gold",
-    "file": "travel-gen-amalfi.png",
-    "overlay": "warm",
+    "id": "15",
+    "name": "Yacht dusk",
+    "file": "travel-gen-yacht-dusk.png",
+    "overlay": "elite",
     "ink": "#f7fcf9",
     "gold": true,
-    "y": 480
-  },
-  {
-    "id": "27",
-    "name": "Dubai mint",
-    "file": "travel-gen-dubai.png",
-    "overlay": "mint",
-    "ink": "#1a5a6e",
-    "gold": false,
     "y": 460
   },
   {
-    "id": "28",
-    "name": "Alps dusk",
-    "file": "travel-gen-alps.png",
+    "id": "16",
+    "name": "Cliff pool",
+    "file": "travel-gen-cliff-pool.png",
     "overlay": "dusk",
     "ink": "#f7fcf9",
     "gold": true,
-    "y": 500
+    "y": 440
   },
   {
-    "id": "29",
-    "name": "Pool teal",
-    "file": "travel-gen-pool.png",
-    "overlay": "teal",
+    "id": "17",
+    "name": "Jet cabin",
+    "file": "travel-gen-jet-cabin.png",
+    "overlay": "deep",
     "ink": "#f7fcf9",
     "gold": false,
     "y": 480
   },
   {
-    "id": "30",
-    "name": "Santorini deep",
-    "file": "travel-gen-santorini.png",
+    "id": "18",
+    "name": "Alpine chalet",
+    "file": "travel-gen-chalet.png",
+    "overlay": "elite",
+    "ink": "#f7fcf9",
+    "gold": true,
+    "y": 460
+  },
+  {
+    "id": "19",
+    "name": "Desert resort",
+    "file": "travel-gen-desert-resort.png",
+    "overlay": "dusk",
+    "ink": "#f7fcf9",
+    "gold": true,
+    "y": 460
+  },
+  {
+    "id": "20",
+    "name": "Heli coast",
+    "file": "travel-gen-heli-coast.png",
+    "overlay": "elite",
+    "ink": "#f7fcf9",
+    "gold": false,
+    "y": 440
+  },
+  {
+    "id": "21",
+    "name": "Overwater villa",
+    "file": "travel-gen-overwater.png",
     "overlay": "deep",
+    "ink": "#f7fcf9",
+    "gold": false,
+    "y": 480
+  },
+  {
+    "id": "22",
+    "name": "First-class lounge",
+    "file": "travel-gen-fclass-lounge.png",
+    "overlay": "elite",
     "ink": "#f7fcf9",
     "gold": true,
     "y": 460

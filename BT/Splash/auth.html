@@ -8,29 +8,193 @@
   <style>
     .auth-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 24px 16px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 32px 24px;
       margin-top: 28px;
     }
-    .auth-card .phone {
-      width: 200px;
-      height: 434px;
-      border-radius: 26px;
+    .auth-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
-    .auth-card .phone-screen { background: #111; }
-    .auth-card .phone-screen img {
+    /* Тот же phone, что AS IS #auth — размеры контролов 1:1 */
+    .auth-card .phone {
+      width: var(--phone-w, 320px);
+      height: var(--phone-h, 680px);
+      border-radius: 36px;
+    }
+    .auth-card .phone-screen {
+      position: relative;
+      background: #111;
+      overflow: hidden;
+    }
+    .auth-card .phone-screen > img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      z-index: 0;
     }
-    .auth-card .phone-label { max-width: 200px; }
+    .auth-card .phone-label { max-width: var(--phone-w, 320px); }
     .auth-note {
       margin-top: 8px;
       max-width: 720px;
       color: rgba(255,255,255,0.55);
       font-size: 0.92rem;
       line-height: 1.45;
+    }
+
+    /* Overlay — padding/типографика login-screen; input/cta/face = AS IS; низ = прод */
+    .auth-ui {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 48px 22px 24px;
+      box-sizing: border-box;
+      color: #fff;
+      font-family: "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    .auth-ui .back {
+      position: absolute;
+      top: 48px;
+      left: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(40, 40, 42, 0.45);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      line-height: 0;
+    }
+    .auth-ui .back svg {
+      width: 14px;
+      height: 14px;
+    }
+    .auth-ui .brand-block {
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 28px;
+    }
+    .auth-ui .brand-title {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      white-space: nowrap;
+      color: #fff;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+    }
+    .auth-ui .brand-sub {
+      margin: 4px 0 0;
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.85);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    }
+    .auth-ui .form-block {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .auth-ui .phone-id {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    }
+    .auth-ui label {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      margin-bottom: 6px;
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    /* AS IS .input — чуть плотнее для читаемости на фото */
+    .auth-ui .input {
+      height: 44px;
+      margin-bottom: 14px;
+      background: rgba(255, 255, 255, 0.36);
+      border: none;
+      border-radius: 12px;
+    }
+    /* Войти — заметнее, чем было (opacity 0.7 на слабом фоне) */
+    .auth-ui .cta {
+      display: block;
+      width: 100%;
+      height: 48px;
+      padding: 0;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.32);
+      opacity: 1;
+      cursor: default;
+      font-family: inherit;
+    }
+    /* AS IS .face — 40×40 */
+    .auth-ui .face {
+      width: 40px;
+      height: 40px;
+      margin: 16px auto;
+      color: #fff;
+      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35));
+    }
+    .auth-ui .face svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    /* Прод: нижние pill — выше прозрачность, тонкая обводка, меньший шрифт */
+    .auth-ui .secondary {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 0 0 8px;
+    }
+    .auth-ui .secondary .btn {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: none;
+      border-radius: 999px;
+      padding: 8px 16px;
+      width: fit-content;
+      max-width: 100%;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: rgba(255, 255, 255, 0.95);
+      box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.18);
+      white-space: nowrap;
+    }
+
+    .auth-dl {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-tab, #00b7d4);
+      text-decoration: none;
+    }
+    .auth-dl:hover { text-decoration: underline; }
+    .auth-dl span {
+      font-weight: 400;
+      opacity: 0.65;
+      font-size: 11px;
     }
   </style>
 </head>
@@ -48,8 +212,11 @@
         <a href="../MAP/index.html">Карта</a>
       </nav>
       <h1>Фоны авторизации · туризм</h1>
-      <p>30 full-bleed фото · только «МОЙ TLS» · без формы · <a href="SPEC.md">SPEC.md</a></p>
-      <p class="auth-note">Мастер: <strong>1290 × 2796</strong>. Реалистичные travel-кадры (берег, города, отели, авиация) + mint/teal overlay для читаемости wordmark.</p>
+      <p>22 full-bleed фото · превью с формой как на проде · <a href="SPEC.md">SPEC.md</a></p>
+      <p class="auth-note">
+        Мастер для приложения: <strong>1290 × 2796</strong> — только фон (для заливки).
+        На превью UI как на скрине: «МОЙ TLS» в одну строку, поля и кнопки. <strong>Скачать</strong> — полноразмерный PNG без формы.
+      </p>
     </header>
 
     <div class="auth-grid" id="grid"></div>
@@ -60,16 +227,52 @@
   <script type="module">
     const res = await fetch('src/auth-variants.json');
     const variants = await res.json();
-    document.getElementById('grid').innerHTML = variants.map((v) => `
+    const form = `
+      <div class="auth-ui">
+        <div class="back" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </div>
+        <div class="brand-block">
+          <p class="brand-title">МОЙ TLS</p>
+          <p class="brand-sub">Travel &amp; Lifestyle Service</p>
+        </div>
+        <div class="form-block">
+          <div class="phone-id">+7 964 712-15-97</div>
+          <label>Пароль</label>
+          <div class="input"></div>
+          <button class="cta" type="button">Войти</button>
+          <div class="face" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <path d="M8 3.8H6.2A2.2 2.2 0 0 0 4 6v1.8"/>
+              <path d="M16 3.8h1.8A2.2 2.2 0 0 1 20 6v1.8"/>
+              <path d="M8 20.2H6.2A2.2 2.2 0 0 1 4 18v-1.8"/>
+              <path d="M16 20.2h1.8A2.2 2.2 0 0 0 20 18v-1.8"/>
+              <path d="M9 10.2v1.2"/>
+              <path d="M15 10.2v1.2"/>
+              <path d="M9.2 15c.9.9 2.1 1.35 3.8 1.35 1.7 0 2.9-.45 3.8-1.35"/>
+            </svg>
+          </div>
+        </div>
+        <div class="secondary">
+          <div class="btn">Восстановить пароль</div>
+          <div class="btn">Сменить пользователя</div>
+        </div>
+      </div>`;
+
+    document.getElementById('grid').innerHTML = variants.map((v) => {
+      const file = `assets/auth-bg-${v.id}-1290x2796.png`;
+      return `
       <div class="phone-wrap auth-card">
         <div class="phone-label"><strong>${v.id}</strong> · ${v.name}</div>
         <div class="phone">
           <div class="phone-screen">
-            <img src="assets/auth-bg-${v.id}-1290x2796.png" alt="МОЙ TLS · ${v.name}" width="1290" height="2796" loading="lazy" />
+            <img src="${file}" alt="${v.name}" width="1290" height="2796" loading="lazy" />
+            ${form}
           </div>
         </div>
-      </div>
-    `).join('');
+        <a class="auth-dl" href="${file}" download="auth-bg-${v.id}-1290x2796.png">Скачать <span>· 1290×2796 · только фон</span></a>
+      </div>`;
+    }).join('');
   </script>
 </body>
 </html>

@@ -26,41 +26,45 @@ Continues [AppIcon-mint-light](../LOGO/AppIcon-mint-light.svg):
 
 **Static file:** `assets/splash-mint-light-1290x2796.png`
 
-### Animation candidates (HTML preview)
+### Animation — Spin 2D (native after Launch)
 
-On [index.html](index.html):
+HTML preview: [index.html](index.html). **Not** derived from the static PNG.
 
-1. **Pulse Brand** — pulse of App Icon tile (iOS radius, teal→gold rings, ink wordmark).
-2. **Orbit** — medium speed: outer ring `rotateY` (horizontal), inner arcs `rotateX` (vertical), 5.5 s loop; «МОЙ» slides from left, «TLS» from right.
-3. **Assemble** — rings + wordmark fly in and settle.
+| Layer | Motion | Duration | Notes |
+|-------|--------|----------|--------|
+| Outer ring | CW `rotateZ` | **8 s** linear | Stroke gradient `#1a5a6e` → `#c9a86a`, width ~31 @1024, r≈420, center ~(512, 492) |
+| Inner arcs | CCW `rotateZ` | **10 s** linear | Top arc thicker (~44), bottom (~22), r≈358; gold→teal gradients |
+| Wordmark | none | — | «МОЙ» `#0e2436`, «TLS» `#1a5a6e`, two lines, same size |
 
-Native note: Launch Screen (storyboard) is static only. Animated splash = first VC / SwiftUI / Lottie·Rive after launch (~1.5–2 s one-shot).
+- Launch Screen (storyboard): **static PNG only**
+- Animated splash: first VC / SwiftUI / Lottie·Rive after launch (~**1.5–2 s** one-shot in app; preview loops)
+- Geometry reference: [AppIcon-mint-light.svg](../LOGO/AppIcon-mint-light.svg) + SVG in preview
 
-## Auth backgrounds — 30 tourism variants
+Native note: Launch Screen cannot animate. Do not expect iOS to “animate” the PNG.
 
-Only atmosphere + **«МОЙ TLS»** — no phone / password / buttons.
+## Auth backgrounds — 22 tourism variants
 
-Sources: `BT/assets/auth/` (generated travel stills + stories). Export: `npm run export` (sharp + resvg).
+Master PNG: photo + atmospheric overlay only — **no** UI, **no** wordmark (title «МОЙ TLS» is app chrome).
+
+Preview [auth.html](auth.html): HTML login chrome matching prod layout (back, **МОЙ TLS** one line + subtitle, phone, password, Войти glass, Face ID, footer pills). Each card has **Скачать** → full-size background PNG.
+
+Sources: `BT/assets/auth/`. Export: `npm run export` (sharp + resvg).
 
 | # | Name | # | Name |
 |---|------|---|------|
-| 01 | Beach mint | 16 | Waterfall |
-| 02 | Yacht coast | 17 | Chauffeur hotel |
-| 03 | Santorini | 18 | Amalfi coast |
-| 04 | Private jet | 19 | Airport lounge |
-| 05 | Infinity pool | 20 | Hotel suite |
-| 06 | Alpine lake | 21 | Fine dining |
-| 07 | Marina night | 22 | City night |
-| 08 | Tokyo glow | 23 | Maybach transfer |
-| 09 | Desert dunes | 24 | Beach dusk |
-| 10 | Sky lounge | 25 | Maldives air |
-| 11 | Venice canal | 26 | Amalfi gold |
-| 12 | Maldives | 27 | Dubai mint |
-| 13 | Terrace brunch | 28 | Alps dusk |
-| 14 | Ski resort | 29 | Pool teal |
-| 15 | Dubai dusk | 30 | Santorini deep |
+| 01 | Private jet | 12 | Fine dining |
+| 02 | Infinity pool | 13 | Beach dusk |
+| 03 | Marina night | 14 | Volcanic coast |
+| 04 | Desert dunes | 15 | Yacht dusk |
+| 05 | Sky lounge | 16 | Cliff pool |
+| 06 | Venice canal | 17 | Jet cabin |
+| 07 | Maldives | 18 | Alpine chalet |
+| 08 | Terrace brunch | 19 | Desert resort |
+| 09 | Chauffeur hotel | 20 | Heli coast |
+| 10 | Airport lounge | 21 | Overwater villa |
+| 11 | Hotel suite | 22 | First-class lounge |
 
-**Files:** `assets/auth-bg-01-…-30-1290x2796.png`  
+**Files:** `assets/auth-bg-01-…-22-1290x2796.png`  
 **Index:** `src/auth-variants.json`
 
 ## Export
@@ -73,7 +77,7 @@ cd BT/Splash && npm install && npm run export
 
 - [x] Splash Mint light (not AS IS dark teal)
 - [x] Splash PNG 1290×2796
-- [x] Pulse + Assemble previews on splash page
-- [x] 30 tourism auth PNGs 1290×2796; no login form on preview
+- [x] Spin 2D preview on splash page
+- [x] 22 tourism auth PNGs 1290×2796 (bg only); preview with login overlay + download
 - [x] Nav + hub sections
 - [x] This SPEC for Xcode / Asset Catalog
