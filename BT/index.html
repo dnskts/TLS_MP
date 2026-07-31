@@ -79,7 +79,12 @@
       to { transform: rotate(-360deg); }
     }
 
-    /* Hub · Auth preview with form overlay */
+    /* Hub · Auth preview — same overlay as Splash/auth.html */
+    .hub-auth-card .phone {
+      width: var(--phone-w, 320px);
+      height: var(--phone-h, 680px);
+      border-radius: 36px;
+    }
     .hub-auth-card .phone-screen {
       position: relative;
       background: #111;
@@ -91,6 +96,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
       z-index: 0;
     }
     .hub-auth-card .auth-ui {
@@ -117,7 +123,10 @@
       color: #fff;
       line-height: 0;
     }
-    .hub-auth-card .auth-ui .back svg { width: 14px; height: 14px; }
+    .hub-auth-card .auth-ui .back svg {
+      width: 14px;
+      height: 14px;
+    }
     .hub-auth-card .auth-ui .brand-block {
       text-align: center;
       margin-top: 8px;
@@ -128,6 +137,7 @@
       font-size: 28px;
       font-weight: 700;
       letter-spacing: 0.04em;
+      line-height: 1.15;
       white-space: nowrap;
       color: #fff;
       text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
@@ -135,8 +145,14 @@
     .hub-auth-card .auth-ui .brand-sub {
       margin: 4px 0 0;
       font-size: 12px;
+      font-weight: 400;
       color: rgba(255, 255, 255, 0.85);
       text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    }
+    .hub-auth-card .auth-ui .form-block {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
     }
     .hub-auth-card .auth-ui .phone-id {
       text-align: center;
@@ -149,42 +165,52 @@
     .hub-auth-card .auth-ui label {
       display: block;
       font-size: 12px;
+      font-weight: 400;
       margin-bottom: 6px;
       color: #fff;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
     .hub-auth-card .auth-ui .input {
       height: 44px;
       margin-bottom: 14px;
       background: rgba(255, 255, 255, 0.36);
+      border: none;
       border-radius: 12px;
     }
     .hub-auth-card .auth-ui .cta {
       display: block;
       width: 100%;
       height: 48px;
+      padding: 0;
       border: none;
       border-radius: 12px;
       font-size: 16px;
       font-weight: 500;
       color: #fff;
       background: rgba(255, 255, 255, 0.32);
-      font-family: inherit;
+      opacity: 1;
       cursor: default;
+      font-family: inherit;
     }
     .hub-auth-card .auth-ui .face {
       width: 40px;
       height: 40px;
       margin: 16px auto;
       color: #fff;
+      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35));
     }
-    .hub-auth-card .auth-ui .face svg { width: 100%; height: 100%; display: block; }
+    .hub-auth-card .auth-ui .face svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
     .hub-auth-card .auth-ui .secondary {
       margin-top: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 8px;
-      padding-bottom: 8px;
+      padding: 0 0 8px;
     }
     .hub-auth-card .auth-ui .secondary .btn {
       background: rgba(255, 255, 255, 0.12);
@@ -194,8 +220,11 @@
       border-radius: 999px;
       padding: 8px 16px;
       width: fit-content;
+      max-width: 100%;
+      text-align: center;
       font-size: 12px;
       font-weight: 400;
+      line-height: 1.2;
       color: rgba(255, 255, 255, 0.95);
       box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.18);
       white-space: nowrap;
@@ -309,10 +338,10 @@
       <a class="hub-more" href="Splash/auth.html">Подробнее · 22 варианта</a>
       <div class="phones">
         <div class="phone-wrap hub-auth-card">
-          <div class="phone-label"><strong>01</strong> · Private jet</div>
+          <div class="phone-label"><strong>05</strong> · Sky lounge</div>
           <div class="phone">
             <div class="phone-screen">
-              <img src="Splash/assets/auth-bg-01-1290x2796.png" alt="Private jet" width="1290" height="2796" />
+              <img src="Splash/assets/auth-bg-05-1290x2796.png" alt="Sky lounge" width="1290" height="2796" />
               <div class="auth-ui">
                 <div class="back" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
@@ -321,20 +350,22 @@
                   <p class="brand-title">МОЙ TLS</p>
                   <p class="brand-sub">Travel &amp; Lifestyle Service</p>
                 </div>
-                <div class="phone-id">+7 964 712-15-97</div>
-                <label>Пароль</label>
-                <div class="input"></div>
-                <button class="cta" type="button">Войти</button>
-                <div class="face" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-                    <path d="M8 3.8H6.2A2.2 2.2 0 0 0 4 6v1.8"/>
-                    <path d="M16 3.8h1.8A2.2 2.2 0 0 1 20 6v1.8"/>
-                    <path d="M8 20.2H6.2A2.2 2.2 0 0 1 4 18v-1.8"/>
-                    <path d="M16 20.2h1.8A2.2 2.2 0 0 0 20 18v-1.8"/>
-                    <path d="M9 10.2v1.2"/>
-                    <path d="M15 10.2v1.2"/>
-                    <path d="M9.2 15c.9.9 2.1 1.35 3.8 1.35 1.7 0 2.9-.45 3.8-1.35"/>
-                  </svg>
+                <div class="form-block">
+                  <div class="phone-id">+7 964 712-15-97</div>
+                  <label>Пароль</label>
+                  <div class="input"></div>
+                  <button class="cta" type="button">Войти</button>
+                  <div class="face" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                      <path d="M8 3.8H6.2A2.2 2.2 0 0 0 4 6v1.8"/>
+                      <path d="M16 3.8h1.8A2.2 2.2 0 0 1 20 6v1.8"/>
+                      <path d="M8 20.2H6.2A2.2 2.2 0 0 1 4 18v-1.8"/>
+                      <path d="M16 20.2h1.8A2.2 2.2 0 0 0 20 18v-1.8"/>
+                      <path d="M9 10.2v1.2"/>
+                      <path d="M15 10.2v1.2"/>
+                      <path d="M9.2 15c.9.9 2.1 1.35 3.8 1.35 1.7 0 2.9-.45 3.8-1.35"/>
+                    </svg>
+                  </div>
                 </div>
                 <div class="secondary">
                   <div class="btn">Восстановить пароль</div>
